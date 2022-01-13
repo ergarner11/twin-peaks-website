@@ -1,0 +1,412 @@
+@import "../colors.scss";
+@import "../mixins.scss";
+@import "../typography.scss";
+.health-plan {
+  .teaser {
+    @extend %flex-column;
+    flex-grow: 1;
+    background-color: $layoutBlack;
+    * {
+      color: $layoutWhite;
+    }
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+    .section-1 {
+      @extend %flex-column-centered;
+      padding: 30px 20px;
+      @media screen and (min-width: 768px) {
+        padding: 60px 20px;
+        width: 50%;
+      }
+      .stat {
+        @extend %flex-column-centered;
+        background: url("../../assets/3of4Graphic.webp") no-repeat center center;
+        background-size: cover;
+        width: 280px;
+        height: 280px;
+        @media screen and (min-width: 768px) {
+          width: 350px;
+          height: 350px;
+        }
+        .number {
+          font-size: 70px;
+          font-weight: bold;
+          line-height: 1;
+          padding-bottom: 10px;
+          @media screen and (min-width: 768px) {
+            font-size: 90px;
+            padding-bottom: 20px;
+          }
+        }
+        .have-hp {
+          font-size: 24px;
+          font-weight: bold;
+          @media screen and (min-width: 768px) {
+            font-size: 28px;
+            padding-bottom: 20px;
+          }
+        }
+      }
+      .let-us-help {
+        margin-top: 25px;
+        font-size: 20px;
+        line-height: 1.4;
+        text-align: center;
+        @media screen and (min-width: 768px) {
+          margin-top: 40px;
+          font-size: 30px;
+        }
+      }
+    }
+    .section-2 {
+      padding: 20px;
+      @extend %flex-column-centered;
+      justify-content: space-around;
+      background: url("../../assets/hpBanner.webp") no-repeat top center;
+      background-size: cover;
+      width: 100%;
+      height: 320px;
+      @media screen and (min-width: 768px) {
+        width: 50%;
+        height: 100%;
+      }
+      h1 {
+        text-align: center;
+        line-height: 1.4;
+        font-size: 30px;
+        font-weight: bolder;
+        @media screen and (min-width: 768px) {
+          font-size: 50px;
+        }
+      }
+      button {
+        font-size: 22px;
+        padding: 22px;
+        @media screen and (min-width: 768px) {
+          font-size: 30px;
+          padding: 25px;
+        }
+      }
+    }
+  }
+  .inclusion-panel {
+    background-color: $layoutBlack;
+    @media screen and (min-width: 768px) {
+      width: 33%;
+    }
+    .header {
+      background-color: $layoutGreen;
+    }
+    .content {
+      padding: 15px;
+      margin-left: 35px;
+      margin-top: 20px;
+      width: auto;
+    }
+    .stat {
+      @extend %flex-column-centered;
+      margin: 20px auto 15px auto;
+      background: url("../../assets/1of3Graphic.webp") no-repeat center center;
+      background-size: cover;
+      width: 200px;
+      height: 200px;
+      * {
+        color: $layoutWhite;
+      }
+      .number {
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 1;
+        margin: 5px;
+      }
+      p {
+        max-width: 130px;
+        text-align: center;
+      }
+    }
+    >ul {
+      margin-left: 30px;
+    }
+    li {
+      font-size: 20px;
+    }
+    .secondary-ul {
+      li {
+        margin-left: 20px;
+        list-style: none;
+        &::before {
+          content: "-";
+          margin-right: 5px;
+        }
+        padding-top: 5px;
+        font-size: 14px;
+        font-family: $sura;
+      }
+    }
+  }
+  .did-you-know {
+    margin: 20px;
+    padding: 20px;
+    background-color: $layoutWhite;
+    border-radius: 5px;
+    .did-you-know-header {
+      padding: 0px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    p {
+      padding-top: 15px;
+      font-family: $sura;
+    }
+  }
+  .not-included {
+    @extend %flex-column;
+    margin-bottom: 40px !important;
+    background-color: $layoutWhite;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .content {
+        display: flex;
+        justify-content: space-between;
+        width: 75% !important;
+        margin: 0px !important;
+        padding: 0px 20px !important;
+        p {
+          padding: 15px;
+        }
+      }
+    }
+    p {
+      padding: 10px 0px;
+      font-family: $sura;
+    }
+    .header {
+      color: $layoutWhite;
+      background-color: $layoutOrange;
+      @media screen and (min-width: 768px) {
+        width: 255px !important;
+        height: max-content;
+      }
+    }
+  }
+  .not-included,
+  .inclusion-panel {
+    @include box-shadow;
+    border-radius: 5px;
+    margin: 15px;
+    margin-left: 35px;
+    .header {
+      position: relative;
+      right: 30px;
+      top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      @media screen and (min-width: 768px) {
+        font-size: 26px;
+      }
+    }
+    .content {
+      padding: 8px 20px 20px 8px;
+      margin-left: 35px;
+      margin-top: 20px;
+      width: auto;
+      @media screen and (min-width: 768px) {
+        padding: 15px;
+      }
+    }
+  }
+  .dental-enhanced {
+    @media screen and (min-width: 768px) {
+      padding: 25px;
+      font-size: 40px;
+      background: url("../../assets/dentalEnhanced.webp") no-repeat center center rgba(173, 211, 197, 0.4);
+      background-size: cover;
+      width: 100%;
+    }
+    .header {
+      background: url("../../assets/dentalEnhanced.webp") no-repeat center center rgba(173, 211, 197, 0.4);
+      background-size: cover;
+      width: 100%;
+      padding: 25px;
+      font-size: 25px;
+      font-weight: bolder;
+      text-align: center;
+      @media screen and (min-width: 768px) {
+        padding: 0px;
+        padding-bottom: 25px;
+        font-size: 40px;
+        background: none;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .content {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .details {
+      @extend %flex-column;
+      justify-content: space-around;
+      padding: 20px;
+      background-color: $layoutWhite;
+      @media screen and (min-width: 768px) {
+        @include box-shadow;
+        border-radius: 5px;
+        margin-top: 50px;
+        padding: 25px;
+        width: 350px;
+        height: 300px;
+      }
+      p {
+        font-family: $sura;
+        padding-bottom: 15px;
+        @media screen and (min-width: 768px) {
+          padding: 0px;
+        }
+      }
+    }
+    .inclusions {
+      padding: 10px 10px 20px 10px;
+      background-color: $layoutBlack;
+      * {
+        color: $layoutWhite;
+      }
+      @media screen and (min-width: 768px) {
+        @include box-shadow;
+        border-radius: 5px;
+        margin-left: -10px;
+        padding: 20px;
+        width: 300px;
+        height: 400px;
+      }
+      .inclusions-header {
+        padding-bottom: 15px;
+        font-size: 22px;
+        text-align: center;
+        font-weight: bold;
+        @media screen and (min-width: 768px) {
+          font-size: 28px;
+          line-height: 1.3;
+        }
+      }
+      ul {
+        padding-left: 40px;
+      }
+      li {
+        font-size: 16px;
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .inclusion-panel li,
+  .dental-enhanced li {
+    color: $layoutWhite;
+    height: auto;
+    list-style-type: disc;
+    padding-top: 8px;
+  }
+  .pricing {
+    @extend %flex-column-centered;
+    .toggle {
+      @extend %flex-row-aligned;
+      justify-content: space-between;
+      padding: 6px;
+      border: 1px solid $layoutBlack;
+      border-radius: 35px;
+      width: 50%;
+      max-width: 200px;
+      .option {
+        width: 50%;
+      }
+      .selected {
+        background-color: $layoutBlack;
+        color: $layoutWhite;
+      }
+    }
+    .pricing-table {
+      padding: 20px;
+      width: 100%;
+      overflow-x: scroll;
+      table {
+        width: 100%;
+        .item-column {
+          min-width: 150px;
+          text-align: right;
+          background-color: gainsboro;
+        }
+        .more-info {
+          text-decoration-line: underline;
+          text-decoration-style: dashed;
+          cursor: pointer;
+        }
+        .no-fill {
+          background-color: unset;
+          border: unset;
+        }
+        .recommended {
+          padding: 5px;
+          background-color: #add3c5;
+          font-size: unset;
+        }
+        .recommended-cell {
+          background-color: #e4f6f1;
+        }
+        .price {
+          font-size: 20px;
+          font-weight: bolder;
+          @media screen and (min-width: 768px) {
+            font-size: 30px;
+          }
+        }
+        th {
+          padding: 5px;
+          width: 200px;
+          min-width: 100px;
+          font-weight: bolder;
+          @media screen and (min-width: 768px) {
+            font-size: 20px;
+            padding: 15px;
+          }
+        }
+        td {
+          padding: 5px;
+        }
+        th,
+        td {
+          background-color: $layoutWhite;
+          border: 1px solid #e2e1df;
+          text-align: center;
+          svg {
+            margin: 0px;
+            height: 15px;
+          }
+        }
+      }
+    }
+    .call-to-action {
+      padding: 20px 10px;
+      line-height: 1.4;
+      font-size: 18px;
+      text-align: center;
+      @media screen and (min-width: 768px) {
+        padding: 20px;
+        font-size: 30px;
+      }
+    }
+    .call-btn {
+      @extend %flex-row-aligned;
+      margin-bottom: 20px;
+      background-color: $layoutGreen;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

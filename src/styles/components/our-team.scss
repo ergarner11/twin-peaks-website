@@ -1,0 +1,81 @@
+@import "../colors.scss";
+@import "../mixins.scss";
+@import "../typography.scss";
+.our-team {
+  .teaser {
+    @extend %flex-column;
+    flex-grow: 1;
+    background-color: $layoutBlack;
+    * {
+      color: $layoutWhite;
+    }
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+    .section-1 {
+      @extend %flex-column-centered;
+      padding: 30px 20px;
+      @media screen and (min-width: 768px) {
+        padding: 60px 30px;
+        width: 50%;
+      }
+      h1 {
+        font-size: 40px;
+        text-align: center;
+        line-height: 1.2;
+        @media screen and (min-width: 768px) {
+          font-size: 80px;
+        }
+      }
+    }
+    .section-2 {
+      @extend %flex-column-centered;
+      justify-content: space-around;
+      width: 100%;
+      @media screen and (min-width: 768px) {
+        width: 50%;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .doctor {
+    margin: 20px;
+    padding: 20px;
+    background-color: $layoutWhite;
+    @include box-shadow;
+    border-radius: 5px;
+    @media screen and (min-width: 768px) {
+      padding: 30px;
+      display: flex;
+      flex-direction: row;
+    }
+    .header {
+      p {
+        padding-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      img {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 200px;
+        @media screen and (min-width: 768px) {
+          margin-bottom: unset;
+          margin-right: 20px;
+          width: 200px;
+        }
+      }
+    }
+    .content {
+      @extend %flex-column;
+      justify-content: center;
+      p {
+        margin-top: 20px;
+        font-family: $sura;
+      }
+    }
+  }
+}
