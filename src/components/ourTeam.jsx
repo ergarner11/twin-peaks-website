@@ -52,7 +52,7 @@ function OurTeam() {
           Dr. White enjoys spending time outdoors, camping and hiking, as well
           as traveling both within the United States and overseas. She and her
           husband stay busy with two young children at home and their loveable
-          dog, Pip.
+          tripod cat, Frank.
         </p>
       </div>
     </div>
