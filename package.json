@@ -2,7 +2,7 @@
   "name": "twin-peaks-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.twinpeaksvetclinic.com/",
+  "homepage": "https://ergarner11.github.io/twin-peaks-website/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
