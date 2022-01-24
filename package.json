@@ -17,8 +17,6 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "startDev": "export PORT=8080 && nodemon index.jsx",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -44,7 +42,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
     "nodemon": "^2.0.15",
     "react-snap": "^1.23.0"
   }
