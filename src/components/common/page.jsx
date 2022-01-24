@@ -6,19 +6,21 @@ import Navbar from "../navbar";
 
 function Page({ children, ...props }) {
   return (
-    <div className="page">
+    <React.Fragment>
       <Helmet>
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Helmet>
-      <Navbar {...props} />
-      <Banner />
-      <div
-        className={`d-flex flex-column flex-grow-1 background-gray p-0 ${props.className}`}
-      >
-        {children}
+      <div className="page">
+        <Navbar {...props} />
+        <Banner />
+        <div
+          className={`d-flex flex-column flex-grow-1 background-gray p-0 ${props.className}`}
+        >
+          {children}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 

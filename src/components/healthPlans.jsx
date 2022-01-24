@@ -288,7 +288,7 @@ function HealthPlans() {
             {allCheckedRow("Fecal Floats")}
             {allCheckedRow("Routine Deworming for Roundworm & Hookworm")}
             {allCheckedRow("Nail Trims")}
-            {species === "Dog" && allCheckedRow("Anal Glands Expression")}
+            {allCheckedRow("Anal Glands Expression")}
             {allCheckedRow("Euthanasia")}
             {allCheckedRow("Spay or Neuter Surgery")}
             {allCheckedRow("Discounted Office Visits")}
@@ -301,7 +301,8 @@ function HealthPlans() {
               <td className="bold font-16 recommended-cell">90%</td>
               <td className="bold font-16">90%</td>
             </tr>
-            {allCheckedRow("Discount on Heartworm Prevention")}
+            {species === "Dog" &&
+              allCheckedRow("Discount on Heartworm Prevention")}
             {allCheckedRow("50% Discount on Elective Procedures")}
             <tr>
               <OverlayTrigger
