@@ -43,6 +43,12 @@
       "last 1 safari version"
     ]
   },
+  "reactSnap": {
+    "viewport": {
+      "width": 375,
+      "height": 667
+    }
+  },
   "devDependencies": {
     "nodemon": "^2.0.15",
     "react-snap": "^1.23.0"
