@@ -90,7 +90,12 @@ function OurTeam() {
   );
 
   return (
-    <Page selectedTab="ourTeam" className="our-team">
+    <Page
+      selectedTab="ourTeam"
+      className="our-team"
+      title="Our Team"
+      description="Our team members are all highly-qualified, but more importantly, they are passionate about providing the very best care."
+    >
       <Mobile>
         {hpTeaser}
         {drWhite}

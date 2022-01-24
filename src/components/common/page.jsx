@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 import Banner from "../banner";
 import Navbar from "../navbar";
@@ -6,6 +7,10 @@ import Navbar from "../navbar";
 function Page({ children, ...props }) {
   return (
     <div className="page">
+      <Helmet>
+        <title>{props.title}</title>
+        <meta name="description" content={props.description} />
+      </Helmet>
       <Navbar {...props} />
       <Banner />
       <div

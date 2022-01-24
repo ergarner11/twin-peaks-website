@@ -396,7 +396,12 @@ function HealthPlans() {
   );
 
   return (
-    <Page selectedTab="healthPlans" className="health-plan">
+    <Page
+      selectedTab="healthPlans"
+      className="health-plan"
+      title="Health Plans"
+      description="Our Health Plans are flexible, affordable, and central to our mission to make quality care accessible to every pet. Whatever you need, we can help!"
+    >
       <Mobile>
         {hpTeaser}
         {header("Included in ALL Health Plans")}
