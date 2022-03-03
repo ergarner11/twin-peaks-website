@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet";
 import Banner from "../banner";
 import Navbar from "../navbar";
 
+import Footer from "./footer";
+
 function Page({ children, ...props }) {
   return (
     <React.Fragment>
@@ -19,6 +21,7 @@ function Page({ children, ...props }) {
         >
           {children}
         </div>
+        <Footer />
       </div>
     </React.Fragment>
   );

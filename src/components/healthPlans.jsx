@@ -33,7 +33,7 @@ function HealthPlans() {
       <div className="section-2">
         <h1>Health Plans help your pet get the best care</h1>
         <button
-          className="btn-rounded white background-orange"
+          className="btn-rounded-tertiary"
           onClick={() => (window.location.hash = "pricing")}
         >
           Pricing
@@ -41,23 +41,6 @@ function HealthPlans() {
       </div>
     </div>
   );
-
-  const header = (text) => {
-    return (
-      <React.Fragment>
-        <Mobile>
-          <div className="text-center py-3 bold" style={{ fontSize: "25px" }}>
-            {text}
-          </div>
-        </Mobile>
-        <NotMobile>
-          <div className="text-center py-3 bold" style={{ fontSize: "35px" }}>
-            {text}
-          </div>
-        </NotMobile>
-      </React.Fragment>
-    );
-  };
 
   const preventiveCare = (
     <div className="inclusion-panel">
@@ -191,7 +174,7 @@ function HealthPlans() {
   );
 
   const disclaimer = (
-    <p className="font-16 text-center p-3">
+    <p className="text-center p-3 sura">
       *Website contains general overview of Health Plan details. Please call us
       with any questions
     </p>
@@ -214,7 +197,7 @@ function HealthPlans() {
 
   const pricing = (
     <div id="pricing" className="pricing">
-      {header("Pricing")}
+      <div className="header">Pricing</div>
       <div className="toggle">
         <button
           onClick={() => setSpecies("Dog")}
@@ -405,7 +388,7 @@ function HealthPlans() {
     >
       <Mobile>
         {hpTeaser}
-        {header("Included in ALL Health Plans")}
+        <div className="header">Included in ALL Health Plans</div>
         {preventiveCare}
         {officeVisits}
         {discount}
@@ -419,7 +402,7 @@ function HealthPlans() {
           <div className="container d-flex w-100">{hpTeaser}</div>
         </div>
         <div className="container">
-          {header("Included in ALL Health Plans")}
+          <div className="header">Included in ALL Health Plans</div>
           <div className="d-flex">
             {preventiveCare}
             {officeVisits}

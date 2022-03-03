@@ -35,6 +35,15 @@ $subtle: #d5d3d3;
   background-color: $layoutOrange;
 }
 
+.background-topography {
+  @extend %background-topography;
+}
+
+%background-topography {
+  background-color: #e4dccd;
+  background-image: url("../assets/topography.svg");
+}
+
 .attention {
   color: $attention;
 }

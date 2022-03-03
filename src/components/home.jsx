@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
+import Carousel from "react-bootstrap/Carousel";
 
-import intro from "../assets/intro.webp";
+import carousel1 from "../assets/carousel1.webp";
+import carousel2 from "../assets/carousel2.webp";
+import carousel3 from "../assets/carousel3.webp";
+import logo from "../assets/logo-dark.webp";
+import newPet from "../assets/newPet.webp";
 
 import Page from "./common/page";
 import { Mobile, NotMobile } from "./common/responsive";
 
 import { ReactComponent as ArrowRightIcon } from "../assets/arrow-right.svg";
 import { ReactComponent as AwardIcon } from "../assets/award.svg";
-import { ReactComponent as ExclamationIcon } from "../assets/exclamation-circle.svg";
+import { ReactComponent as ClockIcon } from "../assets/clock.svg";
 import { ReactComponent as HeartIcon } from "../assets/heart.svg";
+import { ReactComponent as HospitalIcon } from "../assets/hospital.svg";
 import { ReactComponent as PawIcon } from "../assets/paw.svg";
 import { ReactComponent as PhoneIcon } from "../assets/phone.svg";
 
@@ -40,117 +46,161 @@ function Home() {
           happens, we want the focus to be on your pet, not on your finances
         </p>
         <Link to="health-plans">
-          <button className="btn-rounded">
+          <button className="btn-rounded-tertiary">
             <ArrowRightIcon />
             About our Health Plans
           </button>
         </Link>
       </div>
       <div className="section-2">
-        <img src={intro} alt="veterinarian working with a dog" />
+        <Carousel>
+          <Carousel.Item>
+            <img src={carousel1} alt="Two small dogs running" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={carousel2} alt="Cat relaxing on a couch" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={carousel3} alt="A dog and cat snuggling" />
+          </Carousel.Item>
+        </Carousel>
       </div>
     </div>
   );
 
   const introContent = (
-    <div className="content-block intro">
-      <h1 className="header">
-        <AwardIcon />
-        Locally Owned Loveland Vet Clinic!
-      </h1>
-      <p>
-        Welcome to our Twin Peaks family! We are a locally owned, innovative
-        veterinary clinic located in Loveland, CO. In all we do, we strive to
-        provide the best care for your dog or cat. From our caring and
-        highly-qualified staff to our beautiful fully-equiped clinic, we are
-        confident that you will find many reasons to love us!
-      </p>
-      <p>
-        We're conveniently located to serve Loveland, Berthoud, Johnstown,
-        Milliken and the surrounding area.
-      </p>
+    <div className="content-container intro">
+      <div className="content-block">
+        <h1 className="header">
+          <AwardIcon />
+          Locally Owned Loveland Vet Clinic!
+        </h1>
+        <p>
+          Welcome to our Twin Peaks family! We are a locally owned, innovative
+          veterinary clinic located in Loveland, CO. In all we do, we strive to
+          provide the best care for your dog or cat. From our caring and
+          highly-qualified staff to our beautiful fully-equiped clinic, we are
+          confident that you will find many reasons to love us!
+        </p>
+        <p>
+          We're conveniently located to serve Loveland, Berthoud, Johnstown,
+          Milliken and the surrounding area.
+        </p>
+      </div>
     </div>
   );
 
   const missionContent = (
-    <div className="content-block mission">
-      <p className="header">
-        <HeartIcon />
-        Our Mission
-      </p>
-      <p>
-        Twin Peaks was built on the idea that high quality veterinary care
-        should be accessible to everyone. We know that tight finances prevent
-        far too many pets from getting the care they need, and we're working
-        hard to provide affordable solutions. Our Health Plans, which are
-        central to our mission, are{" "}
-        <span className="bold">
-          specifically designed to reduce financial barriers for pet parents.
-        </span>
-      </p>
-      <Link to="health-plans">
-        <button className="btn-filled-primary">Learn More</button>
-      </Link>
+    <div className="content-container mission">
+      <div className="layer">
+        <div className="content-block">
+          <h2 className="header">
+            <HeartIcon />
+            Our Mission
+          </h2>
+          <p>
+            Twin Peaks was built on the idea that high quality veterinary care
+            should be accessible to everyone. We know that tight finances
+            prevent far too many pets from getting the care they need, and we're
+            working hard to provide affordable solutions. Our Health Plans,
+            which are central to our mission, are{" "}
+            <span className="bold">
+              specifically designed to reduce financial barriers for pet
+              parents.
+            </span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 
   const newAdditionContent = (
-    <div className="content-block new-addition">
-      <p className="header">
-        <PawIcon />
-        New Pet?
-      </p>
-      <p>
-        If you've got a new puppy or kitten, we've got a deal for you! Getting a
-        new pet is exciting, but between wellness exams, vaccines, and getting
-        your little one spayed or neutered, costs can start to add up. The good
-        news? We've got you covered! Seriously - it's all included in our Health
-        Plan!
-      </p>
-      <p>You've got enough on your plate. Let our vets take it from here.</p>
-      <Link to="health-plans">
-        <button className="btn-filled-primary">
-          Puppy & Kitten Health Plans
-        </button>
-      </Link>
+    <div className="content-container new-addition">
+      <div className="content-block">
+        <div className="d-flex">
+          <div className="section-1">
+            <h2 className="header">
+              <PawIcon />
+              New Pet?
+            </h2>
+            <p>
+              If you've got a new puppy or kitten, we've got a deal for you!
+              Getting a new pet is exciting, but between wellness exams,
+              vaccines, and getting your little one spayed or neutered, costs
+              can start to add up. The good news? We've got you covered!
+              Seriously - it's all included in our Health Plan!
+            </p>
+            <p>
+              You've got enough on your plate. Let our vets take it from here.
+            </p>
+            <Link to="health-plans">
+              <button className="btn-filled-primary">Learn More</button>
+            </Link>
+          </div>
+          <div className="section-2">
+            <img src={newPet} alt="" width="100%" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 
   const emergencyContent = (
-    <div className="content-block emergency">
-      <p className="header">
-        <ExclamationIcon className="error mb-0" />
-        Having an Emergency?
-      </p>
-      <p className="mt-3 sura font-16">
-        Don't hesitate to give us a call during regular business hours. We'll
-        help you determine the best path forward.
-      </p>
-      <a href="tel: 970-663-0218">
-        <div className="flex-row-aligned my-4">
-          <PhoneIcon style={{ height: "30px" }} />
-          <span className="font-16 bold sura">Call us at (970) 663-0218</span>
+    <div className="content-container emergency">
+      <div className="content-block">
+        <h2 className="header align-self-center">Emergency Information</h2>
+        <div className="sections mt-5">
+          <div className="section">
+            <ClockIcon />
+            <p className="primary">Regular Business Hours</p>
+            <p className="mt-3 secondary">
+              Don't hesitate to give us a call. We'll help you determine the
+              best path forward.
+            </p>
+            <a href="tel: 970-663-0218">
+              <div className="flex-row-aligned justify-content-center my-4">
+                <PhoneIcon />
+                <span className="font-18 bold">Call us at (970) 663-0218</span>
+              </div>
+            </a>
+            <NotMobile>
+              <img
+                src={logo}
+                alt="Twin Peaks Vet Clinic logo"
+                className="mt-3"
+                width="120px"
+              />
+            </NotMobile>
+          </div>
+          <Mobile>
+            <div className="border my-5 mx-4"></div>
+          </Mobile>
+          <div className="section">
+            <HospitalIcon />
+            <p className="primary">After Hours</p>
+            <p className="secondary">Call an emergency clinic we trust:</p>
+            <div className="reference">
+              <p className="name">Four Seasons Veterinary Specialists: </p>
+              <p className="number">970-800-1106</p>
+              <p className="location">Loveland, CO</p>
+            </div>
+            <div className="reference">
+              <p className="name">
+                VCA Veterinary Specialists of Northern Colorado:{" "}
+              </p>
+              <p className="number">970-278-0668</p>
+              <p className="location">Loveland, CO</p>
+            </div>
+          </div>
         </div>
-      </a>
-
-      <p className="sura font-16">
-        After hours? Call an emergency clinic we trust:
-      </p>
-      <p className="sura ms-4 mt-2">
-        Four Seasons Veterinary Specialists (Loveland):{" "}
-        <nobr className="bold">970-800-1106</nobr>
-      </p>
-      <p className="sura ms-4 mt-2">
-        VCA Veterinary Specialists of Northern Colorado (Loveland):{" "}
-        <nobr className="bold">970-278-0668</nobr>
-      </p>
+      </div>
     </div>
   );
 
   const couponContent = (
     <Modal show={true} onHide={() => setShowCoupon(false)} size="sm" centered>
       <div className="coupon">
-        <p className="header">Free Wellness and Dental Exam</p>
+        <h3 className="header">Free Wellness and Dental Exam</h3>
         <p className="details">
           Welcome to Twin Peaks! Use the code below at checkout to get your
           first exam free. We look forward to meeting you!
@@ -159,6 +209,19 @@ function Home() {
         <p>*Offer valid for new clients only. Offer valid for 1 pet.</p>
       </div>
     </Modal>
+  );
+
+  const googleMap = (
+    <div style={{ lineHeight: "0" }}>
+      <iframe
+        title="Twin Peaks Veterinary Clinic Map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.615369139024!2d-105.07876308413698!3d40.350877679372914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8769548b9009aaa3%3A0x93917b741b079537!2sTwin%20Peaks%20Veterinary%20Clinic!5e0!3m2!1sen!2sus!4v1645139818432!5m2!1sen!2sus"
+        width="100%"
+        height="600px"
+        allowFullScreen=""
+        loading="lazy"
+      />
+    </div>
   );
 
   return (
@@ -171,10 +234,6 @@ function Home() {
       <Mobile>
         {couponBanner}
         {teaser}
-        {introContent}
-        {newAdditionContent}
-        {emergencyContent}
-        {missionContent}
       </Mobile>
       <NotMobile>
         <div className="background-green">
@@ -183,15 +242,12 @@ function Home() {
         <div className="background-black">
           <div className="container">{teaser}</div>
         </div>
-        <div className="d-flex container">
-          <div className="d-flex w-50 h-100">{introContent}</div>
-          <div className="d-flex w-50 h-100">{newAdditionContent}</div>
-        </div>
-        <div className="d-flex container">
-          <div className="d-flex w-50 h-100">{missionContent}</div>
-          <div className="d-flex w-50 h-100">{emergencyContent}</div>
-        </div>
       </NotMobile>
+      {introContent}
+      {newAdditionContent}
+      {missionContent}
+      {emergencyContent}
+      {googleMap}
       {showCoupon && couponContent}
     </Page>
   );

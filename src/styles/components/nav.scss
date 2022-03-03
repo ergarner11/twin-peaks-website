@@ -13,12 +13,16 @@ nav {
     }
     .nav-content {
       max-width: 1300px;
-      padding: 0 100px;
+      padding: 0 10px;
       height: 70px;
     }
   }
+  @media screen and (min-width: 991px) {
+    .nav-content {
+      padding: 0 50px;
+    }
+  }
   svg {
-    height: 30px;
     color: $layoutWhite;
   }
   .nav-tabs {
@@ -34,12 +38,12 @@ nav {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 60px;
+      height: 52px;
       width: 100%;
       padding: 5px 0px;
       border-top: 0.5px solid $disabledDark;
       >span {
-        font-size: 20px;
+        font-size: 16px;
       }
       >svg {
         margin-right: 0px;
@@ -57,9 +61,15 @@ nav {
           margin-right: 10px;
         }
       }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        padding: 0px 15px;
+        >span {
+          font-size: 12px;
+        }
+      }
       >*:not(.tooltip-container) {
         height: 26px;
-        font-family: $sura;
+        font-family: $headingFont;
         line-height: 20px;
         display: flex;
         flex-direction: row;

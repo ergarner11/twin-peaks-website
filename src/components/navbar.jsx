@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Collapse from "react-bootstrap/Collapse";
 
+import Links from "./common/links";
 import { Mobile, NotMobile } from "./common/responsive";
 
 import logo from "../assets/logo-light.webp";
 import { ReactComponent as BarsIcon } from "../assets/bars.svg";
 import { ReactComponent as PhoneIcon } from "../assets/phone.svg";
 import { ReactComponent as TimesIcon } from "../assets/times.svg";
-import { ReactComponent as UserIcon } from "../assets/user-icon.svg";
 
 import "../styles/components/nav.scss";
 
@@ -17,61 +16,7 @@ function Navbar({ selectedTab }) {
 
   const links = (
     <div className="nav-tabs">
-      <Link
-        to="/"
-        className={"nav-tab" + (selectedTab === "home" ? " selected" : "")}
-      >
-        <span>Home</span>
-      </Link>
-      {/*<Link
-        to="/pricing"
-        className={"nav-tab" + (selectedTab === "pricing" ? " selected" : "")}
-      >
-        <span>Pricing</span>
-      </Link>*/}
-      <Link
-        to="/health-plans"
-        className={
-          "nav-tab" + (selectedTab === "healthPlans" ? " selected" : "")
-        }
-      >
-        <span>Health Plans</span>
-      </Link>
-      <Link
-        to="/our-team"
-        className={"nav-tab" + (selectedTab === "ourTeam" ? " selected" : "")}
-      >
-        <span>Our Team</span>
-      </Link>
-      <div
-        className="nav-tab"
-        onClick={() =>
-          window.open(
-            "http://twinpeaksvetclinic.vetsourceweb.com/site/view/149471_HomeDelivery.pml?retUrl=https://www.twinpeaksvetclinic.com/"
-          )
-        }
-      >
-        <span>Shop</span>
-      </div>
-      <div
-        className="nav-tab"
-        onClick={() =>
-          window.open(
-            "https://www.carecredit.com/go/TCP659/B3CALAdToolkitANCardVeterinary"
-          )
-        }
-      >
-        <span>CareCredit</span>
-      </div>
-      <div
-        className="nav-tab"
-        onClick={() => window.open("https://portal.twinpeaksvetclinic.com")}
-      >
-        <span className="flex-row-aligned">
-          <UserIcon className="pt-1" />
-          Health Plan Portal
-        </span>
-      </div>
+      <Links selectedTab={selectedTab} social />
     </div>
   );
 

@@ -39,8 +39,7 @@ body,
 }
 
 .container {
-  max-width: 1200px;
-  padding: 0px;
+  @extend %container;
 }
 
 h1,
@@ -49,13 +48,12 @@ h3,
 h4,
 h5,
 h6,
-p,
 button,
 div,
 ul {
   margin: 0;
   padding: 0;
-  font-family: $newsCycle;
+  font-family: $headingFont;
   color: $layoutBlack;
 }
 
@@ -78,6 +76,13 @@ h4,
 h5,
 h6 {
   font-weight: bold;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5em;
+  color: $layoutBlack;
+  font-family: $bodyFont;
 }
 
 p,
@@ -104,7 +109,7 @@ a {
 label,
 input,
 select {
-  font-family: $sura;
+  font-family: $bodyFont;
 }
 
 input {
@@ -129,6 +134,7 @@ label {
 
 svg {
   margin-right: 10px;
+  height: 25px;
 }
 
 i {
@@ -153,7 +159,7 @@ i {
     letter-spacing: normal;
     font-weight: normal;
     font-size: 14px;
-    font-family: $sura;
+    font-family: $headingFont;
     border-bottom: 1px solid $subtle;
     &:last-child {
       border-bottom: none;

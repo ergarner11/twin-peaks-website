@@ -2,6 +2,16 @@
 @import "../mixins.scss";
 @import "../typography.scss";
 .health-plan {
+  .header {
+    padding: 16px 0px;
+    font-family: $bodyFont;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      font-size: 35px;
+    }
+  }
   .teaser {
     @extend %flex-column;
     flex-grow: 1;
@@ -76,6 +86,7 @@
         line-height: 1.4;
         font-size: 30px;
         font-weight: bolder;
+        font-family: $newsCycle;
         @media screen and (min-width: 768px) {
           font-size: 50px;
         }
@@ -84,7 +95,7 @@
         font-size: 22px;
         padding: 22px;
         @media screen and (min-width: 768px) {
-          font-size: 30px;
+          font-size: 28px;
           padding: 25px;
         }
       }
@@ -140,8 +151,8 @@
           margin-right: 5px;
         }
         padding-top: 5px;
-        font-size: 14px;
-        font-family: $sura;
+        font-size: 16px;
+        font-family: $newsCycle;
       }
     }
   }
@@ -152,6 +163,7 @@
     border-radius: 5px;
     .did-you-know-header {
       padding: 0px;
+      font-family: $headingFont;
       font-size: 20px;
       font-weight: bold;
     }
@@ -203,9 +215,9 @@
       right: 30px;
       top: 20px;
       font-size: 20px;
-      font-weight: bold;
       padding: 10px 20px;
       border-radius: 5px;
+      text-align: left;
       @media screen and (min-width: 768px) {
         font-size: 26px;
       }
@@ -232,14 +244,10 @@
       background: url("../../assets/dentalEnhanced.webp") no-repeat center center rgba(173, 211, 197, 0.4);
       background-size: cover;
       width: 100%;
-      padding: 25px;
-      font-size: 25px;
-      font-weight: bolder;
-      text-align: center;
+      padding: 50px 30px;
       @media screen and (min-width: 768px) {
         padding: 0px;
         padding-bottom: 25px;
-        font-size: 40px;
         background: none;
       }
     }
@@ -271,7 +279,7 @@
       }
     }
     .inclusions {
-      padding: 10px 10px 20px 10px;
+      padding: 30px 20px;
       background-color: $layoutBlack;
       * {
         color: $layoutWhite;
@@ -280,17 +288,17 @@
         @include box-shadow;
         border-radius: 5px;
         margin-left: -10px;
-        padding: 20px;
         width: 300px;
         height: 400px;
       }
       .inclusions-header {
-        padding-bottom: 15px;
+        margin-bottom: 15px;
         font-size: 22px;
         text-align: center;
         font-weight: bold;
+        font-family: $headingFont;
         @media screen and (min-width: 768px) {
-          font-size: 28px;
+          font-size: 26px;
           line-height: 1.3;
         }
       }
@@ -298,10 +306,8 @@
         padding-left: 40px;
       }
       li {
-        font-size: 16px;
-        @media screen and (min-width: 768px) {
-          font-size: 20px;
-        }
+        font-family: $newsCycle;
+        font-size: 18px;
       }
     }
   }
@@ -380,6 +386,7 @@
         }
         th,
         td {
+          font-family: $newsCycle;
           background-color: $layoutWhite;
           border: 1px solid #e2e1df;
           text-align: center;
@@ -391,22 +398,18 @@
       }
     }
     .call-to-action {
-      padding: 20px 10px;
+      margin: 40px 20px 30px 20px;
       line-height: 1.4;
-      font-size: 18px;
+      font-size: 22px;
       text-align: center;
       @media screen and (min-width: 768px) {
-        padding: 20px;
         font-size: 30px;
       }
     }
     .call-btn {
       @extend %flex-row-aligned;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       background-color: $layoutGreen;
-      @media screen and (min-width: 768px) {
-        margin-bottom: 40px;
-      }
     }
   }
 }

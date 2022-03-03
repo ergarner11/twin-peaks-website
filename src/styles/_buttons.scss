@@ -9,11 +9,14 @@ button {
   &:disabled {
     color: $disabledLight;
   }
+  svg {
+    height: 20px;
+  }
 }
 
 .btn-text-primary,
 .btn-text-secondary,
-.btn-text-error {
+.btn-text-tertiary {
   height: auto;
   justify-content: start;
   &:hover:not(:disabled) {
@@ -38,16 +41,17 @@ button {
   }
 }
 
-.btn-text-error {
-  color: $error;
+.btn-text-tertiary {
+  color: $layoutOrange;
   &:hover:not(:disabled) {
-    color: $error;
+    color: $layoutOrange;
   }
 }
 
 .btn-rounded,
 .btn-rounded-primary,
-.btn-rounded-secondary {
+.btn-rounded-secondary,
+.btn-rounded-tertiary {
   border-radius: 20px;
   padding-left: 15px;
   padding-right: 15px;
@@ -79,9 +83,17 @@ button {
   }
 }
 
+.btn-rounded-tertiary {
+  color: $layoutWhite;
+  background-color: $layoutOrange;
+  &:hover:not(:disabled) {
+    background-color: $disabledLight;
+  }
+}
+
 .btn-filled-primary,
 .btn-filled-secondary,
-.btn-filled-error {
+.btn-filled-tertiary {
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
@@ -113,7 +125,11 @@ button {
   }
 }
 
-.btn-filled-error {
+.btn-filled-tertiary {
   color: $layoutWhite;
-  background-color: $error;
+  background-color: $layoutOrange;
+  &:hover:not(:disabled) {
+    background-color: $disabledLight;
+    border: 1px solid $disabledDark;
+  }
 }
