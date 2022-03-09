@@ -1,0 +1,123 @@
+@import "../colors.scss";
+@import "../mixins.scss";
+@import "../typography.scss";
+.services {
+  .banner {
+    @extend %background-topography;
+    @extend %flex-centered;
+    height: 200px;
+    @media screen and (min-width: 768px) {
+      display: unset;
+      margin-bottom: 30px;
+      @include bannner-img("../assets/servicesBanner.webp");
+    }
+    h1 {
+      font-family: "Brush Script MT", cursive;
+      font-size: 60px;
+      @media screen and (min-width: 768px) {
+        position: relative;
+        top: 30%;
+        left: 10%;
+        margin: 0px;
+        color: $layoutWhite;
+        font-size: 110px;
+        left: 15%;
+      }
+      @media screen and (min-width: 991px) {
+        font-size: 140px;
+        left: 20%;
+      }
+    }
+  }
+  .service {
+    @extend %flex-column;
+    padding: 20px;
+    @media screen and (min-width: 768px) {
+      padding: 30px;
+      width: 50%;
+      max-width: 500px;
+    }
+    .content {
+      @extend %flex-column;
+      justify-content: space-between;
+      padding: 20px;
+      * {
+        margin: 10px 0px;
+      }
+      .header {
+        @extend %flex-row-aligned;
+        @media screen and (min-width: 768px) {
+          font-size: 30px;
+        }
+        svg {
+          margin-right: 15px;
+        }
+      }
+      p {
+        font-size: 16px;
+      }
+      button {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.service-page {
+  .content {
+    margin: 30px 20px;
+    @media screen and (min-width: 768px) {
+      margin: 50px 20px;
+    }
+  }
+  p,
+  li {
+    font-size: 16px;
+  }
+  p {
+    margin-top: 15px;
+    font-family: $bodyFont;
+  }
+  h1,
+  h2,
+  h3 {
+    margin: 15px 0px;
+  }
+  h2 {
+    margin: 20px 0px;
+    color: $darkBlue;
+  }
+  ul {
+    margin-left: 30px;
+    list-style-type: disc;
+  }
+  li {
+    height: auto;
+    font-family: $bodyFont;
+  }
+}
+
+.dentistry .banner {
+  @include bannner-img("../assets/dentistryBanner.webp");
+}
+
+.vaccines {
+  .banner {
+    @include bannner-img("../assets/vaccineBanner.webp");
+  }
+  .accordion-header {
+    margin: 0;
+    button:focus {
+      outline: 1px solid $disabledLight;
+      box-shadow: unset;
+    }
+  }
+  .accordion-body {
+    margin: 0;
+    background-color: #dbeee7;
+  }
+  .accordion-button:not(.collapsed) {
+    color: unset;
+    background-color: unset;
+  }
+}

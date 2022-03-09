@@ -79,7 +79,7 @@ function Home() {
           Welcome to our Twin Peaks family! We are a locally owned, innovative
           veterinary clinic located in Loveland, CO. In all we do, we strive to
           provide the best care for your dog or cat. From our caring and
-          highly-qualified staff to our beautiful fully-equiped clinic, we are
+          highly-qualified staff to our beautiful fully-equipped clinic, we are
           confident that you will find many reasons to love us!
         </p>
         <p>

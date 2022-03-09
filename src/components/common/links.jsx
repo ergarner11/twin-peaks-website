@@ -20,13 +20,13 @@ function Links({ selectedTab, social }) {
         className={"nav-tab" + (selectedTab === "pricing" ? " selected" : "")}
       >
         <span>Pricing</span>
-      </Link>
+      </Link>*/}
       <Link
         to="/services"
         className={"nav-tab" + (selectedTab === "services" ? " selected" : "")}
       >
         <span>Services</span>
-      </Link>*/}
+      </Link>
       <Link
         to="/health-plans"
         className={
