@@ -37,6 +37,9 @@
       width: 50%;
       max-width: 500px;
     }
+    img {
+      width: 100%;
+    }
     .content {
       @extend %flex-column;
       justify-content: space-between;
