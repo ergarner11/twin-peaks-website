@@ -138,7 +138,7 @@ function Home() {
             </Link>
           </div>
           <div className="section-2">
-            <img src={newPet} alt="" width="100%" />
+            <img src={newPet} alt="Dog holding a stuffed animal in his mouth" />
           </div>
         </div>
       </div>
