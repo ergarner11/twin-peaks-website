@@ -1,0 +1,72 @@
+@import "../../colors.scss";
+@import "../../mixins.scss";
+@import "../../typography.scss";
+.footer {
+  background-color: $layoutBlack;
+  padding: 20px;
+  * {
+    color: $layoutWhite;
+  }
+  .mobile {
+    @extend %flex-column;
+    align-items: center;
+    >* {
+      margin: 15px 0px;
+    }
+    button {
+      width: 100%;
+      max-width: 250px;
+    }
+  }
+  .not-mobile {
+    @extend %flex-row-aligned;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0px 20px;
+    .section-1,
+    .section-3 {
+      @extend %flex-column;
+      justify-content: space-around;
+    }
+    .section-1 {
+      height: 150px;
+      .social {
+        align-self: center;
+      }
+    }
+    .section-3 {
+      height: 120px;
+    }
+  }
+  nav {
+    @media screen and (min-width: 768px) {
+      max-width: 200px;
+    }
+  }
+  .legal {
+    @extend %flex-column;
+    justify-content: center;
+    margin-top: 25px;
+    border-top: 1px solid $layoutWhite;
+    p {
+      margin-top: 20px;
+      margin-bottom: 5px;
+      text-align: center;
+      font-family: $roboto;
+    }
+    .documents {
+      @extend %flex-row-aligned;
+      justify-content: center;
+      a {
+        text-align: center;
+        color: $layoutWhite;
+        &:hover {
+          color: $subtle;
+        }
+      }
+      span {
+        margin: 0px 5px;
+      }
+    }
+  }
+}

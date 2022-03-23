@@ -7,7 +7,7 @@ function Social({ darkmode }) {
   const modeClass = darkmode ? "white" : "";
 
   return (
-    <div className="flex-row-aligned">
+    <div className="social flex-row-aligned">
       <span
         className={modeClass}
         onClick={() =>

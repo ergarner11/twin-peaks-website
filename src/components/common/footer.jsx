@@ -9,69 +9,76 @@ import RequestRefill from "./requestRefill";
 import Social from "./social";
 import { Desktop, Mobile, NotMobile } from "./responsive";
 
+import "../../styles/components/common/footer.scss";
+
 function Footer() {
+  const nav = (
+    <nav>
+      <div className="d-flex flex-column nav-tabs">
+        <Links />
+      </div>
+    </nav>
+  );
+
   return (
-    <div className="background-black p-4">
+    <div className="footer">
       <div className="container">
         <Mobile>
-          <div className="d-flex flex-column align-items-center">
-            <div className="my-4">
-              <Address darkmode />
-            </div>
-            <div className="mb-4">
-              <Phone darkmode />
-            </div>
-            <div className="mb-4">
-              <Hours darkmode />
-            </div>
-            <div className="mb-4">
-              <Social darkmode />
-            </div>
-            <div className="w-100" style={{ maxWidth: "250px" }}>
-              <RequestAppointment darkmode />
-            </div>
-            <div className="my-4 w-100" style={{ maxWidth: "250px" }}>
-              <RequestRefill darkmode />
-            </div>
-            <nav className="mt-4">
-              <div className="d-flex flex-column nav-tabs">
-                <Links />
-              </div>
-            </nav>
+          <div className="mobile">
+            <Address darkmode />
+            <Phone darkmode />
+            <Hours darkmode />
+            <Social darkmode />
+            <RequestAppointment darkmode />
+            <RequestRefill darkmode />
+            {nav}
           </div>
         </Mobile>
         <NotMobile>
-          <div className="d-flex justify-content-between align-items-center mx-4 h-100">
-            <div
-              className="d-flex flex-column justify-content-around"
-              style={{ height: "150px" }}
-            >
+          <div className="not-mobile">
+            <div className="section-1">
               <Address darkmode />
               <Phone darkmode />
-              <div className="align-self-center">
-                <Social darkmode />
-              </div>
+              <Social darkmode />
             </div>
             <Hours darkmode expanded />
             <Desktop>
-              <div className="d-flex flex-column">
+              <div className="section-3">
                 <RequestAppointment darkmode />
-                <div className="mt-3">
-                  <RequestRefill darkmode />
-                </div>
+                <RequestRefill darkmode />
               </div>
             </Desktop>
-            <nav style={{ width: "200px" }}>
-              <div className="d-flex flex-column nav-tabs">
-                <Links />
-              </div>
-            </nav>
+            {nav}
           </div>
         </NotMobile>
-        <p className="mt-4 pt-3 w-100 text-center border-top white">
-          Copyright <span style={{ fontSize: "1.3em", margin: "0" }}>©</span>{" "}
-          2022 Twin Peaks Veterinary Clinic
-        </p>
+        <div className="legal">
+          <p>Copyright © 2022 Twin Peaks Veterinary Clinic</p>
+          <div className="documents">
+            <a
+              href="https://app.termly.io/document/privacy-policy/774c8f02-ba40-4d34-985c-72f884509f6e"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Privacy Policy
+            </a>
+            <span>|</span>
+            <a
+              href="https://app.termly.io/document/terms-of-use-for-website/95e1bcd1-b1af-4d01-b6b5-4320929fd69e"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Terms of Use
+            </a>
+            <span>|</span>
+            <a
+              href="https://app.termly.io/document/disclaimer/e0eb5565-f841-4248-b6bb-066b783d81eb"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Disclaimer
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
