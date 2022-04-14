@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -32,12 +33,9 @@ function HealthPlans() {
       </div>
       <div className="section-2">
         <h1>Health Plans help your pet get the best care</h1>
-        <button
-          className="btn-rounded-tertiary"
-          onClick={() => (window.location.hash = "pricing")}
-        >
-          Pricing
-        </button>
+        <Link to="/health-plans/video" className="btn-rounded-tertiary">
+          Watch a Video
+        </Link>
       </div>
     </div>
   );

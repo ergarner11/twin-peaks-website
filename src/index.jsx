@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import HealthPlans from "./components/healthPlans";
+import HealthPlanVideo from "./components/healthPlanVideo";
+import HealthPlanContractVideo from "./components/healthPlanContractVideo";
 import Home from "./components/home";
 import Services from "./components/services";
 import OurTeam from "./components/ourTeam";
@@ -17,6 +19,12 @@ const App = () => {
     <Router>
       <Routes>
         <Route exact path="/health-plans" element={<HealthPlans />} />
+        <Route exact path="/health-plans/video" element={<HealthPlanVideo />} />
+        <Route
+          exact
+          path="/health-plans/contract-video"
+          element={<HealthPlanContractVideo />}
+        />
         <Route exact path="/our-team" element={<OurTeam />} />
         {/*<Route exact path="/pricing" element={<HealthPlans />} />*/}
         <Route exact path="/services" element={<Services />} />

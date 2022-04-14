@@ -91,12 +91,11 @@
           font-size: 50px;
         }
       }
-      button {
-        font-size: 22px;
-        padding: 22px;
+      a {
+        font-size: 18px;
+        padding: 15px;
         @media screen and (min-width: 768px) {
-          font-size: 28px;
-          padding: 25px;
+          font-size: 22px;
         }
       }
     }
@@ -410,6 +409,18 @@
       @extend %flex-row-aligned;
       margin-bottom: 40px;
       background-color: $layoutGreen;
+    }
+  }
+}
+
+.health-plan-video,
+.health-plan-contract-video {
+  iframe {
+    padding: 20px;
+    width: 100%;
+    height: 300px;
+    @media screen and (min-width: 768px) {
+      height: 750px;
     }
   }
 }
