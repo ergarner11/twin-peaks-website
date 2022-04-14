@@ -45,7 +45,7 @@ function OurTeam() {
           the clinic. She looks forward to developing new relationships with
           clients and their pets. She provides veterinary care to each of her
           patients as if they were a part of her own family. Her favorite part
-          of being a veterinarian is being able improve each pet’s health and
+          of being a veterinarian is being able to improve each pet’s health and
           see the rewarding bond between pets and their families.
         </p>
         <p>

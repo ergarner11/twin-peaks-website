@@ -88,7 +88,7 @@ function Dentistry() {
         </section>
       </section>
       <p className="font-18">
-        Whether you're starting at prevention or dealing a serious dental
+        Whether you're starting at prevention or dealing with a serious dental
         problem, our veterinarians would love to answer any of your questions
         and help you determine the best plan for you and your pet.
       </p>
@@ -96,7 +96,11 @@ function Dentistry() {
   );
 
   return (
-    <Page title="Dentistry" description="" className="service-page dentistry">
+    <Page
+      title="Dentistry"
+      description="Whether you're starting at prevention or dealing a serious dental problem, our veterinarians can help you determine the best plan for you and your pet."
+      className="service-page dentistry"
+    >
       <div className="banner" />
       <Mobile>{content}</Mobile>
       <NotMobile>

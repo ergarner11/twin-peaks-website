@@ -173,8 +173,8 @@ function HealthPlans() {
 
   const disclaimer = (
     <p className="text-center p-3 sura">
-      *Website contains general overview of Health Plan details. Please call us
-      with any questions
+      *Website contains a general overview of Health Plan details. Please call
+      us with any questions
     </p>
   );
 

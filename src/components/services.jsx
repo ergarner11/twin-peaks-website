@@ -60,48 +60,48 @@ function Services() {
   const wellnessExam = service(
     "Wellness Exams",
     <StethoscopeIcon />,
-    "Don't underestimate the importance of an annual wellness exam. Taking the time to visit with one of veterinarians each year is one of the best ways to ensure your pet lives their longest, healthiest, happiest life!",
-    null,
+    "Don't underestimate the importance of an annual wellness exam. Taking the time to visit with a veterinarian each year is one of the best ways to ensure your pet lives their longest, healthiest, happiest life!",
+    "wellness",
     <img src={wellnessPic} alt="Cat relaxing on a couch" />
   );
   const diagnostics = service(
     "Diagnostics",
     <BandaidIcon />,
     "When your fur baby isn't feeling well, figuring out what is going wrong is the first step to making it right. We have the resources and experience to help you through whatever comes your way!",
-    null,
+    "diagnostics",
     <img src={diagnosticsPic} alt="Dog resting on a wooden floor" />
   );
   const spayNeuter = service(
-    "Spay & Neuter Surgery",
+    "Spay & Neuter",
     <DoctorIcon />,
     "Getting your pet spayed or neutered is about more than just population control. Did you know that having this surgury can also reduce behavioral and health problems throughout the life of your pet?",
-    null,
+    "spay-neuter",
     <img src={spayNeuterPic} alt="Dog wearing a surgical cone" />
   );
   const allergies = service(
     "Allergies",
     <AllergenIcon />,
     "Is the constant itching, scratching, and licking driving you crazy? Then it's probably time to get to the root of your pet's discomfort. There are many different sources of allergies and many ways to treat them as well. Together we can stop the itch and get your pet feeling better!",
-    null,
+    "allergies",
     <img src={allergiesPic} alt="Dog rolling in the dirt" />
   );
   const microchip = service(
     "Microchip",
     <SearchIcon />,
     "Has your pet ever suddenly become an escape artist? It happens with even the most loyal companions. Losing a pet is a terrible experience, but having them microchipped is one of the best things you can do to ensure a happy reunion!",
-    null,
+    "microchip",
     <img src={microchipPic} alt="Dog stading in a field" />
   );
   const nutrition = service(
     "Nutrition",
     <BoneIcon />,
     "Making sure your pets are eating well is no easy feat! You may be surprised by the many ways that your pet's diet impacts, for better or for worse, their overall health and quality of life. We'll work with you to understand which diet is best for your pet at each phase of their life.",
-    null,
+    "nutrition",
     <img src={nutritionPic} alt="Dog eating food out of a bowl" />
   );
   /*
   const pain = service("Pain Management", "blah, blah, blah");
-  const nutrition = service("Nutrition", "blah, blah, blah");
+  const surgery = service("Surgery", "blah, blah, blah");
   const heartworm = service("Heartworm Prevention", "blah, blah, blah");
   const fleaTick = service("Flea and Tick Prevention", "blah, blah, blah");
   const anxiety = service("Anxiety/Stress", "blah, blah, blah");*/

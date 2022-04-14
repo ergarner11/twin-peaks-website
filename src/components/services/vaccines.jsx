@@ -8,7 +8,7 @@ function Vaccines() {
   const content = (
     <div className="content">
       <h1 className="mb-3">Vaccinations</h1>
-      <p className="font-16">
+      <p className="font-18">
         Vaccinations can entirely prevent or greatly reduce the severity of some
         of the most common and dangerous diseases found in dogs and cats.
         Staying current on all recommended vaccines is one of the best things
@@ -17,8 +17,8 @@ function Vaccines() {
       <section>
         <h2>Let's break it down</h2>
         <p>Generally speaking, there are two primary categories of vaccines:</p>
-        <section>
-          <section className="ms-4">
+        <section className="my-0">
+          <section className="ms-4 my-0">
             <h3>Core</h3>
             <div className="ms-4">
               <p>
@@ -33,7 +33,7 @@ function Vaccines() {
               </ul>
             </div>
           </section>
-          <section className="ms-4">
+          <section className="ms-4 my-0">
             <h3>Non-Core</h3>
             <div className="ms-4">
               <p>
@@ -42,8 +42,8 @@ function Vaccines() {
               </p>
               <p>They include the following:</p>
               <ul>
-                <li>Bordatella (Canine)</li>
-                <li>Leptosporosis (Canine)</li>
+                <li>Bordetella (Canine)</li>
+                <li>Leptospirosis (Canine)</li>
                 <li>FeLV (Feline)</li>
               </ul>
             </div>
@@ -139,10 +139,10 @@ function Vaccines() {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="3">
-            <Accordion.Header>Leptosporosis</Accordion.Header>
+            <Accordion.Header>Leptospirosis</Accordion.Header>
             <Accordion.Body>
               <p>
-                Leptosporosis is caused by various strains (serovars) of
+                Leptospirosis is caused by various strains (serovars) of
                 bacteria that occur worldwide, most commonly in the summer or
                 fall. Colorado is a higher risk state due to our close proximity
                 to wildlife and higher incidence of contaminated soil or bodies
@@ -159,7 +159,7 @@ function Vaccines() {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="4">
-            <Accordion.Header>Bordatella</Accordion.Header>
+            <Accordion.Header>Bordetella</Accordion.Header>
             <Accordion.Body>
               <p>
                 This vaccine helps protect dogs against some of the most common
@@ -191,7 +191,11 @@ function Vaccines() {
   );
 
   return (
-    <Page title="Vaccinations" description="" className="service-page vaccines">
+    <Page
+      title="Vaccinations"
+      description="Staying current on all recommended vaccines is one of the best things you can do for the health of your pet"
+      className="service-page vaccines"
+    >
       <div className="banner" />
       <Mobile>{content}</Mobile>
       <NotMobile>

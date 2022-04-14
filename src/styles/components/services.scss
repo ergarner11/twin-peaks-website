@@ -98,10 +98,33 @@
     height: auto;
     font-family: $bodyFont;
   }
+  section {
+    margin: 50px 0px;
+  }
+}
+
+.allergies .banner {
+  @include bannner-img("../assets/allergyBanner.webp");
 }
 
 .dentistry .banner {
   @include bannner-img("../assets/dentistryBanner.webp");
+}
+
+.diagnostics .banner {
+  @include bannner-img("../assets/diagnosticsBanner.webp");
+}
+
+.microchip .banner {
+  @include bannner-img("../assets/microchipBanner.webp");
+}
+
+.nutrition .banner {
+  @include bannner-img("../assets/nutritionBanner.webp");
+}
+
+.spay-neuter .banner {
+  @include bannner-img("../assets/spayNeuterBanner.webp");
 }
 
 .vaccines {
@@ -123,4 +146,8 @@
     color: unset;
     background-color: unset;
   }
+}
+
+.wellness .banner {
+  @include bannner-img("../assets/wellnessBanner.webp");
 }
