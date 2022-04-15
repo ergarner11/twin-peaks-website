@@ -36,9 +36,10 @@ function Diagnostics() {
         </p>
         <ul className="mt-2">
           <li>CBC (Complete Blood Count) bloodwork</li>
+          <li>Blood chemistry panel</li>
           <li>Fecal/Stool tests</li>
           <li>Urinalysis</li>
-          <li>Tests for specific diseases, such as Heartworm or Parvo</li>
+          <li>Tests for specific diseases, such as Heartworm or Parvovirus</li>
         </ul>
       </section>
       <p className="font-18">

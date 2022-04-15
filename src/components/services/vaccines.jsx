@@ -179,9 +179,9 @@ function Vaccines() {
             <Accordion.Body>
               <p>
                 This vaccine prevents Feline Leukemia Virus, which can cause
-                cancer and immunodeficiency cats. Because of this, it has a very
-                high mortality rate. FeLV is transferrred from other infected
-                cats.
+                cancer and immunodeficiency in cats. Because of this, it has a
+                very high mortality rate. FeLV is transferrred from other
+                infected cats.
               </p>
             </Accordion.Body>
           </Accordion.Item>
