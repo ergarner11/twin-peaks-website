@@ -27,12 +27,12 @@ function Home() {
 
   const couponBanner = (
     <div className="coupon-banner">
-      <p>New Client? Give us a try - It's FREE!</p>
+      <p>FREE exam for new clients!</p>
       <button
-        className="btn-rounded-secondary"
+        className="btn-filled-secondary"
         onClick={() => setShowCoupon(true)}
       >
-        Click for Coupon
+        Get Coupon
       </button>
     </div>
   );

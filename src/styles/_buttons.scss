@@ -116,12 +116,13 @@ button {
 }
 
 .btn-filled-secondary {
-  color: $disabledDark;
-  border: 1px solid $disabledLight;
+  color: $layoutWhite;
+  background-color: $disabledDark;
+  border: 1px solid $disabledDark;
   &:hover:not(:disabled) {
     color: $layoutWhite;
-    background-color: $disabledDark;
-    border: 1px solid $disabledDark;
+    background-color: $disabledLight;
+    border: 1px solid $disabledLight;
   }
 }
 
