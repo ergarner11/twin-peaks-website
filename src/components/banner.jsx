@@ -50,8 +50,15 @@ function Banner() {
             <Tablet>
               <div className="d-flex flex-column justify-content-between">
                 <Phone />
-                <Address />
+                <div className="my-3">
+                  <Address />
+                </div>
                 <Hours />
+              </div>
+              <div className="d-flex flex-column justify-content-evenly align-items-center">
+                <RequestAppointment />
+                <RequestRefill />
+                <ReviewRequest />
               </div>
             </Tablet>
             <Desktop>
@@ -64,12 +71,12 @@ function Banner() {
               <div className="d-flex flex-column justify-content-around">
                 <Hours />
               </div>
+              <div className="d-flex flex-column justify-content-between align-items-center">
+                <RequestAppointment />
+                <RequestRefill />
+                <ReviewRequest />
+              </div>
             </Desktop>
-            <div className="d-flex flex-column justify-content-between align-items-center">
-              <RequestAppointment />
-              <RequestRefill />
-              <ReviewRequest />
-            </div>
           </div>
         </div>
       </NotMobile>
