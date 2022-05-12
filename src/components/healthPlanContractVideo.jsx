@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ReactGA4 from "react-ga4";
 
 import Page from "./common/page";
 
 function HealthPlanContractVideo() {
+  useEffect(() => {
+    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+    ReactGA4.send("pageview");
+  }, []);
+
   return (
     <Page
       className="health-plan-contract-video"

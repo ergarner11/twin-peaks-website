@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactGA4 from "react-ga4";
 import { Link } from "react-router-dom";
 
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -14,6 +15,11 @@ import "../styles/components/health-plans.scss";
 
 function HealthPlans() {
   const [species, setSpecies] = useState("Dog");
+
+  useEffect(() => {
+    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+    ReactGA4.send("pageview");
+  }, []);
 
   const hpTeaser = (
     <div className="teaser">

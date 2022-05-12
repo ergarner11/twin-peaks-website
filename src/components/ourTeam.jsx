@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ReactGA4 from "react-ga4";
 
 import kaiser from "../assets/kaiser.webp";
 import team from "../assets/team.webp";
@@ -10,6 +11,11 @@ import { Mobile, NotMobile } from "./common/responsive";
 import "../styles/components/our-team.scss";
 
 function OurTeam() {
+  useEffect(() => {
+    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+    ReactGA4.send("pageview");
+  }, []);
+
   const hpTeaser = (
     <div className="teaser">
       <div className="section-1">

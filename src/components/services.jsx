@@ -28,7 +28,7 @@ import "../styles/components/services.scss";
 function Services() {
   useEffect(() => {
     ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send({ hitType: "pageview", page: "/services" });
+    ReactGA4.send("pageview");
   }, []);
 
   const service = (header, icon, content, linkInfo, img) => (

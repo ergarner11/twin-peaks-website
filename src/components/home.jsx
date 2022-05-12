@@ -28,7 +28,7 @@ function Home() {
 
   useEffect(() => {
     ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send({ hitType: "pageview", page: "/" });
+    ReactGA4.send("pageview");
   }, []);
 
   const couponBanner = (
