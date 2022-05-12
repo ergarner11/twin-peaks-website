@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactGA4 from "react-ga4";
 import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Carousel from "react-bootstrap/Carousel";
@@ -24,6 +25,11 @@ import "../styles/components/home.scss";
 
 function Home() {
   const [showCoupon, setShowCoupon] = useState(false);
+
+  useEffect(() => {
+    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+    ReactGA4.send({ hitType: "pageview", page: "/" });
+  }, []);
 
   const couponBanner = (
     <div className="coupon-banner">

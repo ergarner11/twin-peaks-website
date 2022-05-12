@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ReactGA4 from "react-ga4";
 import { Link } from "react-router-dom";
 
 import Page from "./common/page";
@@ -25,6 +26,11 @@ import wellnessPic from "../assets/wellness.webp";
 import "../styles/components/services.scss";
 
 function Services() {
+  useEffect(() => {
+    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+    ReactGA4.send({ hitType: "pageview", page: "/services" });
+  }, []);
+
   const service = (header, icon, content, linkInfo, img) => (
     <div className="service">
       {img}
