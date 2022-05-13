@@ -235,7 +235,7 @@ function Home() {
       selectedTab="home"
       className="home"
       title="Twin Peaks Veterinary Clinic | Loveland, CO"
-      description="We are a locally owned, innovative veterinary clinic serving Loveland, Berthoud, Johnstown, Milliken and the surrounding area. Now offering a FREE exam to new clients!"
+      description="Now offering a FREE exam to new clients! We are a locally owned, innovative veterinary clinic serving Loveland, Berthoud, Johnstown, Milliken and the surrounding area."
     >
       <Mobile>
         {couponBanner}
