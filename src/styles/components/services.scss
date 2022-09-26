@@ -101,13 +101,20 @@
   section {
     margin: 50px 0px;
   }
+  a {
+    color: $attention;
+    &:hover {
+      color: $interactiveGreen5;
+    }
+  }
 }
 
 .allergies .banner {
   @include bannner-img("../assets/allergyBanner.webp");
 }
 
-.dentistry .banner {
+.dentistry .banner,
+.tplo .banner {
   @include bannner-img("../assets/dentistryBanner.webp");
 }
 

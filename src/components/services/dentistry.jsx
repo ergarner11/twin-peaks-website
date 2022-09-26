@@ -17,7 +17,7 @@ function Dentistry() {
         Imagine what would happen to you if you went years without brushing your
         teeth or visiting a dentist. For most people, this routine would result
         in deterioration of the gums, pain from untreated issues, and certainly
-        some pretty bad breath! Just like humans, when it comes to a healthy and
+        some very bad breath! Just like humans, when it comes to a healthy and
         happy pet, proper dental hygiene is something that shouldn't be
         overlooked. Here's a few things you should know.
       </p>

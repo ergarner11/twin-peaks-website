@@ -9,6 +9,7 @@ import { ReactComponent as AllergenIcon } from "../assets/allergen.svg";
 import { ReactComponent as BandaidIcon } from "../assets/bandaid.svg";
 import { ReactComponent as BoneIcon } from "../assets/bone.svg";
 import { ReactComponent as DoctorIcon } from "../assets/doctor.svg";
+import { ReactComponent as PawIcon } from "../assets/paw.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
 import { ReactComponent as StethoscopeIcon } from "../assets/stethoscope.svg";
 import { ReactComponent as SyringeIcon } from "../assets/syringe.svg";
@@ -20,6 +21,7 @@ import diagnosticsPic from "../assets/diagnostics.webp";
 import microchipPic from "../assets/microchip.webp";
 import nutritionPic from "../assets/nutrition.webp";
 import spayNeuterPic from "../assets/spayNeuter.webp";
+import tploPic from "../assets/tplo.webp";
 import vaccinePic from "../assets/vaccine.webp";
 import wellnessPic from "../assets/wellness.webp";
 
@@ -105,6 +107,13 @@ function Services() {
     "nutrition",
     <img src={nutritionPic} alt="Dog eating food out of a bowl" />
   );
+  const tplo = service(
+    "TPLO Surgery",
+    <PawIcon />,
+    "Is your dog dealing with a CCL tear or injury? TPLO is the corrective surgery recommended to get them back to their normal, playful self! Our TPLO surgery packages can help you get on the path to healing.",
+    "tplo-surgery",
+    <img src={tploPic} alt="Dog lying on a bed" />
+  );
   /*
   const pain = service("Pain Management", "blah, blah, blah");
   const surgery = service("Surgery", "blah, blah, blah");
@@ -131,6 +140,7 @@ function Services() {
         {nutrition}
         {spayNeuter}
         {microchip}
+        {tplo}
       </Mobile>
       <NotMobile>
         <div className="container">
@@ -150,6 +160,7 @@ function Services() {
             {spayNeuter}
             {microchip}
           </div>
+          <div className="d-flex justify-content-around">{tplo}</div>
         </div>
       </NotMobile>
     </Page>

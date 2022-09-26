@@ -232,6 +232,7 @@ function Home() {
 
   return (
     <Page
+      showBanner
       selectedTab="home"
       className="home"
       title="Twin Peaks Veterinary Clinic | Loveland, CO"

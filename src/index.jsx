@@ -15,6 +15,7 @@ import Diagnostics from "./components/services/diagnostics";
 import Microchip from "./components/services/microchip";
 import Nutrition from "./components/services/nutrition";
 import SpayNeuter from "./components/services/spayNeuter";
+import TPLO from "./components/services/tplo";
 import Vaccines from "./components/services/vaccines";
 import Wellness from "./components/services/wellness";
 
@@ -40,6 +41,7 @@ const App = () => {
         <Route exact path="/services/microchip" element={<Microchip />} />
         <Route exact path="/services/nutrition" element={<Nutrition />} />
         <Route exact path="/services/spay-neuter" element={<SpayNeuter />} />
+        <Route exact path="/services/tplo-surgery" element={<TPLO />} />
         <Route exact path="/services/vaccines" element={<Vaccines />} />
         <Route exact path="/services/wellness" element={<Wellness />} />
         <Route path="*" element={<Home />} />
