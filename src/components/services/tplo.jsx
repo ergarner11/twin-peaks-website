@@ -36,7 +36,7 @@ function TPLO() {
             </p>
             <p>
               If your dog has already been diagnosed with an injury requiring
-              TPLO surgery, we won't need to repeat diagnostics or X-rays
+              TPLO surgery, we may not need to repeat diagnostics or X-rays
               performed elsewhere.
             </p>
           </section>
