@@ -5,7 +5,7 @@ import Hours from "./hours";
 import Phone from "./phone";
 import Links from "./links";
 import RequestAppointment from "./requestAppointment";
-import RequestRefill from "./requestRefill";
+//import RequestRefill from "./requestRefill";
 import Social from "./social";
 import { Desktop, Mobile, NotMobile } from "./responsive";
 
@@ -30,7 +30,7 @@ function Footer() {
             <Hours darkmode />
             <Social darkmode />
             <RequestAppointment darkmode />
-            <RequestRefill darkmode />
+            {/*<RequestRefill darkmode />*/}
             {nav}
           </div>
         </Mobile>
@@ -45,7 +45,7 @@ function Footer() {
             <Desktop>
               <div className="section-3">
                 <RequestAppointment darkmode />
-                <RequestRefill darkmode />
+                {/*<RequestRefill darkmode />*/}
               </div>
             </Desktop>
             {nav}
