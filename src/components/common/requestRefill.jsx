@@ -10,7 +10,7 @@ function RequestRefill({ darkmode }) {
       }`}
       onClick={() =>
         window.open(
-          "https://connect.allydvm.com/practice/twinpeaks/refill_request"
+          "https://connect.allydvm.com/practice/twinpeaksvc/refill_request"
         )
       }
     >

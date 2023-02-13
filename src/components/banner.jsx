@@ -6,7 +6,7 @@ import Address from "./common/address";
 import Hours from "./common/hours";
 import Phone from "./common/phone";
 import RequestAppointment from "./common/requestAppointment";
-//import RequestRefill from "./common/requestRefill";
+import RequestRefill from "./common/requestRefill";
 import ReviewRequest from "./common/reviewRequest";
 import { Mobile, Tablet, Desktop, NotMobile } from "./common/responsive";
 
@@ -27,9 +27,9 @@ function Banner() {
           <div className="pb-3 w-100" style={{ maxWidth: "250px" }}>
             <RequestAppointment />
           </div>
-          {/*<div className="pb-3 w-100" style={{ maxWidth: "250px" }}>
+          <div className="pb-3 w-100" style={{ maxWidth: "250px" }}>
             <RequestRefill />
-  </div>*/}
+          </div>
           <div className="w-100" style={{ maxWidth: "250px" }}>
             <ReviewRequest />
           </div>
@@ -55,11 +55,11 @@ function Banner() {
                 </div>
                 <Hours />
               </div>
-              {/*<div className="d-flex flex-column justify-content-evenly align-items-center">
+              <div className="d-flex flex-column justify-content-evenly align-items-center">
                 <RequestAppointment />
                 <RequestRefill />
                 <ReviewRequest />
-  </div>*/}
+              </div>
             </Tablet>
             <Desktop>
               <div className="d-flex flex-column justify-content-center">
@@ -71,16 +71,12 @@ function Banner() {
               <div className="d-flex flex-column justify-content-around">
                 <Hours />
               </div>
-              {/*<div className="d-flex flex-column justify-content-between align-items-center">
+              <div className="d-flex flex-column justify-content-between align-items-center">
                 <RequestAppointment />
                 <RequestRefill />
                 <ReviewRequest />
-  </div>*/}
+              </div>
             </Desktop>
-            <div className="d-flex flex-column justify-content-evenly align-items-center">
-              <RequestAppointment />
-              <ReviewRequest />
-            </div>
           </div>
         </div>
       </NotMobile>
