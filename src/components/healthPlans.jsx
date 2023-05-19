@@ -88,10 +88,9 @@ function HealthPlans() {
         <ul>
           <li>Adult Dogs and Cats</li>
           <ul className="secondary-ul">
-            <li>$20 office visits for first 3 visits</li>
-            <li>$50 for any additional visits in a single health plan year</li>
+            <li>$20 office visit each time you come in</li>
           </ul>
-          <li>Puppies and Kittens</li>
+          <li className="mt-3">Puppies and Kittens</li>
           <ul className="secondary-ul">
             <li>$20 for ALL wellness visits</li>
             <li>$50 for all other visits</li>
@@ -296,7 +295,7 @@ function HealthPlans() {
                 placement="top"
                 overlay={
                   <Tooltip>
-                    Pets with unmanaged health conditions are not eligible to
+                    Pets with pre-existing health conditions are not eligible to
                     sign up on the 90% plan. They are also not eligible to
                     upgrade from the 50% plan to the 90% plan at renewal.
                   </Tooltip>
@@ -307,26 +306,6 @@ function HealthPlans() {
                   <span className="more-info">
                     Health Condition Qualifications
                   </span>
-                </td>
-              </OverlayTrigger>
-              <td>{xMark}</td>
-              <td>{xMark}</td>
-              <td className="recommended-cell">{checkMark}</td>
-              <td>{checkMark}</td>
-            </tr>
-            <tr>
-              <OverlayTrigger
-                placement="top"
-                overlay={
-                  <Tooltip>
-                    Out-of-pocket max does not apply to Office Visit payments or
-                    Health Plan Payments
-                  </Tooltip>
-                }
-                trigger={["click", "hover", "focus"]}
-              >
-                <td className="item-column">
-                  <span className="more-info">$500 Out-of-Pocket Max</span>
                 </td>
               </OverlayTrigger>
               <td>{xMark}</td>
