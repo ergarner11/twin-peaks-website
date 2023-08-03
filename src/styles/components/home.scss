@@ -2,30 +2,6 @@
 @import "../mixins.scss";
 @import "../typography.scss";
 .home {
-  .coupon-banner {
-    @extend %flex-column-centered;
-    padding: 20px;
-    background-color: $layoutGreen;
-    @media screen and (min-width: 768px) {
-      padding-left: 40px;
-      flex-direction: row;
-      justify-content: start;
-    }
-    p {
-      font-family: $headingFont;
-      font-size: 18px;
-      @media screen and (min-width: 768px) {
-        font-size: 24px;
-      }
-    }
-    button {
-      margin-top: 15px;
-      @media screen and (min-width: 768px) {
-        margin-top: unset;
-        margin-left: 20px;
-      }
-    }
-  }
   .teaser {
     @extend %flex-column;
     @media screen and (min-width: 768px) {
@@ -255,30 +231,5 @@
   .carousel-inner {
     width: 100%;
     height: 100%;
-  }
-}
-
-.coupon {
-  .header {
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.3;
-  }
-  .details {
-    font-size: 16px;
-    margin: 20px 0px;
-  }
-  .code {
-    margin: 20px 0px;
-    padding: 10px;
-    width: 100%;
-    background-color: $layoutGreen;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-    border: 3px $layoutBlack;
-    border-style: dashed;
-    border-radius: 15px;
   }
 }

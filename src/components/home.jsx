@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import ReactGA4 from "react-ga4";
 import { Link } from "react-router-dom";
-import Modal from "react-bootstrap/Modal";
 import Carousel from "react-bootstrap/Carousel";
 
 import carousel1 from "../assets/carousel1.webp";
@@ -24,24 +23,10 @@ import { ReactComponent as PhoneIcon } from "../assets/phone.svg";
 import "../styles/components/home.scss";
 
 function Home() {
-  const [showCoupon, setShowCoupon] = useState(false);
-
   useEffect(() => {
     ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
     ReactGA4.send("pageview");
   }, []);
-
-  const couponBanner = (
-    <div className="coupon-banner">
-      <p>FREE exam for new clients!</p>
-      <button
-        className="btn-filled-secondary"
-        onClick={() => setShowCoupon(true)}
-      >
-        Get Coupon
-      </button>
-    </div>
-  );
 
   const teaser = (
     <div className="teaser">
@@ -203,20 +188,6 @@ function Home() {
     </div>
   );
 
-  const couponContent = (
-    <Modal show={true} onHide={() => setShowCoupon(false)} size="sm" centered>
-      <div className="coupon">
-        <h3 className="header">Free Wellness and Dental Exam</h3>
-        <p className="details">
-          Welcome to Twin Peaks! Use the code below at checkout to get your
-          first exam free. We look forward to meeting you!
-        </p>
-        <div className="code">WELCOME</div>
-        <p>*Offer valid for new clients only. Offer valid for 1 pet.</p>
-      </div>
-    </Modal>
-  );
-
   const googleMap = (
     <div style={{ lineHeight: "0" }}>
       <iframe
@@ -238,14 +209,8 @@ function Home() {
       title="Twin Peaks Veterinary Clinic | Loveland, CO"
       description="Now offering a FREE exam to new clients! We are a locally owned, innovative veterinary clinic serving Loveland, Berthoud, Johnstown, Milliken and the surrounding area."
     >
-      <Mobile>
-        {/*couponBanner*/}
-        {teaser}
-      </Mobile>
+      <Mobile>{teaser}</Mobile>
       <NotMobile>
-        {/*<div className="background-green">
-          <div className="container">{couponBanner}</div>
-  </div>*/}
         <div className="background-black">
           <div className="container">{teaser}</div>
         </div>
@@ -255,7 +220,6 @@ function Home() {
       {missionContent}
       {emergencyContent}
       {googleMap}
-      {showCoupon && couponContent}
     </Page>
   );
 }
