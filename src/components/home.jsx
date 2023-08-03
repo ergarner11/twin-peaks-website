@@ -239,13 +239,13 @@ function Home() {
       description="Now offering a FREE exam to new clients! We are a locally owned, innovative veterinary clinic serving Loveland, Berthoud, Johnstown, Milliken and the surrounding area."
     >
       <Mobile>
-        {couponBanner}
+        {/*couponBanner*/}
         {teaser}
       </Mobile>
       <NotMobile>
-        <div className="background-green">
+        {/*<div className="background-green">
           <div className="container">{couponBanner}</div>
-        </div>
+  </div>*/}
         <div className="background-black">
           <div className="container">{teaser}</div>
         </div>
