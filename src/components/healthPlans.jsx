@@ -139,39 +139,11 @@ function HealthPlans() {
           cremation, outside diagnostics, pharmacy, and retail items
         </p>
         <p>
-          Any dental procedures are also not included in the Health Plan unless
-          you have a <span className="bold">Dental-Enhanced Health Plan</span>.
+          Any dental procedures are also not included in the Health Plan.
+          However, we offer competitive flat-rate pricing and{" "}
+          <span className="bold">Payment Plans</span> for when you pet needs
+          these services.
         </p>
-      </div>
-    </div>
-  );
-
-  const dentalEnhanced = (
-    <div className="dental-enhanced">
-      <div className="header">What are Dental-Enhanced Health Plans?</div>
-      <div className="content">
-        <div className="details">
-          <p>
-            Dental-Enhanced Health Plans are specifically for pets who need
-            dental cleanings, tooth extractions, or other oral surgery.
-          </p>
-          <p>
-            You can <span className="bold">upgrade at any time</span> to a
-            Dental Enhanced Health Plan from any other Health Plan. This means
-            you only pay for a Health Plan with Dental Coverage on years that
-            you take advantage of that benefit!
-          </p>
-        </div>
-        <div className="inclusions">
-          <p className="inclusions-header">
-            Dental-Enhanced <nobr>Plans Include:</nobr>
-          </p>
-          <ul>
-            <li>One Dental Cleaning</li>
-            <li>50% - 90% Discount on ALL other in-clinic dental procedures</li>
-            <li>PLUS all other Health Plan services</li>
-          </ul>
-        </div>
       </div>
     </div>
   );
@@ -191,9 +163,7 @@ function HealthPlans() {
       <tr>
         <td className="item-column">{rowName}</td>
         <td className="item-inclusion-status">{checkMark}</td>
-        <td className="item-inclusion-status">{checkMark}</td>
         <td className="item-inclusion-status recommended-cell">{checkMark}</td>
-        <td className="item-inclusion-status">{checkMark}</td>
       </tr>
     );
   };
@@ -225,16 +195,12 @@ function HealthPlans() {
             <tr>
               <th className="no-fill"></th>
               <th className="no-fill"></th>
-              <th className="no-fill"></th>
               <th className="recommended">RECOMMENDED</th>
-              <th className="no-fill"></th>
             </tr>
             <tr>
               <th className="no-fill"></th>
               <th>50% Plan</th>
-              <th>50% Dental-Enhanced</th>
               <th className="recommended-cell">90% Plan</th>
-              <th>90% Dental-Enhanced</th>
             </tr>
           </thead>
           <tbody>
@@ -248,21 +214,9 @@ function HealthPlans() {
                 </span>{" "}
                 /mo*
               </td>
-              <td>
-                <span className="price">
-                  {species === "Dog" ? "$67" : "$61"}
-                </span>{" "}
-                /mo*
-              </td>
               <td className="recommended-cell">
                 <span className="price">
                   {species === "Dog" ? "$39" : "$29"}
-                </span>{" "}
-                /mo*
-              </td>
-              <td>
-                <span className="price">
-                  {species === "Dog" ? "$81" : "$71"}
                 </span>{" "}
                 /mo*
               </td>
@@ -283,9 +237,7 @@ function HealthPlans() {
                 Discount on In-Clinic Services
               </td>
               <td className="bold font-16">50%</td>
-              <td className="bold font-16">50%</td>
               <td className="bold font-16 recommended-cell">90%</td>
-              <td className="bold font-16">90%</td>
             </tr>
             {species === "Dog" &&
               allCheckedRow("Discount on Heartworm Prevention")}
@@ -309,25 +261,7 @@ function HealthPlans() {
                 </td>
               </OverlayTrigger>
               <td>{xMark}</td>
-              <td>{xMark}</td>
               <td className="recommended-cell">{checkMark}</td>
-              <td>{checkMark}</td>
-            </tr>
-            <tr>
-              <td className="item-column">One Dental Cleaning</td>
-              <td>{xMark}</td>
-              <td>{checkMark}</td>
-              <td className="recommended-cell">{xMark}</td>
-              <td>{checkMark}</td>
-            </tr>
-            <tr>
-              <td className="item-column bold font-16">
-                Discount on Dental Services
-              </td>
-              <td>{xMark}</td>
-              <td className="bold font-16">50%</td>
-              <td className="recommended-cell">{xMark}</td>
-              <td className="bold font-16">90%</td>
             </tr>
           </tbody>
           <Mobile>
@@ -335,9 +269,7 @@ function HealthPlans() {
               <tr>
                 <th className="no-fill"></th>
                 <th>50% Plan</th>
-                <th>50% Dental-Enhanced</th>
                 <th className="recommended-cell">90% Plan</th>
-                <th>90% Dental-Enhanced</th>
               </tr>
             </thead>
           </Mobile>
@@ -376,7 +308,6 @@ function HealthPlans() {
         {officeVisits}
         {discount}
         {notIncluded}
-        {dentalEnhanced}
         {disclaimer}
         {pricing}
       </Mobile>
@@ -392,7 +323,6 @@ function HealthPlans() {
             {discount}
           </div>
           {notIncluded}
-          {dentalEnhanced}
           {disclaimer}
           {pricing}
         </div>
