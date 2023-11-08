@@ -84,19 +84,6 @@ function HealthPlans() {
   const officeVisits = (
     <div className="inclusion-panel">
       <div className="header">$20 Office Visits</div>
-      <div className="content">
-        <ul>
-          <li>Adult Dogs and Cats</li>
-          <ul className="secondary-ul">
-            <li>$20 office visit each time you come in</li>
-          </ul>
-          <li className="mt-3">Puppies and Kittens</li>
-          <ul className="secondary-ul">
-            <li>$20 for ALL wellness visits</li>
-            <li>$50 for all other visits</li>
-          </ul>
-        </ul>
-      </div>
       {didYouKnow}
     </div>
   );
