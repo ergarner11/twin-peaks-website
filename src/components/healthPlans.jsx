@@ -70,21 +70,17 @@ function HealthPlans() {
     </div>
   );
 
-  const didYouKnow = (
-    <div className="did-you-know">
-      <p className="did-you-know-header">Did you know?</p>
-      <p>
-        Preventive care is critical for every pet. Our Veterinarians take time
-        to examine each pet from nose to tail including an oral exam to evaluate
-        their need for dental care.
-      </p>
-    </div>
-  );
-
   const officeVisits = (
     <div className="inclusion-panel">
       <div className="header">$20 Office Visits</div>
-      {didYouKnow}
+      <div className="did-you-know mt-5">
+        <p className="did-you-know-header">Did you know?</p>
+        <p>
+          Preventive care is critical for every pet. Our Veterinarians take time
+          to examine each pet from nose to tail including an oral exam to
+          evaluate their need for dental care.
+        </p>
+      </div>
     </div>
   );
 
