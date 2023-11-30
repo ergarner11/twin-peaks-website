@@ -62,7 +62,7 @@ function HealthPlans() {
             <li>Anal gland expressions</li>
             <li>Euthanasia</li>
           </ul>
-          <li>Spay or Neuter Surgery</li>
+          <li>Discount on Spay or Neuter Surgery</li>
           <li>Discount on Heartworm Prevention</li>
           <li>50% Discount on Elective Procedures</li>
         </ul>
@@ -213,7 +213,6 @@ function HealthPlans() {
             {allCheckedRow("Nail Trims")}
             {allCheckedRow("Anal Glands Expression")}
             {allCheckedRow("Euthanasia")}
-            {allCheckedRow("Spay or Neuter Surgery")}
             {allCheckedRow("Discounted Office Visits")}
             <tr>
               <td className="item-column bold font-16">
@@ -222,6 +221,7 @@ function HealthPlans() {
               <td className="bold font-16">50%</td>
               <td className="bold font-16 recommended-cell">90%</td>
             </tr>
+            {allCheckedRow("Discount on Spay or Neuter Surgery")}
             {species === "Dog" &&
               allCheckedRow("Discount on Heartworm Prevention")}
             {allCheckedRow("50% Discount on Elective Procedures")}

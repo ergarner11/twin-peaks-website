@@ -116,10 +116,9 @@ function Home() {
             </h2>
             <p>
               If you've got a new puppy or kitten, we've got a deal for you!
-              Getting a new pet is exciting, but between wellness exams,
-              vaccines, and getting your little one spayed or neutered, costs
-              can start to add up. The good news? We've got you covered!
-              Seriously - it's all included in our Health Plan!
+              Getting a new pet is exciting, but between all the wellness exams
+              and vaccines, costs can start to add up. The good news? We've got
+              you covered! Seriously - it's all included in our Health Plan!
             </p>
             <p>
               You've got enough on your plate. Let our vets take it from here.
