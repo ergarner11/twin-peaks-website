@@ -1,0 +1,17 @@
+@import "../colors.scss";
+@import "../mixins.scss";
+@import "../typography.scss";
+.cirdc-notice {
+  table {
+    width: auto;
+    thead {
+      text-decoration: underline;
+    }
+    .service {
+      width: 160px;
+    }
+    .price {
+      width: 130px;
+    }
+  }
+}

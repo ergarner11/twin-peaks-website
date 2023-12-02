@@ -8,7 +8,9 @@ import { Mobile, NotMobile } from "./common/responsive";
 import { ReactComponent as AllergenIcon } from "../assets/allergen.svg";
 import { ReactComponent as BandaidIcon } from "../assets/bandaid.svg";
 import { ReactComponent as BoneIcon } from "../assets/bone.svg";
+import { ReactComponent as CoughIcon } from "../assets/cough.svg";
 import { ReactComponent as DoctorIcon } from "../assets/doctor.svg";
+import { ReactComponent as LungIcon } from "../assets/lungs.svg";
 import { ReactComponent as PawIcon } from "../assets/paw.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
 import { ReactComponent as StethoscopeIcon } from "../assets/stethoscope.svg";
@@ -16,8 +18,10 @@ import { ReactComponent as SyringeIcon } from "../assets/syringe.svg";
 import { ReactComponent as ToothIcon } from "../assets/tooth.svg";
 
 import allergiesPic from "../assets/allergies.webp";
+import cirdcPic from "../assets/cirdc.webp";
 import dentistryPic from "../assets/dentistry.webp";
 import diagnosticsPic from "../assets/diagnostics.webp";
+import kennelCoughPic from "../assets/kennelCough.webp";
 import microchipPic from "../assets/microchip.webp";
 import nutritionPic from "../assets/nutrition.webp";
 import spayNeuterPic from "../assets/spayNeuter.webp";
@@ -78,6 +82,20 @@ function Services() {
     "When your fur baby isn't feeling well, figuring out what is going wrong is the first step to making it right. We have the resources and experience to help you through whatever comes your way!",
     "diagnostics",
     <img src={diagnosticsPic} alt="Dog resting on a wooden floor" />
+  );
+  const kennelCough = service(
+    "Kennel Cough",
+    <CoughIcon />,
+    "Kennel Cough, an older term describing contagious coughing in dogs, is now considered outdated. It was commonly associated with dogs being boarded, where the infection could easily spread. Today, we use a more comprehensive term, Canine Infectious Respiratory Disease Complex (CIRDC), which encompasses a wider range of contagious respiratory diseases. This updated term reflects our improved understanding of these diseases and their varied causes.",
+    "cirdc",
+    <img src={kennelCoughPic} alt="Puppy looking around" />
+  );
+  const cirdc = service(
+    "CIRDC",
+    <LungIcon />,
+    "Canine Infectious Respiratory Disease Complex (CIRDC) is a broad term encompassing highly contagious respiratory illnesses and infections. Find out what you need to know to keep your safe and protected.",
+    "cirdc",
+    <img src={cirdcPic} alt="Dog resting on a wooden deck" />
   );
   const spayNeuter = service(
     "Spay & Neuter",
@@ -151,6 +169,10 @@ function Services() {
           <div className="d-flex justify-content-around">
             {wellnessExam}
             {diagnostics}
+          </div>
+          <div className="d-flex justify-content-around">
+            {kennelCough}
+            {cirdc}
           </div>
           <div className="d-flex justify-content-around">
             {allergies}

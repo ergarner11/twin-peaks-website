@@ -113,6 +113,24 @@
   @include bannner-img("../assets/allergyBanner.webp");
 }
 
+.cirdc {
+  .banner {
+    @include bannner-img("../assets/wellnessBanner.webp");
+  }
+  table {
+    width: auto;
+    thead {
+      text-decoration: underline;
+    }
+    .service {
+      width: 160px;
+    }
+    .price {
+      width: 130px;
+    }
+  }
+}
+
 .dentistry .banner,
 .tplo .banner {
   @include bannner-img("../assets/dentistryBanner.webp");

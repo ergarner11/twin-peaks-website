@@ -8,8 +8,10 @@ import HealthPlanContractVideo from "./components/healthPlanContractVideo";
 import Home from "./components/home";
 import Services from "./components/services";
 import OurTeam from "./components/ourTeam";
+import CirdcNotice from "./components/cirdcNotice";
 
 import Allergies from "./components/services/allergies";
+import Cirdc from "./components/services/cirdc";
 import Dentistry from "./components/services/dentistry";
 import Diagnostics from "./components/services/diagnostics";
 import Microchip from "./components/services/microchip";
@@ -36,6 +38,7 @@ const App = () => {
         {/*<Route exact path="/pricing" element={<HealthPlans />} />*/}
         <Route exact path="/services" element={<Services />} />
         <Route exact path="/services/allergies" element={<Allergies />} />
+        <Route exact path="/services/cirdc" element={<Cirdc />} />
         <Route exact path="/services/dentistry" element={<Dentistry />} />
         <Route exact path="/services/diagnostics" element={<Diagnostics />} />
         <Route exact path="/services/microchip" element={<Microchip />} />
@@ -44,6 +47,7 @@ const App = () => {
         <Route exact path="/services/tplo-surgery" element={<TPLO />} />
         <Route exact path="/services/vaccines" element={<Vaccines />} />
         <Route exact path="/services/wellness" element={<Wellness />} />
+        <Route exact path="/cirdc-notice" element={<CirdcNotice />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>

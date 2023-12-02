@@ -38,7 +38,7 @@ function Banner() {
       <NotMobile>
         <div className="d-flex justify-content-center background-white">
           <div
-            className="d-flex justify-content-between flex-grow-1 p-4"
+            className="d-flex justify-content-between flex-grow-1 px-4 py-5"
             style={{ maxWidth: "1024px" }}
           >
             <img
