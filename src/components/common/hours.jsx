@@ -25,9 +25,6 @@ function Hours({ darkmode, expanded }) {
           {!expanded && <p className={className}>Monday - Friday: 8am - 6pm</p>}
           <p className={className}>Saturday: 8am - 5pm</p>
           <p className={className}>Sunday: Closed</p>
-          <br />
-          <p className={className}>12/23 - 12/25: Closed for Christmas</p>
-          <p className={className}>New Year's Day (1/1): Closed</p>
         </div>
       </div>
     </div>
