@@ -84,23 +84,23 @@ function TPLO() {
               <tbody>
                 <tr>
                   <td>&lt; 90 lbs</td>
-                  <td>$3,000</td>
-                  <td>$4,900</td>
-                </tr>
-                <tr>
-                  <td>90 - 120 lbs</td>
                   <td>$3,100</td>
                   <td>$5,100</td>
                 </tr>
                 <tr>
-                  <td>120 - 150 lbs</td>
+                  <td>90 - 120 lbs</td>
                   <td>$3,200</td>
                   <td>$5,300</td>
                 </tr>
                 <tr>
+                  <td>120 - 150 lbs</td>
+                  <td>$3,300</td>
+                  <td>$5,500</td>
+                </tr>
+                <tr>
                   <td>&gt; 150 lbs</td>
-                  <td>$3,400</td>
-                  <td>$5,700</td>
+                  <td>$3,500</td>
+                  <td>$5,900</td>
                 </tr>
               </tbody>
             </table>
