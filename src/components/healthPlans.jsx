@@ -46,6 +46,33 @@ function HealthPlans() {
     </div>
   );
 
+  const eligibility = (
+    <div className="px-5">
+      <div className="header">Health Plan Eligibility</div>
+      <div className="font-18 mt-4">
+        Our Health Plans help manage the cost of unexpected veterinary care, so
+        be sure to sign up while your pet is healthy! Here's what that means for
+        you:
+      </div>
+      <div className="font-18 ms-5 mt-3">
+        Pets who are currently sick, injured, or require diagnostics are not
+        eligible to sign-up on a Health Plan
+      </div>
+      <div className="font-16 sura mt-2 ms-5">
+        *If your pet is currently ineligible, don't worry! They will become
+        eligible again as soon as the underlying issues have been resolved.
+      </div>
+      <div className="font-18 ms-5 mt-4 mb-5">
+        Pets who are eligible to sign up on a Health Plan but have certain
+        pre-existing conditions are only eligible for the 50%
+      </div>
+      <div className="font-18 mt-5 mb-5">
+        Our team can answer specific eligibility questions and help you know
+        what's next for your pet
+      </div>
+    </div>
+  );
+
   const preventiveCare = (
     <div className="inclusion-panel">
       <div className="header">Preventive Care</div>
@@ -230,8 +257,8 @@ function HealthPlans() {
                 placement="top"
                 overlay={
                   <Tooltip>
-                    Pets with pre-existing health conditions are not eligible to
-                    sign up on the 90% plan. They are also not eligible to
+                    Pets with certain pre-existing conditions are not eligible
+                    to sign up on the 90% plan. They are also not eligible to
                     upgrade from the 50% plan to the 90% plan at renewal.
                   </Tooltip>
                 }
@@ -286,6 +313,7 @@ function HealthPlans() {
     >
       <Mobile>
         {hpTeaser}
+        {eligibility}
         <div className="header">Included in ALL Health Plans</div>
         {preventiveCare}
         {officeVisits}
@@ -299,6 +327,7 @@ function HealthPlans() {
           <div className="container d-flex w-100">{hpTeaser}</div>
         </div>
         <div className="container">
+          {eligibility}
           <div className="header">Included in ALL Health Plans</div>
           <div className="d-flex">
             {preventiveCare}
