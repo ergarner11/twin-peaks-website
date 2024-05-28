@@ -52,7 +52,7 @@ function Footer() {
           </div>
         </NotMobile>
         <div className="legal">
-          <p>Copyright © 2022 Twin Peaks Veterinary Clinic</p>
+          <p>Copyright © 2024 Twin Peaks Veterinary Clinic</p>
           <div className="documents">
             <a
               href="https://app.termly.io/document/privacy-policy/774c8f02-ba40-4d34-985c-72f884509f6e"
