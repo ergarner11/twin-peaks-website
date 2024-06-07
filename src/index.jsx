@@ -8,7 +8,6 @@ import HealthPlanContractVideo from "./components/healthPlanContractVideo";
 import Home from "./components/home";
 import Services from "./components/services";
 import OurTeam from "./components/ourTeam";
-import CirdcNotice from "./components/cirdcNotice";
 
 import Allergies from "./components/services/allergies";
 import Cirdc from "./components/services/cirdc";
@@ -47,7 +46,6 @@ const App = () => {
         <Route exact path="/services/tplo-surgery" element={<TPLO />} />
         <Route exact path="/services/vaccines" element={<Vaccines />} />
         <Route exact path="/services/wellness" element={<Wellness />} />
-        <Route exact path="/cirdc-notice" element={<CirdcNotice />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>

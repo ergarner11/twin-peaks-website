@@ -17,7 +17,6 @@ import { ReactComponent as AwardIcon } from "../assets/award.svg";
 import { ReactComponent as ClockIcon } from "../assets/clock.svg";
 import { ReactComponent as HeartIcon } from "../assets/heart.svg";
 import { ReactComponent as HospitalIcon } from "../assets/hospital.svg";
-import { ReactComponent as AllergenIcon } from "../assets/allergen.svg";
 import { ReactComponent as PawIcon } from "../assets/paw.svg";
 import { ReactComponent as PhoneIcon } from "../assets/phone.svg";
 
@@ -28,24 +27,6 @@ function Home() {
     ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
     ReactGA4.send("pageview");
   }, []);
-
-  const cirdcNotice = (
-    <div className="content-container" style={{ backgroundColor: "#ead9bb" }}>
-      <div className="cirdc-notice d-flex-row">
-        <AllergenIcon className="mt-1 error" />
-        <p>
-          Important Health Notice for Dogs: Contagious Respiratory Disease and
-          Canine Influenza Vaccination
-        </p>
-        <Link to="cirdc-notice">
-          <button className="btn-text-secondary ms-3 mt-2">
-            <ArrowRightIcon />
-            Learn More
-          </button>
-        </Link>
-      </div>
-    </div>
-  );
 
   const teaser = (
     <div className="teaser">
@@ -227,7 +208,6 @@ function Home() {
       title="Twin Peaks Veterinary Clinic | Loveland, CO"
       description="We are a locally owned, innovative veterinary clinic serving Loveland, Berthoud, Johnstown, Milliken and the surrounding area."
     >
-      {cirdcNotice}
       <Mobile>{teaser}</Mobile>
       <NotMobile>
         <div className="background-black">

@@ -67,7 +67,7 @@ function Links({ selectedTab, social }) {
       >
         <span className="flex-row-aligned">
           <UserIcon className="pt-1" />
-          Health Plan Portal
+          Client Portal
         </span>
       </div>
       {social && (
