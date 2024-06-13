@@ -111,6 +111,7 @@ function CIRDC() {
 
   return (
     <Page
+      selectedTab="services"
       title="CIRDC"
       description="Canine Infectious Respiratory Disease Complex (CIRDC) is a is a broad term encompassing highly contagious respiratory illnesses and infections"
       className="service-page cirdc"

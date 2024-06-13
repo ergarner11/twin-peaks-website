@@ -1,4 +1,6 @@
 $layoutBlack: #0f1b26;
+$layoutDarkBlue: #213849;
+$layoutLightBlue: #197c8b;
 $layoutWhite: #fcfbf9;
 $layoutGray: #f3f3f3;
 $layoutGreen: #add3c5;
@@ -19,8 +21,8 @@ $subtle: #d5d3d3;
   background-color: $layoutWhite;
 }
 
-.background-black {
-  background-color: $layoutBlack;
+.background-dark-blue {
+  background-color: $layoutDarkBlue;
 }
 
 .background-gray {
@@ -40,7 +42,7 @@ $subtle: #d5d3d3;
 }
 
 %background-topography {
-  background-color: #e4dccd;
+  background-color: #ccd9d4;
   background-image: url("../assets/topography.svg");
 }
 

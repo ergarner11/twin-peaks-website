@@ -55,6 +55,7 @@ function SpayNeuter() {
 
   return (
     <Page
+      selectedTab="services"
       title="Spay & Neuter Surgery"
       description="There are a number of health and behavioral benefits associated with having your pet spayed or neutered."
       className="service-page spay-neuter"

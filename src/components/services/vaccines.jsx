@@ -198,6 +198,7 @@ function Vaccines() {
 
   return (
     <Page
+      selectedTab="services"
       title="Vaccinations"
       description="Staying current on all recommended vaccines is one of the best things you can do for the health of your pet"
       className="service-page vaccines"

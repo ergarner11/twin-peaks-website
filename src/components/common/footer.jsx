@@ -1,56 +1,11 @@
 import React from "react";
 
-import Address from "./address";
-import Hours from "./hours";
-import Phone from "./phone";
-import Links from "./links";
-import RequestAppointment from "./requestAppointment";
-import RequestRefill from "./requestRefill";
-import Social from "./social";
-import { Desktop, Mobile, NotMobile } from "./responsive";
-
 import "../../styles/components/common/footer.scss";
 
 function Footer() {
-  const nav = (
-    <nav>
-      <div className="d-flex flex-column nav-tabs">
-        <Links />
-      </div>
-    </nav>
-  );
-
   return (
     <div className="footer">
       <div className="container">
-        <Mobile>
-          <div className="mobile">
-            <Address darkmode />
-            <Phone darkmode />
-            <Hours darkmode />
-            <Social darkmode />
-            <RequestAppointment darkmode />
-            <RequestRefill darkmode />
-            {nav}
-          </div>
-        </Mobile>
-        <NotMobile>
-          <div className="not-mobile">
-            <div className="section-1">
-              <Address darkmode />
-              <Phone darkmode />
-              <Social darkmode />
-            </div>
-            <Hours darkmode expanded />
-            <Desktop>
-              <div className="section-3">
-                <RequestAppointment darkmode />
-                <RequestRefill darkmode />
-              </div>
-            </Desktop>
-            {nav}
-          </div>
-        </NotMobile>
         <div className="legal">
           <p>Copyright © 2024 Twin Peaks Veterinary Clinic</p>
           <div className="documents">

@@ -76,6 +76,7 @@ function Microchip() {
 
   return (
     <Page
+      selectedTab="services"
       title="Microchip"
       description="Getting your pet microchipped is the best thing you can do to ensure a happy reunion when your pet is lost"
       className="service-page microchip"

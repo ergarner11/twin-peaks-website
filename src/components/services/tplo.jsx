@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import ReactGA4 from "react-ga4";
 
 import Page from "../common/page";
@@ -108,9 +107,7 @@ function TPLO() {
           <p className="mt-4">
             All medications prescribed and services performed before, after, or
             in addition to the TPLO surgery will be provided by Twin Peaks
-            veterinarians at our regular clinic prices. Our{" "}
-            <Link to="/health-plans">Health Plan memberships</Link> provide
-            significant savings on these services!
+            veterinarians at our regular clinic prices.
           </p>
         </section>
       </section>
@@ -124,6 +121,7 @@ function TPLO() {
 
   return (
     <Page
+      selectedTab="services"
       title="TPLO Surgery"
       description="We offer TPLO surgery packages at competitive flat rate prices. If you're dealing with a CCL injury, we can help!"
       className="service-page tplo"

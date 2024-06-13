@@ -57,6 +57,7 @@ function Diagnostics() {
 
   return (
     <Page
+      selectedTab="services"
       title="Diagnostics"
       description="There are many reasons that your pet may not being feeling well. Our doctors use reliable and modern equipment and tests to get you answers as soon as possible!"
       className="service-page diagnostics"

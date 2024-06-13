@@ -1,0 +1,123 @@
+@import "../colors.scss";
+@import "../mixins.scss";
+@import "../typography.scss";
+.locations {
+  .phone,
+  .address {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      margin-right: 15px;
+      width: 25px;
+      align-self: center;
+    }
+  }
+  .phone,
+  .address,
+  .hours {
+    p {
+      font-family: $roboto;
+      font-size: 18px;
+    }
+  }
+  .intro {
+    @extend %background-topography;
+  }
+  .emergency {
+    background-color: $layoutWhite;
+    svg {
+      height: 30px;
+    }
+    .sections {
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      .section {
+        align-self: center;
+        padding: 0px 20px;
+        max-width: 400px;
+        @extend %flex-column;
+        align-items: center;
+        .primary {
+          margin: 20px 0px;
+          font-family: $headingFont;
+          font-weight: bolder;
+          font-size: 18px;
+          @media screen and (min-width: 768px) {
+            font-size: 24px;
+          }
+        }
+        .secondary {
+          @media screen and (min-width: 768px) {
+            font-size: 18px;
+          }
+        }
+        p {
+          text-align: center;
+        }
+        .reference {
+          margin-top: 15px;
+          .name {
+            font-family: $headingFont;
+            font-size: 16px;
+            font-style: italic;
+            font-weight: bolder;
+            @media screen and (min-width: 768px) {
+              font-size: 20px;
+            }
+          }
+          .number {
+            font-size: 18px;
+          }
+          .location {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .intro {
+    p {
+      margin-top: 40px;
+      font-size: 16px;
+    }
+  }
+  .content-container {
+    @extend %flex-centered;
+  }
+  .content-block {
+    @extend %container;
+    @extend %flex-column;
+    width: 100%;
+    margin: 30px 0px;
+    padding: 20px;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-self: center;
+    @media screen and (min-width: 768px) {
+      margin: 100px 40px;
+      padding: 25px;
+      p {
+        font-size: 22px;
+      }
+    }
+    .header {
+      @extend %flex-row-aligned;
+      margin: 0px;
+      font-family: $headingFont;
+      font-weight: bold;
+      line-height: 1.3;
+      @media screen and (min-width: 768px) {
+        font-size: 35px;
+      }
+      svg {
+        margin-right: 15px;
+        height: 30px;
+      }
+    }
+  }
+}

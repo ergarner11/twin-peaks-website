@@ -12,7 +12,7 @@
       @extend %flex-column;
       justify-content: space-around;
       padding: 25px;
-      background-color: $layoutBlack;
+      background-color: $layoutDarkBlue;
       @media screen and (min-width: 768px) {
         width: 40%;
         padding: 40px;
@@ -110,62 +110,6 @@
       height: 100%;
       width: 100%;
       background-color: rgba(138, 127, 115, 0.7);
-    }
-  }
-  .emergency {
-    background-color: $layoutWhite;
-    svg {
-      height: 30px;
-    }
-    .sections {
-      display: flex;
-      flex-direction: column;
-      @media screen and (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-evenly;
-      }
-      .section {
-        align-self: center;
-        padding: 0px 20px;
-        max-width: 400px;
-        @extend %flex-column;
-        align-items: center;
-        .primary {
-          margin: 20px 0px;
-          font-family: $headingFont;
-          font-weight: bolder;
-          font-size: 18px;
-          @media screen and (min-width: 768px) {
-            font-size: 24px;
-          }
-        }
-        .secondary {
-          @media screen and (min-width: 768px) {
-            font-size: 18px;
-          }
-        }
-        p {
-          text-align: center;
-        }
-        .reference {
-          margin-top: 15px;
-          .name {
-            font-family: $headingFont;
-            font-size: 16px;
-            font-style: italic;
-            font-weight: bolder;
-            @media screen and (min-width: 768px) {
-              font-size: 20px;
-            }
-          }
-          .number {
-            font-size: 18px;
-          }
-          .location {
-            font-size: 16px;
-          }
-        }
-      }
     }
   }
   .intro,

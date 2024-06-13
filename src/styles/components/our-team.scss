@@ -5,7 +5,7 @@
   .teaser {
     @extend %flex-column;
     flex-grow: 1;
-    background-color: $layoutBlack;
+    background-color: $layoutDarkBlue;
     * {
       color: $layoutWhite;
     }

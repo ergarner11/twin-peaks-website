@@ -49,27 +49,27 @@ function HealthPlans() {
   const eligibility = (
     <div className="px-5">
       <div className="header">Health Plan Eligibility</div>
-      <div className="font-18 mt-4">
+      <p className="font-18 mt-4">
         Our Health Plans help manage the cost of unexpected veterinary care, so
         be sure to sign up while your pet is healthy! Here's what that means for
         you:
-      </div>
-      <div className="font-18 ms-5 mt-3">
+      </p>
+      <p className="font-18 ms-5 mt-3">
         Pets who are currently sick, injured, or require diagnostics are not
         eligible to sign-up on a Health Plan
-      </div>
-      <div className="font-16 sura mt-2 ms-5">
+      </p>
+      <p className="font-16 sura mt-2 ms-5">
         *If your pet is currently ineligible, don't worry! They will become
         eligible again as soon as the underlying issues have been resolved.
-      </div>
-      <div className="font-18 ms-5 mt-4 mb-5">
+      </p>
+      <p className="font-18 ms-5 mt-4 mb-5">
         Pets who are eligible to sign up on a Health Plan but have certain
         pre-existing conditions are only eligible for the 50%
-      </div>
-      <div className="font-18 mt-5 mb-5">
+      </p>
+      <p className="font-18 mt-5 mb-5">
         Our team can answer specific eligibility questions and help you know
         what's next for your pet
-      </div>
+      </p>
     </div>
   );
 
@@ -215,9 +215,7 @@ function HealthPlans() {
           </thead>
           <tbody>
             <tr>
-              <td className="item-column bold text-decoration-underline">
-                Monthly Price
-              </td>
+              <td className="item-column roboto font-16">Monthly Price</td>
               <td>
                 <span className="price">
                   {species === "Dog" ? "$25" : "$19"}
@@ -242,7 +240,7 @@ function HealthPlans() {
             {allCheckedRow("Euthanasia")}
             {allCheckedRow("Discounted Office Visits")}
             <tr>
-              <td className="item-column bold font-16">
+              <td className="item-column roboto">
                 Discount on In-Clinic Services
               </td>
               <td className="bold font-16">50%</td>
@@ -323,7 +321,7 @@ function HealthPlans() {
         {pricing}
       </Mobile>
       <NotMobile>
-        <div className="background-black">
+        <div className="background-dark-blue">
           <div className="container d-flex w-100">{hpTeaser}</div>
         </div>
         <div className="container">

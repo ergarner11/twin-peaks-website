@@ -63,6 +63,7 @@ function Wellness() {
 
   return (
     <Page
+      selectedTab="services"
       title="Wellness Exams"
       description="During each wellness exam, one of our doctors will examine your pet from nose to tail. Routine exams help your pet live a longer, healthier, happier life!"
       className="service-page wellness"

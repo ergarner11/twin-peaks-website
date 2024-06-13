@@ -48,7 +48,7 @@ function Services() {
         <p>{content}</p>
         {linkInfo && (
           <Link to={linkInfo}>
-            <button className="btn-text-primary">Learn More</button>
+            <button className="btn-text-secondary">Learn More</button>
           </Link>
         )}
       </div>

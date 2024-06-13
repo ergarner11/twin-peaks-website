@@ -59,6 +59,7 @@ function Allergies() {
 
   return (
     <Page
+      selectedTab="services"
       title="Allergies"
       description="Allergies can have many causes. Our veterinarians will make recommendations specific to your pet's needs and help you stop the itch!"
       className="service-page allergies"

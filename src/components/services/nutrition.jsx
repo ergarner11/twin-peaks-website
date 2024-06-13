@@ -56,6 +56,7 @@ function Nutrition() {
 
   return (
     <Page
+      selectedTab="services"
       title="Nutrition"
       description="Don't underestimate the difference a diet change can make for your pet. We can help you identify nutritional gaps and make suggestions specific to your pet"
       className="service-page nutrition"

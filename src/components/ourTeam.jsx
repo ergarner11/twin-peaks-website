@@ -108,7 +108,7 @@ function OurTeam() {
         {drKaiser}
       </Mobile>
       <NotMobile>
-        <div className="background-black">
+        <div className="background-dark-blue">
           <div className="container d-flex">{hpTeaser}</div>
         </div>
         <div className="container">

@@ -103,6 +103,7 @@ function Dentistry() {
 
   return (
     <Page
+      selectedTab="services"
       title="Dentistry"
       description="Whether you're starting at prevention or dealing a serious dental problem, our veterinarians can help you determine the best plan for you and your pet."
       className="service-page dentistry"
