@@ -33,8 +33,12 @@ function Evans() {
         <p>970-836-1208</p>
       </div>
       <br />
-      <p style={{ maxWidth: "300px", fontFamily: "sura", fontSize: "14px" }}>
-        *Please leave a message, and we will get back to you as soon as we can.
+      <p
+        className="ps-4"
+        style={{ maxWidth: "300px", fontFamily: "sura", fontSize: "14px" }}
+      >
+        *If we are in surgery, please leave a message, and we will get back to
+        you shortly
       </p>
     </a>
   );
@@ -59,6 +63,13 @@ function Evans() {
         <p>Monday - Friday: By Appointment</p>
         <p>Saturday: Closed</p>
         <p>Sunday: Closed</p>
+        <button
+          className="btn-filled-secondary font-18 mt-3"
+          style={{ width: "250px" }}
+          onClick={() => setShowRequestAppointmentModal(true)}
+        >
+          Request Appointment
+        </button>
       </div>
     </div>
   );
@@ -73,9 +84,9 @@ function Evans() {
             height="150px"
             alt="Twin Peaks Veterinary Dental & Surgery logo"
           />
+          <div className="mb-4">{hours}</div>
           <div className="mb-4">{phone}</div>
           <div className="mb-4">{address}</div>
-          <div className="mb-4">{hours}</div>
         </div>
       </Mobile>
       <NotMobile>
@@ -91,18 +102,18 @@ function Evans() {
             />
             <Tablet>
               <div className="d-flex flex-column justify-content-between">
-                {phone}
-                <div className="my-3">{address}</div>
                 {hours}
+                <div className="my-3">{phone}</div>
+                {address}
               </div>
             </Tablet>
             <Desktop>
+              <div className="d-flex flex-column justify-content-around">
+                {hours}
+              </div>
               <div className="d-flex flex-column justify-content-center">
                 {phone}
                 <div className="mt-3">{address}</div>
-              </div>
-              <div className="d-flex flex-column justify-content-around">
-                {hours}
               </div>
             </Desktop>
           </div>
@@ -122,7 +133,7 @@ function Evans() {
           today to get a quote!
         </p>
         <button
-          className="mt-5 btn-filled-primary align-self-center font-18"
+          className="btn-filled-primary font-18 mt-5 align-self-center"
           style={{ width: "250px" }}
           onClick={() => setShowRequestAppointmentModal(true)}
         >
