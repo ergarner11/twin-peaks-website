@@ -64,7 +64,7 @@ function Evans() {
         <p>Saturday: Closed</p>
         <p>Sunday: Closed</p>
         <button
-          className="btn-filled-secondary font-18 mt-3"
+          className="btn-filled-primary font-18 mt-3"
           style={{ width: "250px" }}
           onClick={() => setShowRequestAppointmentModal(true)}
         >

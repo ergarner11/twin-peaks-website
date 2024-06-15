@@ -109,9 +109,9 @@ button {
 
 .btn-filled-primary {
   color: $layoutWhite;
-  background-color: $interactiveGreen3;
+  background-color: $layoutLightBlue;
   &:hover:not(:disabled) {
-    background-color: $interactiveGreen1;
+    background-color: $layoutDarkBlue;
   }
 }
 
