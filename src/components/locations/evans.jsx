@@ -122,6 +122,17 @@ function Evans() {
     </React.Fragment>
   );
 
+  const promo = (
+    <div
+      className="content-container p-4"
+      style={{ backgroundColor: "#efce97" }}
+    >
+      <h2 className="roboto">
+        Grand Opening Promotion: $500 off any dental procedure!
+      </h2>
+    </div>
+  );
+
   const introContent = (
     <div className="content-container intro">
       <div className="content-block">
@@ -129,8 +140,8 @@ function Evans() {
         <p>
           Our Evans location is focused on providing dental and other surgical
           procedures for your dog or cat. Our competitive flat-rate pricing
-          ensures that you know exactly what you will pay. Schedule a consult
-          today to get a quote!
+          ensures that you know exactly what you will pay. Schedule your{" "}
+          <span className="roboto">FREE</span> consult today to get a quote!
         </p>
         <button
           className="btn-filled-primary font-18 mt-5 align-self-center"
@@ -165,6 +176,7 @@ function Evans() {
       description="We are a locally-owned, innovative veterinary clinic focused on dental and other surgical procedures for dogs and cats"
     >
       {contactInfo}
+      {promo}
       {introContent}
       {googleMap}
       {showRequestAppointmentModal && (
