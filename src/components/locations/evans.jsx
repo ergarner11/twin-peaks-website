@@ -7,6 +7,7 @@ import http from "../../services/httpService";
 import logo from "../../assets/logo-twin-peaks-dental-surgery-dark.png";
 
 import Input from "../common/input";
+import InputSelect from "../common/inputSelect";
 import InputTextarea from "../common/inputTextarea";
 import Page from "../common/page";
 import { Desktop, Tablet, Mobile, NotMobile } from "../common/responsive";
@@ -20,6 +21,7 @@ import "../../styles/components/locations.scss";
 function Evans() {
   const [showRequestAppointmentModal, setShowRequestAppointmentModal] =
     useState(false);
+  const [showContactUsModal, setShowContactUsModal] = useState(false);
 
   useEffect(() => {
     ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
@@ -66,9 +68,9 @@ function Evans() {
         <button
           className="btn-filled-primary font-18 mt-3"
           style={{ width: "250px" }}
-          onClick={() => setShowRequestAppointmentModal(true)}
+          onClick={() => setShowContactUsModal(true)}
         >
-          Request Appointment
+          Contact Us
         </button>
       </div>
     </div>
@@ -148,7 +150,7 @@ function Evans() {
           style={{ width: "250px" }}
           onClick={() => setShowRequestAppointmentModal(true)}
         >
-          Request Appointment
+          Schedule Free Consult
         </button>
       </div>
     </div>
@@ -184,6 +186,9 @@ function Evans() {
           handleClose={() => setShowRequestAppointmentModal(false)}
         />
       )}
+      {showContactUsModal && (
+        <ContactUsModal handleClose={() => setShowContactUsModal(false)} />
+      )}
     </Page>
   );
 }
@@ -194,7 +199,8 @@ function RequestAppointmentModal({ handleClose }) {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [petName, setPetName] = useState("");
-  const [reason, setReason] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
 
   const [requestSubmitted, setRequestSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState();
@@ -209,7 +215,204 @@ function RequestAppointmentModal({ handleClose }) {
         phone,
         email,
         petName,
-        reason,
+        date,
+        time,
+      });
+
+      setRequestSubmitted(true);
+    } catch (error) {
+      setErrorMessage(error.response.data.message);
+      setRequestSubmitted(false);
+    }
+  };
+
+  const availableDates = [
+    "Select Date",
+    "Monday July 15th",
+    "Thursday July 18th",
+    "Tuesday July 23rd",
+    "Wednesday July 24th",
+  ];
+
+  const availableTimes = [
+    { date: "Select Date", times: [] },
+    {
+      date: "Monday July 15th",
+      times: [
+        "8:00 am",
+        "8:30 am",
+        "9:00 am",
+        "9:30 am",
+        "3:00 pm",
+        "3:30 pm",
+        "4:00 pm",
+      ],
+    },
+    {
+      date: "Thursday July 18th",
+      times: [
+        "8:00 am",
+        "8:30 am",
+        "9:00 am",
+        "9:30 am",
+        "3:00 pm",
+        "3:30 pm",
+        "4:00 pm",
+      ],
+    },
+    {
+      date: "Tuesday July 23rd",
+      times: [
+        "8:00 am",
+        "8:30 am",
+        "9:00 am",
+        "9:30 am",
+        "3:00 pm",
+        "3:30 pm",
+        "4:00 pm",
+      ],
+    },
+    {
+      date: "Wednesday July 24th",
+      times: [
+        "8:00 am",
+        "8:30 am",
+        "9:00 am",
+        "9:30 am",
+        "3:00 pm",
+        "3:30 pm",
+        "4:00 pm",
+      ],
+    },
+  ];
+
+  return (
+    <Modal
+      className="modal-auto-width"
+      show={true}
+      onHide={handleClose}
+      centered
+    >
+      <form>
+        {errorMessage && <p className="mb-3 sura error">{errorMessage}</p>}
+
+        {requestSubmitted && (
+          <React.Fragment>
+            <p className="input-width">
+              Your request has been submitted. We will be in touch shortly!
+            </p>
+            <button
+              className="mt-4 btn-filled-primary align-self-center"
+              onClick={(e) => {
+                e.preventDefault();
+                handleClose();
+              }}
+            >
+              Close
+            </button>
+          </React.Fragment>
+        )}
+
+        {!requestSubmitted && (
+          <React.Fragment>
+            <Input
+              name="firstName"
+              value={firstName}
+              label="First Name"
+              onChange={setFirstName}
+            />
+            <Input
+              name="lastName"
+              value={lastName}
+              label="Last Name"
+              onChange={setLastName}
+            />
+            <Input
+              name="phone"
+              value={phone}
+              label="Phone Number"
+              onChange={setPhone}
+            />
+            <Input
+              name="email"
+              type="email"
+              value={email}
+              label="Email"
+              onChange={setEmail}
+            />
+            <Input
+              name="petName"
+              value={petName}
+              label="Pet Name"
+              onChange={setPetName}
+            />
+            <InputSelect
+              name="date"
+              value={date}
+              label="Date"
+              optionConfig={availableDates}
+              rawOptions={true}
+              onChange={setDate}
+            />
+            {availableTimes
+              .filter((t) => t.date === date)
+              .map((t) =>
+                t.times.map((s, i) => (
+                  <div key={i} className="radio-line align-items-start mb-2">
+                    <input
+                      className="mt-1"
+                      type="radio"
+                      id={`time-${s}`}
+                      name="apptTime"
+                      checked={time === s}
+                      value={s}
+                      onChange={({ target }) => setTime(target.value)}
+                    />
+                    <label
+                      className="fw-bolder news-cycle font-16"
+                      htmlFor={`time-${s}`}
+                    >
+                      {s}
+                    </label>
+                  </div>
+                ))
+              )}
+            <button
+              className="mt-4 btn-filled-primary align-self-center"
+              onClick={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+            >
+              Submit
+            </button>
+          </React.Fragment>
+        )}
+      </form>
+    </Modal>
+  );
+}
+
+function ContactUsModal({ handleClose }) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [content, setContent] = useState("");
+
+  const [requestSubmitted, setRequestSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState();
+
+  const handleSubmit = async () => {
+    try {
+      setErrorMessage("");
+
+      await http.post(`/contactUs`, {
+        firstName,
+        lastName,
+        phone,
+        email,
+        content,
       });
 
       setRequestSubmitted(true);
@@ -273,18 +476,12 @@ function RequestAppointmentModal({ handleClose }) {
               label="Email"
               onChange={setEmail}
             />
-            <Input
-              name="petName"
-              value={petName}
-              label="Pet Name"
-              onChange={setPetName}
-            />
             <InputTextarea
-              name="reason"
-              value={reason}
-              label="Reason for Appointment"
+              name="content"
+              value={content}
+              label="How can we help you?"
               rows="4"
-              onChange={setReason}
+              onChange={setContent}
             />
             <button
               className="mt-4 btn-filled-primary align-self-center"
