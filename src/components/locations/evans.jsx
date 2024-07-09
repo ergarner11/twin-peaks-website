@@ -246,6 +246,7 @@ function RequestAppointmentModal({ handleClose }) {
         "3:00 pm",
         "3:30 pm",
         "4:00 pm",
+        "4:30 pm",
       ],
     },
     {
@@ -258,6 +259,7 @@ function RequestAppointmentModal({ handleClose }) {
         "3:00 pm",
         "3:30 pm",
         "4:00 pm",
+        "4:30 pm",
       ],
     },
     {
@@ -270,6 +272,7 @@ function RequestAppointmentModal({ handleClose }) {
         "3:00 pm",
         "3:30 pm",
         "4:00 pm",
+        "4:30 pm",
       ],
     },
     {
@@ -282,6 +285,7 @@ function RequestAppointmentModal({ handleClose }) {
         "3:00 pm",
         "3:30 pm",
         "4:00 pm",
+        "4:30 pm",
       ],
     },
   ];
