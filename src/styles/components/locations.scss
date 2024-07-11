@@ -86,6 +86,22 @@
       font-size: 16px;
     }
   }
+  .evans-pricing {
+    p {
+      font-weight: bolder;
+    }
+    ul {
+      li {
+        list-style: disc;
+        font-family: $quicksand;
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+          margin-top: 10px;
+          height: 30px;
+        }
+      }
+    }
+  }
   .content-container {
     @extend %flex-centered;
   }

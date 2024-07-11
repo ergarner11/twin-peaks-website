@@ -141,7 +141,7 @@ function Evans() {
         <h1 className="header">Evans</h1>
         <p>
           Our Evans location is focused on providing dental and other surgical
-          procedures for your dog or cat. Our competitive flat-rate pricing
+          procedures for dogs and cats. Our competitive flat-rate pricing
           ensures that you know exactly what you will pay. Schedule your{" "}
           <span className="roboto">FREE</span> consult today to get a quote!
         </p>
@@ -152,6 +152,29 @@ function Evans() {
         >
           Schedule Free Consult
         </button>
+      </div>
+    </div>
+  );
+
+  const pricing = (
+    <div className="content-container evans-pricing">
+      <div className="content-block">
+        <h1 className="header">Pricing</h1>
+        <p className="mt-3">
+          We use flat-rate pricing for all of our procedures. What that means
+          for you:
+        </p>
+        <ul className="ms-5">
+          <li>No surprises - you pay exactly what we quote</li>
+          <li>
+            All presurgical bloodwork, services, and medications to go home are
+            already included in the price
+          </li>
+        </ul>
+        <p className="mt-5">
+          Want to pay over time? All of our procedures are eligible for Payment
+          Plans!
+        </p>
       </div>
     </div>
   );
@@ -180,6 +203,7 @@ function Evans() {
       {contactInfo}
       {promo}
       {introContent}
+      {pricing}
       {googleMap}
       {showRequestAppointmentModal && (
         <RequestAppointmentModal
