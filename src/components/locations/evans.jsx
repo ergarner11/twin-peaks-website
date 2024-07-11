@@ -24,8 +24,10 @@ function Evans() {
   const [showContactUsModal, setShowContactUsModal] = useState(false);
 
   useEffect(() => {
-    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send("pageview");
+    if (process.env.NODE_ENV === "production") {
+      ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+      ReactGA4.send("pageview");
+    }
   }, []);
 
   const phone = (
@@ -172,6 +174,18 @@ function Evans() {
           </li>
         </ul>
         <p className="mt-5">
+          We can't give an exact quote without a dental evaluation. However...
+        </p>
+        <ul className="ms-5">
+          <li>Our dental procedures start at $480</li>
+          <li>More than 50% of our procedures cost less than $1,000</li>
+          <li>
+            Only 5% of procedures cost more than $1,500, and no procedure is
+            more than $2,000
+          </li>
+        </ul>
+        <h1 className="header mt-5">Payment Plans</h1>
+        <p className="mt-3">
           Want to pay over time? All of our procedures are eligible for Payment
           Plans!
         </p>
