@@ -238,16 +238,7 @@ function RequestAppointmentModal({ handleClose }) {
     { date: "Select Date", times: [] },
     {
       date: "Monday July 15th",
-      times: [
-        "8:00 am",
-        "8:30 am",
-        "9:00 am",
-        "9:30 am",
-        "3:00 pm",
-        "3:30 pm",
-        "4:00 pm",
-        "4:30 pm",
-      ],
+      times: ["9:00 am", "9:30 am", "3:00 pm", "3:30 pm", "4:00 pm", "4:30 pm"],
     },
     {
       date: "Thursday July 18th",
