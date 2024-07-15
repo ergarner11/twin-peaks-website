@@ -139,7 +139,7 @@ function Loveland() {
             <NotMobile>
               <img
                 src={logo}
-                alt="Twin Peaks Vet Clinic logo"
+                alt="Twin Peaks Veterinary Clinic logo"
                 className="mt-3"
                 width="120px"
               />

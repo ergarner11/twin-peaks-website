@@ -266,7 +266,6 @@ function RequestAppointmentModal({ handleClose }) {
 
   const availableDates = [
     "Select Date",
-    "Monday July 15th",
     "Thursday July 18th",
     "Tuesday July 23rd",
     "Wednesday July 24th",
@@ -275,21 +274,8 @@ function RequestAppointmentModal({ handleClose }) {
   const availableTimes = [
     { date: "Select Date", times: [] },
     {
-      date: "Monday July 15th",
-      times: ["9:00 am", "9:30 am", "3:00 pm", "3:30 pm", "4:00 pm", "4:30 pm"],
-    },
-    {
       date: "Thursday July 18th",
-      times: [
-        "8:00 am",
-        "8:30 am",
-        "9:00 am",
-        "9:30 am",
-        "3:00 pm",
-        "3:30 pm",
-        "4:00 pm",
-        "4:30 pm",
-      ],
+      times: ["8:00 am", "9:00 am", "3:00 pm", "3:30 pm", "4:00 pm"],
     },
     {
       date: "Tuesday July 23rd",
