@@ -266,42 +266,29 @@ function RequestAppointmentModal({ handleClose }) {
 
   const availableDates = [
     "Select Date",
-    "Thursday July 18th",
     "Tuesday July 23rd",
     "Wednesday July 24th",
+    "Tuesday July 30th",
+    "Thursday August 1st",
   ];
 
   const availableTimes = [
     { date: "Select Date", times: [] },
     {
-      date: "Thursday July 18th",
-      times: ["8:00 am", "9:00 am", "3:00 pm", "3:30 pm", "4:00 pm"],
-    },
-    {
       date: "Tuesday July 23rd",
-      times: [
-        "8:00 am",
-        "8:30 am",
-        "9:00 am",
-        "9:30 am",
-        "3:00 pm",
-        "3:30 pm",
-        "4:00 pm",
-        "4:30 pm",
-      ],
+      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
     },
     {
       date: "Wednesday July 24th",
-      times: [
-        "8:00 am",
-        "8:30 am",
-        "9:00 am",
-        "9:30 am",
-        "3:00 pm",
-        "3:30 pm",
-        "4:00 pm",
-        "4:30 pm",
-      ],
+      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+    },
+    {
+      date: "Tuesday July 30th",
+      times: ["8:00 am", "8:30 am", "4:30 pm"],
+    },
+    {
+      date: "Thursday August 1st",
+      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
     },
   ];
 
