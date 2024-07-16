@@ -38,14 +38,6 @@ function Evans() {
         <PhoneIcon />
         <p>970-836-1208</p>
       </div>
-      <br />
-      <p
-        className="ps-4"
-        style={{ maxWidth: "300px", fontFamily: "sura", fontSize: "14px" }}
-      >
-        *If we are in surgery, please leave a message, and we will get back to
-        you shortly
-      </p>
     </a>
   );
 
@@ -66,7 +58,7 @@ function Evans() {
     <div className="hours d-flex">
       <ClockIcon className="me-3 mt-3" />
       <div>
-        <p>Monday - Friday: By Appointment</p>
+        <p>Monday - Friday: 8am - 5pm</p>
         <p>Saturday: Closed</p>
         <p>Sunday: Closed</p>
         <button
