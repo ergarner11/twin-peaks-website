@@ -19,7 +19,9 @@ import { ReactComponent as PhoneIcon } from "../../assets/phone.svg";
 import "../../styles/components/locations.scss";
 
 function Evans() {
-  const [showRequestAppointmentModal, setShowRequestAppointmentModal] =
+  const [showDentalAppointmentModal, setShowDentalAppointmentModal] =
+    useState(false);
+  const [showSpayNeuterAppointmentModal, setShowSpayNeuterAppointmentModal] =
     useState(false);
   const [showContactUsModal, setShowContactUsModal] = useState(false);
 
@@ -144,16 +146,8 @@ function Evans() {
         <p>
           Our Evans location is focused on providing dental and other surgical
           procedures for dogs and cats. Our competitive flat-rate pricing
-          ensures that you know exactly what you will pay. Schedule your{" "}
-          <span className="roboto">FREE</span> consult today to get a quote!
+          ensures that you know exactly what you will pay.
         </p>
-        <button
-          className="btn-filled-primary font-18 mt-5 align-self-center"
-          style={{ width: "250px" }}
-          onClick={() => setShowRequestAppointmentModal(true)}
-        >
-          Schedule Free Consult
-        </button>
       </div>
     </div>
   );
@@ -173,17 +167,50 @@ function Evans() {
             already included in the price
           </li>
         </ul>
-        <p className="mt-5">
-          We can't give an exact quote without a dental evaluation. However...
+
+        <h2 className="mt-5 mb-2">Dental Services</h2>
+        <p>
+          We can't give an exact flat-rate quote without a dental evaluation.
+          However...
         </p>
         <ul className="ms-5">
           <li>Our dental procedures start at $480</li>
           <li>More than 50% of our procedures cost less than $1,000</li>
           <li>
-            Only 5% of procedures cost more than $1,500, and no procedure is
+            Only 5% of procedures cost more than $1,500, and no procedure costs
             more than $2,000
           </li>
         </ul>
+        <button
+          className="btn-filled-primary font-18 my-4"
+          style={{ width: "250px" }}
+          onClick={() => setShowDentalAppointmentModal(true)}
+        >
+          Schedule Free Evaluation
+        </button>
+
+        <h2 className="mt-4 mb-2">Spay & Neuter Surgery</h2>
+        <ul className="ms-5">
+          <li>$480</li>
+        </ul>
+        <button
+          className="btn-filled-primary font-18 my-4"
+          style={{ width: "250px" }}
+          onClick={() => setShowSpayNeuterAppointmentModal(true)}
+        >
+          Schedule Spay/Neuter
+        </button>
+
+        <h2 className="mt-4 mb-2">Abdominal Explore/Foreign Body Removal</h2>
+        <ul className="ms-5">
+          <li>$3,900</li>
+        </ul>
+
+        <h2 className="mt-4 mb-2">Other General Anesthesia Procedures</h2>
+        <ul className="ms-5">
+          <li>Call for custom flat-rate quote</li>
+        </ul>
+
         <h1 className="header mt-5">Payment Plans</h1>
         <p className="mt-3">
           Want to pay over time? All of our procedures are eligible for Payment
@@ -219,9 +246,62 @@ function Evans() {
       {introContent}
       {pricing}
       {googleMap}
-      {showRequestAppointmentModal && (
+      {showDentalAppointmentModal && (
         <RequestAppointmentModal
-          handleClose={() => setShowRequestAppointmentModal(false)}
+          appointmentType="Dental Eval"
+          availableDates={[
+            "Select Date",
+            "Thursday July 18th",
+            "Tuesday July 23rd",
+            "Wednesday July 24th",
+            "Tuesday July 30th",
+            "Thursday August 1st",
+          ]}
+          availableTimes={[
+            { date: "Select Date", times: [] },
+            { date: "Tuesday July 18th", times: ["4:00 pm"] },
+            {
+              date: "Tuesday July 23rd",
+              times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+            },
+            {
+              date: "Wednesday July 24th",
+              times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+            },
+            {
+              date: "Tuesday July 30th",
+              times: ["8:00 am", "8:30 am", "4:30 pm"],
+            },
+            {
+              date: "Thursday August 1st",
+              times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+            },
+          ]}
+          handleClose={() => setShowDentalAppointmentModal(false)}
+        />
+      )}
+      {showSpayNeuterAppointmentModal && (
+        <RequestAppointmentModal
+          appointmentType="Spay/Neuter"
+          availableDates={[
+            "Select Date",
+            "Monday July 29th",
+            "Tuesday July 30th",
+            "Thursday August 1st",
+            "Tuesday August 6th",
+            "Wednesday August 7th",
+            "Thursday August 9th",
+          ]}
+          availableTimes={[
+            { date: "Select Date", times: [] },
+            { date: "Monday July 29th", times: ["7:30 am"] },
+            { date: "Tuesday July 30th", times: ["7:30 am"] },
+            { date: "Thursday August 1st", times: ["7:30 am"] },
+            { date: "Tuesday August 6th", times: ["7:45 am"] },
+            { date: "Wednesday August 7th", times: ["7:30 am"] },
+            { date: "Thursday August 9th", times: ["7:30 am"] },
+          ]}
+          handleClose={() => setShowSpayNeuterAppointmentModal(false)}
         />
       )}
       {showContactUsModal && (
@@ -231,7 +311,12 @@ function Evans() {
   );
 }
 
-function RequestAppointmentModal({ handleClose }) {
+function RequestAppointmentModal({
+  appointmentType,
+  availableDates,
+  availableTimes,
+  handleClose,
+}) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -253,6 +338,7 @@ function RequestAppointmentModal({ handleClose }) {
         phone,
         email,
         petName,
+        appointmentType,
         date,
         time,
       });
@@ -263,34 +349,6 @@ function RequestAppointmentModal({ handleClose }) {
       setRequestSubmitted(false);
     }
   };
-
-  const availableDates = [
-    "Select Date",
-    "Tuesday July 23rd",
-    "Wednesday July 24th",
-    "Tuesday July 30th",
-    "Thursday August 1st",
-  ];
-
-  const availableTimes = [
-    { date: "Select Date", times: [] },
-    {
-      date: "Tuesday July 23rd",
-      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
-    },
-    {
-      date: "Wednesday July 24th",
-      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
-    },
-    {
-      date: "Tuesday July 30th",
-      times: ["8:00 am", "8:30 am", "4:30 pm"],
-    },
-    {
-      date: "Thursday August 1st",
-      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
-    },
-  ];
 
   return (
     <Modal
