@@ -243,7 +243,6 @@ function Evans() {
           appointmentType="Dental Eval"
           availableDates={[
             "Select Date",
-            "Thursday July 18th",
             "Tuesday July 23rd",
             "Wednesday July 24th",
             "Tuesday July 30th",
@@ -251,7 +250,6 @@ function Evans() {
           ]}
           availableTimes={[
             { date: "Select Date", times: [] },
-            { date: "Tuesday July 18th", times: ["4:00 pm"] },
             {
               date: "Tuesday July 23rd",
               times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
