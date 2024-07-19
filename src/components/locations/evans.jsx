@@ -262,7 +262,7 @@ function Evans() {
             },
             {
               date: "Thursday August 1st",
-              times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+              times: ["8:30 am", "4:00 pm", "4:30 pm"],
             },
             {
               date: "Tuesday August 6th",
