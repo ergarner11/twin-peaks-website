@@ -247,12 +247,15 @@ function Evans() {
             "Wednesday July 24th",
             "Tuesday July 30th",
             "Thursday August 1st",
+            "Tuesday August 6th",
+            "Wednesday August 7th",
+            "Friday August 9th",
           ]}
           availableTimes={[
             { date: "Select Date", times: [] },
             {
               date: "Tuesday July 23rd",
-              times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+              times: ["8:00 am", "4:00 pm", "4:30 pm"],
             },
             {
               date: "Wednesday July 24th",
@@ -265,6 +268,18 @@ function Evans() {
             {
               date: "Thursday August 1st",
               times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+            },
+            {
+              date: "Tuesday August 6th",
+              times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+            },
+            {
+              date: "Wednesday August 7th",
+              times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+            },
+            {
+              date: "Friday August 9th",
+              times: ["8:30 am", "4:00 pm", "4:30 pm"],
             },
           ]}
           handleClose={() => setShowDentalAppointmentModal(false)}
