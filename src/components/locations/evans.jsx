@@ -254,7 +254,7 @@ function Evans() {
             { date: "Select Date", times: [] },
             {
               date: "Wednesday July 24th",
-              times: ["8:00 am", "4:00 pm", "4:30 pm"],
+              times: ["4:00 pm", "4:30 pm"],
             },
             {
               date: "Tuesday July 30th",
