@@ -258,7 +258,7 @@ function Evans() {
             },
             {
               date: "Tuesday July 30th",
-              times: ["8:00 am", "8:30 am", "4:30 pm"],
+              times: ["8:30 am", "4:30 pm"],
             },
             {
               date: "Thursday August 1st",
