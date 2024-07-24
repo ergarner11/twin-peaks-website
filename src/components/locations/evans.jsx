@@ -120,17 +120,6 @@ function Evans() {
     </React.Fragment>
   );
 
-  const promo = (
-    <div
-      className="content-container p-4"
-      style={{ backgroundColor: "#efce97" }}
-    >
-      <h2 className="roboto">
-        Grand Opening Promotion: $500 off any dental procedure!
-      </h2>
-    </div>
-  );
-
   const introContent = (
     <div className="content-container intro">
       <div className="content-block">
@@ -234,7 +223,6 @@ function Evans() {
       description="We are a locally-owned, innovative veterinary clinic focused on dental and other surgical procedures for dogs and cats"
     >
       {contactInfo}
-      {promo}
       {introContent}
       {pricing}
       {googleMap}
