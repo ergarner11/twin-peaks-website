@@ -257,7 +257,7 @@ function Evans() {
             },
             {
               date: "Friday August 9th",
-              times: ["8:30 am", "4:00 pm", "4:30 pm"],
+              times: ["4:00 pm", "4:30 pm"],
             },
           ]}
           handleClose={() => setShowDentalAppointmentModal(false)}
