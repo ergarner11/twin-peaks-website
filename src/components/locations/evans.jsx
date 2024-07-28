@@ -155,8 +155,8 @@ function Evans() {
           However...
         </p>
         <ul className="ms-5">
-          <li>Our dental procedures start at $480</li>
-          <li>More than 50% of our procedures cost less than $1,000</li>
+          <li>Our dental procedures start at $500</li>
+          <li>More than 50% of our procedures cost $800 or less</li>
           <li>
             Only 5% of procedures cost more than $1,500, and no procedure costs
             more than $2,000
