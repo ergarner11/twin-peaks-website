@@ -149,7 +149,12 @@ function Evans() {
           </li>
         </ul>
 
-        <h2 className="mt-5 mb-2">Dental Services</h2>
+        <div className="d-flex align-items-center mt-5 mb-2">
+          <h2 className="me-3">Dental Services</h2>
+          <h3 className="font-18">
+            (Teeth cleaning, Dental X-Ray, Extractions, Gingivectomy, etc.)
+          </h3>
+        </div>
         <p>
           We can't give an exact flat-rate quote without a dental evaluation.
           However...
@@ -245,7 +250,7 @@ function Evans() {
             },
             {
               date: "Thursday August 1st",
-              times: ["8:30 am", "4:00 pm", "4:30 pm"],
+              times: ["4:30 pm"],
             },
             {
               date: "Tuesday August 6th",
@@ -268,18 +273,14 @@ function Evans() {
           appointmentType="Spay/Neuter"
           availableDates={[
             "Select Date",
-            "Monday July 29th",
             "Tuesday July 30th",
-            "Thursday August 1st",
             "Tuesday August 6th",
             "Wednesday August 7th",
             "Thursday August 9th",
           ]}
           availableTimes={[
             { date: "Select Date", times: [] },
-            { date: "Monday July 29th", times: ["7:30 am"] },
             { date: "Tuesday July 30th", times: ["7:30 am"] },
-            { date: "Thursday August 1st", times: ["7:30 am"] },
             { date: "Tuesday August 6th", times: ["7:45 am"] },
             { date: "Wednesday August 7th", times: ["7:30 am"] },
             { date: "Thursday August 9th", times: ["7:30 am"] },
