@@ -21,6 +21,8 @@ import "../../styles/components/locations.scss";
 function Evans() {
   const [showDentalAppointmentModal, setShowDentalAppointmentModal] =
     useState(false);
+  const [showConsultAppointmentModal, setShowConsultAppointmentModal] =
+    useState(false);
   const [showSpayNeuterAppointmentModal, setShowSpayNeuterAppointmentModal] =
     useState(false);
   const [showContactUsModal, setShowContactUsModal] = useState(false);
@@ -61,13 +63,6 @@ function Evans() {
         <p>Monday - Friday: 8am - 5pm</p>
         <p>Saturday: Closed</p>
         <p>Sunday: Closed</p>
-        <button
-          className="btn-filled-primary font-18 mt-3"
-          style={{ width: "250px" }}
-          onClick={() => setShowContactUsModal(true)}
-        >
-          Contact Us
-        </button>
       </div>
     </div>
   );
@@ -168,11 +163,62 @@ function Evans() {
           </li>
         </ul>
         <button
-          className="btn-filled-primary font-18 my-4"
+          className="btn-filled-primary font-18 mt-5 mb-4"
           style={{ width: "250px" }}
           onClick={() => setShowDentalAppointmentModal(true)}
         >
           Schedule Free Evaluation
+        </button>
+
+        <h2 className="mt-4 mb-2">Other Surgical Procedures</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td>Abdominal Explore/Foreign Body Removal</td>
+              <td>$3,500</td>
+            </tr>
+            <tr>
+              <td>Cystotomy (bladder stones)</td>
+              <td>$1,800</td>
+            </tr>
+            <tr>
+              <td>Limb Amputation</td>
+              <td>$1,500</td>
+            </tr>
+            <tr>
+              <td>Tail Amputation</td>
+              <td>$900</td>
+            </tr>
+            <tr>
+              <td>Enucleation</td>
+              <td>$1,200</td>
+            </tr>
+            <tr>
+              <td>Gastropexy (prophylactic)</td>
+              <td>$800</td>
+            </tr>
+            <tr>
+              <td>Gastropexy + Spay/Neuter</td>
+              <td>$1,000</td>
+            </tr>
+            <tr>
+              <td>Vulvoplasty</td>
+              <td>$1,500</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p className="my-4">
+          Other surgical procedures require a doctor to determine price.
+          Schedule a free consult to know exactly what you will pay.
+        </p>
+
+        <button
+          className="btn-filled-primary font-18 my-4"
+          style={{ width: "250px" }}
+          onClick={() => setShowConsultAppointmentModal(true)}
+        >
+          Schedule Free Consult
         </button>
 
         <h2 className="mt-4 mb-2">Spay & Neuter Surgery</h2>
@@ -186,16 +232,6 @@ function Evans() {
         >
           Schedule Spay/Neuter
         </button>
-
-        <h2 className="mt-4 mb-2">Abdominal Explore/Foreign Body Removal</h2>
-        <ul className="ms-5">
-          <li>$3,900</li>
-        </ul>
-
-        <h2 className="mt-4 mb-2">Other General Anesthesia Procedures</h2>
-        <ul className="ms-5">
-          <li>Call for custom flat-rate quote</li>
-        </ul>
 
         <h1 className="header mt-5">Payment Plans</h1>
         <p className="mt-3">
@@ -219,6 +255,44 @@ function Evans() {
     </div>
   );
 
+  const consultDates = [
+    "Select Date",
+    "Tuesday August 6th",
+    "Wednesday August 7th",
+    "Friday August 9th",
+    "Wednesday August 14th",
+    "Friday August 16th",
+    "Monday August 19th",
+  ];
+
+  const consultTimes = [
+    { date: "Select Date", times: [] },
+    {
+      date: "Tuesday August 6th",
+      times: ["8:30 am", "4:00 pm", "4:30 pm"],
+    },
+    {
+      date: "Wednesday August 7th",
+      times: ["8:30 am", "4:00 pm", "4:30 pm"],
+    },
+    {
+      date: "Friday August 9th",
+      times: ["4:00 pm", "4:30 pm"],
+    },
+    {
+      date: "Wednesday August 14th",
+      times: ["8:00 am", "4:00 pm", "4:30 pm"],
+    },
+    {
+      date: "Friday August 16th",
+      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+    },
+    {
+      date: "Monday August 19th",
+      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
+    },
+  ];
+
   return (
     <Page
       selectedTab="locations"
@@ -234,6 +308,22 @@ function Evans() {
       {showDentalAppointmentModal && (
         <RequestAppointmentModal
           appointmentType="Dental Eval"
+          availableDates={consultDates}
+          availableTimes={consultTimes}
+          handleClose={() => setShowDentalAppointmentModal(false)}
+        />
+      )}
+      {showConsultAppointmentModal && (
+        <RequestAppointmentModal
+          appointmentType="Surgical Consult"
+          availableDates={consultDates}
+          availableTimes={consultTimes}
+          handleClose={() => setShowConsultAppointmentModal(false)}
+        />
+      )}
+      {showSpayNeuterAppointmentModal && (
+        <RequestAppointmentModal
+          appointmentType="Spay/Neuter"
           availableDates={[
             "Select Date",
             "Tuesday August 6th",
@@ -244,42 +334,7 @@ function Evans() {
           ]}
           availableTimes={[
             { date: "Select Date", times: [] },
-            {
-              date: "Tuesday August 6th",
-              times: ["8:30 am", "4:00 pm", "4:30 pm"],
-            },
-            {
-              date: "Wednesday August 7th",
-              times: ["8:30 am", "4:00 pm", "4:30 pm"],
-            },
-            {
-              date: "Friday August 9th",
-              times: ["4:00 pm", "4:30 pm"],
-            },
-            {
-              date: "Wednesday August 14th",
-              times: ["8:00 am", "4:00 pm", "4:30 pm"],
-            },
-            {
-              date: "Friday August 16th",
-              times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
-            },
-          ]}
-          handleClose={() => setShowDentalAppointmentModal(false)}
-        />
-      )}
-      {showSpayNeuterAppointmentModal && (
-        <RequestAppointmentModal
-          appointmentType="Spay/Neuter"
-          availableDates={[
-            "Select Date",
-            "Wednesday August 7th",
-            "Friday August 9th",
-            "Wednesday August 14th",
-            "Friday August 16th",
-          ]}
-          availableTimes={[
-            { date: "Select Date", times: [] },
+            { date: "Tuesday August 6th", times: ["7:45 am"] },
             { date: "Wednesday August 7th", times: ["7:45 am"] },
             { date: "Friday August 9th", times: ["7:30 am"] },
             { date: "Wednesday August 14th", times: ["7:45 am"] },
