@@ -63,6 +63,8 @@ function Evans() {
         <p>Monday - Friday: 8am - 5pm</p>
         <p>Saturday: Closed</p>
         <p>Sunday: Closed</p>
+        <br />
+        <p>Sept. 2nd (Labor Day): Closed</p>
       </div>
     </div>
   );
