@@ -144,12 +144,21 @@ function Evans() {
           </li>
         </ul>
 
-        <div className="d-flex align-items-center mt-5 mb-2">
-          <h2 className="me-3">Dental Services</h2>
-          <h3 className="font-18">
+        <Mobile>
+          <h2 className="mt-5 me-3">Dental Services</h2>
+          <h3 className="my-3 font-18">
             (Teeth cleaning, Dental X-Ray, Extractions, Gingivectomy, etc.)
           </h3>
-        </div>
+        </Mobile>
+
+        <NotMobile>
+          <div className="d-flex align-items-center mt-5 mb-2">
+            <h2 className="me-3">Dental Services</h2>
+            <h3 className="font-18">
+              (Teeth cleaning, Dental X-Ray, Extractions, Gingivectomy, etc.)
+            </h3>
+          </div>
+        </NotMobile>
         <p>
           We can't give an exact flat-rate quote without a dental evaluation.
           However...
@@ -174,7 +183,9 @@ function Evans() {
         <table>
           <tbody>
             <tr>
-              <td>Abdominal Explore/Foreign Body Removal</td>
+              <td style={{ width: "400px" }}>
+                Abdominal Explore/Foreign Body Removal
+              </td>
               <td>$3,500</td>
             </tr>
             <tr>
@@ -190,11 +201,11 @@ function Evans() {
               <td>$900</td>
             </tr>
             <tr>
-              <td>Enucleation</td>
+              <td>Eye Enucleation</td>
               <td>$1,200</td>
             </tr>
             <tr>
-              <td>Gastropexy (prophylactic)</td>
+              <td>Gastropexy</td>
               <td>$800</td>
             </tr>
             <tr>
@@ -208,7 +219,7 @@ function Evans() {
           </tbody>
         </table>
 
-        <p className="my-4">
+        <p className="my-4 font-18">
           Other surgical procedures require a doctor to determine price.
           Schedule a free consult to know exactly what you will pay.
         </p>
