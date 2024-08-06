@@ -270,7 +270,6 @@ function Evans() {
 
   const consultDates = [
     "Select Date",
-    "Tuesday August 6th",
     "Wednesday August 7th",
     "Friday August 9th",
     "Wednesday August 14th",
@@ -280,10 +279,6 @@ function Evans() {
 
   const consultTimes = [
     { date: "Select Date", times: [] },
-    {
-      date: "Tuesday August 6th",
-      times: ["8:30 am", "4:00 pm", "4:30 pm"],
-    },
     {
       date: "Wednesday August 7th",
       times: ["8:30 am", "4:00 pm", "4:30 pm"],
@@ -339,7 +334,6 @@ function Evans() {
           appointmentType="Spay/Neuter"
           availableDates={[
             "Select Date",
-            "Tuesday August 6th",
             "Wednesday August 7th",
             "Friday August 9th",
             "Wednesday August 14th",
@@ -347,7 +341,6 @@ function Evans() {
           ]}
           availableTimes={[
             { date: "Select Date", times: [] },
-            { date: "Tuesday August 6th", times: ["7:45 am"] },
             { date: "Wednesday August 7th", times: ["7:45 am"] },
             { date: "Friday August 9th", times: ["7:30 am"] },
             { date: "Wednesday August 14th", times: ["7:45 am"] },
