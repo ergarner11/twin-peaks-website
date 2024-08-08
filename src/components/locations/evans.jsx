@@ -272,7 +272,6 @@ function Evans() {
     "Select Date",
     "Friday August 9th",
     "Tuesday August 13th",
-    "Wednesday August 14th",
     "Friday August 16th",
     "Monday August 19th",
   ];
@@ -286,10 +285,6 @@ function Evans() {
     {
       date: "Tuesday August 13th",
       times: ["8:00 am", "8:30 am", "4:30 pm"],
-    },
-    {
-      date: "Wednesday August 14th",
-      times: ["4:00 pm", "4:30 pm"],
     },
     {
       date: "Friday August 16th",
