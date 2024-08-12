@@ -335,15 +335,11 @@ function Evans() {
           availableDates={[
             "Select Date",
             "Wednesday August 14th",
-            "Friday August 16th",
-            "Monday August 19th",
             "Thursday August 22nd",
           ]}
           availableTimes={[
             { date: "Select Date", times: [] },
             { date: "Wednesday August 14th", times: ["7:45 am"] },
-            { date: "Friday August 16th", times: ["7:45 am"] },
-            { date: "Monday August 19th", times: ["7:30 am"] },
             { date: "Monday August 22nd", times: ["7:30 am"] },
           ]}
           handleClose={() => setShowSpayNeuterAppointmentModal(false)}
