@@ -274,6 +274,8 @@ function Evans() {
     "Friday August 16th",
     "Monday August 19th",
     "Thursday August 22nd",
+    "Tuesday August 27th",
+    "Friday August 30th",
   ];
 
   const consultTimes = [
@@ -292,6 +294,14 @@ function Evans() {
     },
     {
       date: "Thursday August 22nd",
+      times: ["8:00 am", "8:30 am", "4:00 pm"],
+    },
+    {
+      date: "Tuesday August 27th",
+      times: ["8:30 am", "4:00 pm", "4:30 pm"],
+    },
+    {
+      date: "Friday August 30th",
       times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
     },
   ];
@@ -329,13 +339,15 @@ function Evans() {
           appointmentType="Spay/Neuter"
           availableDates={[
             "Select Date",
-            "Wednesday August 14th",
             "Thursday August 22nd",
+            "Tuesday August 27th",
+            "Friday August 30th",
           ]}
           availableTimes={[
             { date: "Select Date", times: [] },
-            { date: "Wednesday August 14th", times: ["7:45 am"] },
             { date: "Monday August 22nd", times: ["7:30 am"] },
+            { date: "Tuesday August 27th", times: ["7:30 am"] },
+            { date: "Friday August 30th", times: ["7:30 am"] },
           ]}
           handleClose={() => setShowSpayNeuterAppointmentModal(false)}
         />
