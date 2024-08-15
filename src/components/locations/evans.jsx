@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactGA4 from "react-ga4";
 import Modal from "react-bootstrap/Modal";
+import moment from "moment-timezone";
 
 import http from "../../services/httpService";
 
@@ -23,8 +24,8 @@ function Evans() {
     useState(false);
   const [showConsultAppointmentModal, setShowConsultAppointmentModal] =
     useState(false);
-  const [showSpayNeuterAppointmentModal, setShowSpayNeuterAppointmentModal] =
-    useState(false);
+  /*const [showSpayNeuterAppointmentModal, setShowSpayNeuterAppointmentModal] =
+    useState(false);*/
   const [showContactUsModal, setShowContactUsModal] = useState(false);
 
   useEffect(() => {
@@ -185,14 +186,16 @@ function Evans() {
         <table>
           <tbody>
             <tr>
-              <td style={{ width: "400px" }}>
-                Abdominal Explore/Foreign Body Removal
-              </td>
-              <td>$3,500</td>
+              <td style={{ width: "400px" }}>Spay/Neuter</td>
+              <td>$480</td>
             </tr>
             <tr>
               <td>Cystotomy (bladder stones)</td>
               <td>$1,800</td>
+            </tr>
+            <tr>
+              <td>Abdominal Explore/Foreign Body Removal</td>
+              <td>$3,500</td>
             </tr>
             <tr>
               <td>Limb Amputation</td>
@@ -234,7 +237,7 @@ function Evans() {
           Schedule Free Consult
         </button>
 
-        <h2 className="mt-4 mb-2">Spay & Neuter Surgery</h2>
+        {/*<h2 className="mt-4 mb-2">Spay & Neuter Surgery</h2>
         <ul className="ms-5">
           <li>$480</li>
         </ul>
@@ -244,7 +247,7 @@ function Evans() {
           onClick={() => setShowSpayNeuterAppointmentModal(true)}
         >
           Schedule Spay/Neuter
-        </button>
+        </button>*/}
 
         <h1 className="header mt-5">Payment Plans</h1>
         <p className="mt-3">
@@ -268,34 +271,6 @@ function Evans() {
     </div>
   );
 
-  const consultDates = [
-    "Select Date",
-    "Monday August 19th",
-    "Thursday August 22nd",
-    "Tuesday August 27th",
-    "Friday August 30th",
-  ];
-
-  const consultTimes = [
-    { date: "Select Date", times: [] },
-    {
-      date: "Monday August 19th",
-      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
-    },
-    {
-      date: "Thursday August 22nd",
-      times: ["8:00 am", "8:30 am"],
-    },
-    {
-      date: "Tuesday August 27th",
-      times: ["8:30 am", "4:00 pm"],
-    },
-    {
-      date: "Friday August 30th",
-      times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
-    },
-  ];
-
   return (
     <Page
       selectedTab="locations"
@@ -311,20 +286,16 @@ function Evans() {
       {showDentalAppointmentModal && (
         <RequestAppointmentModal
           appointmentType="Dental Eval"
-          availableDates={consultDates}
-          availableTimes={consultTimes}
           handleClose={() => setShowDentalAppointmentModal(false)}
         />
       )}
       {showConsultAppointmentModal && (
         <RequestAppointmentModal
           appointmentType="Surgical Consult"
-          availableDates={consultDates}
-          availableTimes={consultTimes}
           handleClose={() => setShowConsultAppointmentModal(false)}
         />
       )}
-      {showSpayNeuterAppointmentModal && (
+      {/*showSpayNeuterAppointmentModal && (
         <RequestAppointmentModal
           appointmentType="Spay/Neuter"
           availableDates={[
@@ -341,7 +312,7 @@ function Evans() {
           ]}
           handleClose={() => setShowSpayNeuterAppointmentModal(false)}
         />
-      )}
+      )*/}
       {showContactUsModal && (
         <ContactUsModal handleClose={() => setShowContactUsModal(false)} />
       )}
@@ -349,12 +320,10 @@ function Evans() {
   );
 }
 
-function RequestAppointmentModal({
-  appointmentType,
-  availableDates,
-  availableTimes,
-  handleClose,
-}) {
+function RequestAppointmentModal({ appointmentType, handleClose }) {
+  const [availableDates, setAvailableDates] = useState([]);
+  const [availableTimes, setAvailableTimes] = useState([]);
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -365,6 +334,44 @@ function RequestAppointmentModal({
 
   const [requestSubmitted, setRequestSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState();
+
+  useEffect(() => {
+    const getConsultAvailability = async () => {
+      try {
+        const response = await http.get("/appointment/getConsultAvailability");
+        const consultAvailability = response.data;
+
+        const availableDates = ["Select Date"];
+        const availableTimes = [{ date: "Select Time", times: [] }];
+
+        for (const block of consultAvailability) {
+          const dateString = moment
+            .tz(block.start, "America/Denver")
+            .format("dddd MMMM Do");
+
+          if (!availableDates.includes(dateString)) {
+            availableDates.push(dateString);
+          }
+
+          if (!availableTimes.find((t) => t.date === dateString)) {
+            availableTimes.push({ date: dateString, times: [] });
+          }
+
+          availableTimes
+            .find((t) => t.date === dateString)
+            .times.push(
+              moment.tz(block.start, "America/Denver").format("hh:mm a")
+            );
+        }
+
+        setAvailableDates(availableDates);
+        setAvailableTimes(availableTimes);
+      } catch (error) {
+        setErrorMessage(error.response.data.message);
+      }
+    };
+    getConsultAvailability();
+  }, []);
 
   const handleSubmit = async () => {
     try {
