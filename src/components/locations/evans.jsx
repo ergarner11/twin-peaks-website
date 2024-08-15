@@ -270,7 +270,6 @@ function Evans() {
 
   const consultDates = [
     "Select Date",
-    "Friday August 16th",
     "Monday August 19th",
     "Thursday August 22nd",
     "Tuesday August 27th",
@@ -279,10 +278,6 @@ function Evans() {
 
   const consultTimes = [
     { date: "Select Date", times: [] },
-    {
-      date: "Friday August 16th",
-      times: ["4:30 pm"],
-    },
     {
       date: "Monday August 19th",
       times: ["8:00 am", "8:30 am", "4:00 pm", "4:30 pm"],
