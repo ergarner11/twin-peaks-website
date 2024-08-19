@@ -177,7 +177,12 @@ function Evans() {
         <button
           className="btn-filled-primary font-18 mt-5 mb-4"
           style={{ width: "250px" }}
-          onClick={() => setShowDentalAppointmentModal(true)}
+          onClick={() => {
+            setShowDentalAppointmentModal(true);
+            if (process.env.NODE_ENV === "production") {
+              ReactGA4.event("schedule_dental_eval_clicked");
+            }
+          }}
         >
           Schedule Free Evaluation
         </button>
@@ -232,7 +237,12 @@ function Evans() {
         <button
           className="btn-filled-primary font-18 my-4"
           style={{ width: "250px" }}
-          onClick={() => setShowConsultAppointmentModal(true)}
+          onClick={() => {
+            setShowConsultAppointmentModal(true);
+            if (process.env.NODE_ENV === "production") {
+              ReactGA4.event("schedule_consult_clicked");
+            }
+          }}
         >
           Schedule Free Consult
         </button>
@@ -490,6 +500,9 @@ function RequestAppointmentModal({ appointmentType, handleClose }) {
               className="mt-4 btn-filled-primary align-self-center"
               onClick={(e) => {
                 e.preventDefault();
+                if (process.env.NODE_ENV === "production") {
+                  ReactGA4.event("appointment_request_submitted");
+                }
                 handleSubmit();
               }}
             >
