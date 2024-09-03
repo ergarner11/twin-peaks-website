@@ -48,8 +48,6 @@ function Loveland() {
         <p>Monday - Friday: 8am - 6pm</p>
         <p>Saturday: 8am - 5pm</p>
         <p>Sunday: Closed</p>
-        <br />
-        <p>Sept. 2nd (Labor Day): Closed</p>
       </div>
     </div>
   );
