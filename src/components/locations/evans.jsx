@@ -184,7 +184,11 @@ function Evans() {
         <table>
           <tbody>
             <tr>
-              <td style={{ width: "400px" }}>Spay/Neuter</td>
+              <td style={{ width: "400px" }}>Spay</td>
+              <td>$480</td>
+            </tr>
+            <tr>
+              <td style={{ width: "400px" }}>Neuter</td>
               <td>$480</td>
             </tr>
             <tr>
