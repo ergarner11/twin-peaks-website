@@ -152,20 +152,19 @@ function Evans() {
               <td style={{ width: "400px" }}>Dental Cleaning</td>
               <td>$400</td>
             </tr>
+            <tr>
+              <td style={{ width: "400px" }}>
+                Dental Cleaning + Additional Services <br />
+                (extractions, oral surgery, etc.)
+              </td>
+              <td>$500 - $2,000</td>
+            </tr>
           </tbody>
         </table>
-        <p className="mt-4">
-          We'll need a dental evaluation before we can give an exact flat-rate
-          quote for other dental services (extractions, gingivectomy, etc.).
-          However...
-        </p>
         <ul className="ms-5">
-          <li>Our dental procedures start at $500</li>
-          <li>More than 50% of our procedures cost $800 or less</li>
-          <li>
-            Only 5% of procedures cost more than $1,500, and no procedure costs
-            more than $2,000
-          </li>
+          <li>Exact quote after dental evaluation</li>
+          <li>More than 50% cost $800 or less</li>
+          <li>Only 5% cost more than $1,500</li>
         </ul>
         <button
           className="btn-filled-primary font-18 mt-5 mb-4"
