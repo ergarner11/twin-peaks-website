@@ -86,7 +86,7 @@ function Evans() {
       <NotMobile>
         <div className="d-flex justify-content-center background-white">
           <div
-            className="d-flex justify-content-between flex-grow-1 px-4 py-5"
+            className="d-flex justify-content-between flex-grow-1 p-4"
             style={{ maxWidth: "1024px" }}
           >
             <img
@@ -145,23 +145,18 @@ function Evans() {
           </li>
         </ul>
 
-        <Mobile>
-          <h2 className="mt-5 me-3">Dental Services</h2>
-          <h3 className="my-3 font-18">
-            (Teeth cleaning, Dental X-Ray, Extractions, Gingivectomy, etc.)
-          </h3>
-        </Mobile>
-
-        <NotMobile>
-          <div className="d-flex align-items-center mt-5 mb-2">
-            <h2 className="me-3">Dental Services</h2>
-            <h3 className="font-18">
-              (Teeth cleaning, Dental X-Ray, Extractions, Gingivectomy, etc.)
-            </h3>
-          </div>
-        </NotMobile>
-        <p>
-          We can't give an exact flat-rate quote without a dental evaluation.
+        <h2 className="mt-5 mb-3">Dental Services</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td style={{ width: "400px" }}>Dental Cleaning</td>
+              <td>$400</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="mt-4">
+          We'll need a dental evaluation before we can give an exact flat-rate
+          quote for other dental services (extractions, gingivectomy, etc.).
           However...
         </p>
         <ul className="ms-5">
