@@ -157,15 +157,10 @@ function Evans() {
                 Dental Cleaning + Additional Services <br />
                 (extractions, oral surgery, etc.)
               </td>
-              <td>$500 - $2,000</td>
+              <td>Free Quote</td>
             </tr>
           </tbody>
         </table>
-        <ul className="ms-5">
-          <li>Exact quote after dental evaluation</li>
-          <li>More than 50% cost $800 or less</li>
-          <li>Only 5% cost more than $1,500</li>
-        </ul>
         <button
           className="btn-filled-primary font-18 mt-5 mb-4"
           style={{ width: "250px" }}
@@ -192,15 +187,15 @@ function Evans() {
             </tr>
             <tr>
               <td>Cystotomy (bladder stones)</td>
-              <td>$1,800</td>
+              <td>$1,200</td>
             </tr>
             <tr>
               <td>Abdominal Explore/Foreign Body Removal</td>
-              <td>$3,500</td>
+              <td>$1,900</td>
             </tr>
             <tr>
               <td>Limb Amputation</td>
-              <td>$1,500</td>
+              <td>$1,000</td>
             </tr>
             <tr>
               <td>Tail Amputation</td>
@@ -208,7 +203,7 @@ function Evans() {
             </tr>
             <tr>
               <td>Eye Enucleation</td>
-              <td>$1,200</td>
+              <td>$1,000</td>
             </tr>
             <tr>
               <td>Gastropexy</td>
@@ -219,18 +214,16 @@ function Evans() {
               <td>$1,000</td>
             </tr>
             <tr>
-              <td>Vulvoplasty</td>
-              <td>$1,500</td>
+              <td>Other</td>
+              <td>Free Quote</td>
             </tr>
           </tbody>
         </table>
 
-        <p className="my-4 font-18">
-          Other surgical procedures require a doctor to determine price.
-          Schedule a free consult to know exactly what you will pay.
-        </p>
+        <p className="mt-4 mb-2 font-20 bold">Call now to schedule</p>
+        {phone}
 
-        <button
+        {/*<button
           className="btn-filled-primary font-18 my-4"
           style={{ width: "250px" }}
           onClick={() => {
@@ -241,7 +234,7 @@ function Evans() {
           }}
         >
           Schedule Free Consult
-        </button>
+        </button>*/}
 
         {/*<h2 className="mt-4 mb-2">Spay & Neuter Surgery</h2>
         <ul className="ms-5">
