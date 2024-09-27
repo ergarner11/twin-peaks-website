@@ -337,7 +337,7 @@ function RequestAppointmentModal({ appointmentType, handleClose }) {
   useEffect(() => {
     const getConsultAvailability = async () => {
       try {
-        const response = await http.get("/appointment/getConsultAvailability");
+        const response = await http.get("/getConsultAvailability");
         const consultAvailability = response.data;
 
         const availableDates = ["Select Date"];
