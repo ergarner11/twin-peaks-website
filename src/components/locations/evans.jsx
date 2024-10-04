@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ReactGA4 from "react-ga4";
 import Modal from "react-bootstrap/Modal";
-import moment from "moment-timezone";
 
 import http from "../../services/httpService";
 
 import logo from "../../assets/logo-twin-peaks-dental-surgery-dark.png";
 
 import Input from "../common/input";
-import InputSelect from "../common/inputSelect";
 import InputTextarea from "../common/inputTextarea";
 import Page from "../common/page";
 import { Desktop, Tablet, Mobile, NotMobile } from "../common/responsive";
@@ -20,13 +19,11 @@ import { ReactComponent as PhoneIcon } from "../../assets/phone.svg";
 import "../../styles/components/locations.scss";
 
 function Evans() {
-  const [showDentalAppointmentModal, setShowDentalAppointmentModal] =
-    useState(false);
-  const [showConsultAppointmentModal, setShowConsultAppointmentModal] =
-    useState(false);
   /*const [showSpayNeuterAppointmentModal, setShowSpayNeuterAppointmentModal] =
     useState(false);*/
   const [showContactUsModal, setShowContactUsModal] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
@@ -162,14 +159,10 @@ function Evans() {
           </tbody>
         </table>
         <button
+          to="/dental-eval-request"
           className="btn-filled-primary font-18 mt-5 mb-4"
           style={{ width: "250px" }}
-          onClick={() => {
-            setShowDentalAppointmentModal(true);
-            if (process.env.NODE_ENV === "production") {
-              ReactGA4.event("schedule_dental_eval_clicked");
-            }
-          }}
+          onClick={() => navigate("/dental-eval-request")}
         >
           Schedule Free Evaluation
         </button>
@@ -282,18 +275,6 @@ function Evans() {
       {introContent}
       {pricing}
       {googleMap}
-      {showDentalAppointmentModal && (
-        <RequestAppointmentModal
-          appointmentType="Dental Eval"
-          handleClose={() => setShowDentalAppointmentModal(false)}
-        />
-      )}
-      {showConsultAppointmentModal && (
-        <RequestAppointmentModal
-          appointmentType="Surgical Consult"
-          handleClose={() => setShowConsultAppointmentModal(false)}
-        />
-      )}
       {/*showSpayNeuterAppointmentModal && (
         <RequestAppointmentModal
           appointmentType="Spay/Neuter"
@@ -316,191 +297,6 @@ function Evans() {
         <ContactUsModal handleClose={() => setShowContactUsModal(false)} />
       )}
     </Page>
-  );
-}
-
-function RequestAppointmentModal({ appointmentType, handleClose }) {
-  const [availableDates, setAvailableDates] = useState([]);
-  const [availableTimes, setAvailableTimes] = useState([]);
-
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [petName, setPetName] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-
-  const [requestSubmitted, setRequestSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState();
-
-  useEffect(() => {
-    const getConsultAvailability = async () => {
-      try {
-        const response = await http.get("/getConsultAvailability");
-        const consultAvailability = response.data;
-
-        const availableDates = ["Select Date"];
-        const availableTimes = [{ date: "Select Time", times: [] }];
-
-        for (const block of consultAvailability) {
-          const dateString = moment
-            .tz(block.start, "America/Denver")
-            .format("dddd MMMM Do");
-
-          if (!availableDates.includes(dateString)) {
-            availableDates.push(dateString);
-          }
-
-          if (!availableTimes.find((t) => t.date === dateString)) {
-            availableTimes.push({ date: dateString, times: [] });
-          }
-
-          availableTimes
-            .find((t) => t.date === dateString)
-            .times.push(
-              moment.tz(block.start, "America/Denver").format("hh:mm a")
-            );
-        }
-
-        setAvailableDates(availableDates);
-        setAvailableTimes(availableTimes);
-      } catch (error) {
-        setErrorMessage(error.response.data.message);
-      }
-    };
-    getConsultAvailability();
-  }, []);
-
-  const handleSubmit = async () => {
-    try {
-      setErrorMessage("");
-
-      await http.post(`/requestAppointment`, {
-        firstName,
-        lastName,
-        phone,
-        email,
-        petName,
-        appointmentType,
-        date,
-        time,
-      });
-
-      setRequestSubmitted(true);
-    } catch (error) {
-      setErrorMessage(error.response.data.message);
-      setRequestSubmitted(false);
-    }
-  };
-
-  return (
-    <Modal
-      className="modal-auto-width"
-      show={true}
-      onHide={handleClose}
-      centered
-    >
-      <form>
-        {errorMessage && <p className="mb-3 sura error">{errorMessage}</p>}
-
-        {requestSubmitted && (
-          <React.Fragment>
-            <p className="input-width">
-              Your request has been submitted. We will be in touch shortly!
-            </p>
-            <button
-              className="mt-4 btn-filled-primary align-self-center"
-              onClick={(e) => {
-                e.preventDefault();
-                handleClose();
-              }}
-            >
-              Close
-            </button>
-          </React.Fragment>
-        )}
-
-        {!requestSubmitted && (
-          <React.Fragment>
-            <Input
-              name="firstName"
-              value={firstName}
-              label="First Name"
-              onChange={setFirstName}
-            />
-            <Input
-              name="lastName"
-              value={lastName}
-              label="Last Name"
-              onChange={setLastName}
-            />
-            <Input
-              name="phone"
-              value={phone}
-              label="Phone Number"
-              onChange={setPhone}
-            />
-            <Input
-              name="email"
-              type="email"
-              value={email}
-              label="Email"
-              onChange={setEmail}
-            />
-            <Input
-              name="petName"
-              value={petName}
-              label="Pet Name"
-              onChange={setPetName}
-            />
-            <InputSelect
-              name="date"
-              value={date}
-              label="Date"
-              optionConfig={availableDates}
-              rawOptions={true}
-              onChange={setDate}
-            />
-            {availableTimes
-              .filter((t) => t.date === date)
-              .map((t) =>
-                t.times.map((s, i) => (
-                  <div key={i} className="radio-line align-items-start mb-2">
-                    <input
-                      className="mt-1"
-                      type="radio"
-                      id={`time-${s}`}
-                      name="apptTime"
-                      checked={time === s}
-                      value={s}
-                      onChange={({ target }) => setTime(target.value)}
-                    />
-                    <label
-                      className="fw-bolder news-cycle font-16"
-                      htmlFor={`time-${s}`}
-                    >
-                      {s}
-                    </label>
-                  </div>
-                ))
-              )}
-            <button
-              className="mt-4 btn-filled-primary align-self-center"
-              onClick={(e) => {
-                e.preventDefault();
-                if (process.env.NODE_ENV === "production") {
-                  ReactGA4.event("appointment_request_submitted");
-                }
-                handleSubmit();
-              }}
-            >
-              Submit
-            </button>
-          </React.Fragment>
-        )}
-      </form>
-    </Modal>
   );
 }
 

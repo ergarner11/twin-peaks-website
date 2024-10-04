@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import AppointmentRequest from "./components/locations/appointmentRequest";
 import Evans from "./components/locations/evans";
 import Loveland from "./components/locations/loveland";
 
@@ -51,6 +52,28 @@ const App = () => {
         <Route exact path="/services/tplo-surgery" element={<TPLO />} />
         <Route exact path="/services/vaccines" element={<Vaccines />} />
         <Route exact path="/services/wellness" element={<Wellness />} />
+        <Route
+          exact
+          path="/dental-eval-request"
+          element={
+            <AppointmentRequest
+              appointmentType="Dental Eval"
+              headerText="Free Dental Evaluation"
+              analyticsEventName="dental_eval_request_submitted_website"
+            />
+          }
+        />
+        <Route
+          exact
+          path="/dental-eval-request/gv"
+          element={
+            <AppointmentRequest
+              appointmentType="Dental Eval"
+              headerText="Free Dental Evaluation"
+              analyticsEventName="dental_eval_request_submitted_genius_vets"
+            />
+          }
+        />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
