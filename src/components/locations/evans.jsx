@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import ReactGA4 from "react-ga4";
 import Modal from "react-bootstrap/Modal";
 
 import http from "../../services/httpService";
 
-import logo from "../../assets/logo-twin-peaks-dental-surgery-dark.png";
+import EvansBanner from "./evansBanner";
 
 import Input from "../common/input";
 import InputTextarea from "../common/inputTextarea";
 import Page from "../common/page";
-import { Desktop, Tablet, Mobile, NotMobile } from "../common/responsive";
 
-import { ReactComponent as ClockIcon } from "../../assets/clock.svg";
-import { ReactComponent as MapIcon } from "../../assets/map-marker-alt.svg";
 import { ReactComponent as PhoneIcon } from "../../assets/phone.svg";
 
 import "../../styles/components/locations.scss";
@@ -31,87 +28,6 @@ function Evans() {
       ReactGA4.send("pageview");
     }
   }, []);
-
-  const phone = (
-    <a href="tel: 970-836-1208">
-      <div className="phone">
-        <PhoneIcon />
-        <p>970-836-1208</p>
-      </div>
-    </a>
-  );
-
-  const address = (
-    <div
-      className="address"
-      onClick={() => window.open("https://maps.app.goo.gl/AfYri5c4xF97NAdZ7")}
-    >
-      <MapIcon />
-      <div>
-        <p>3629 23rd Avenue</p>
-        <p>Evans, CO 80620</p>
-      </div>
-    </div>
-  );
-
-  const hours = (
-    <div className="hours d-flex">
-      <ClockIcon className="me-3 mt-3" />
-      <div>
-        <p>Monday - Friday: 8am - 5pm</p>
-        <p>Saturday: Closed</p>
-        <p>Sunday: Closed</p>
-      </div>
-    </div>
-  );
-
-  const contactInfo = (
-    <React.Fragment>
-      <Mobile>
-        <div className="d-flex flex-column align-items-start background-white p-4">
-          <img
-            src={logo}
-            className="align-self-center mb-4"
-            height="150px"
-            alt="Twin Peaks Veterinary Dental & Surgery logo"
-          />
-          <div className="mb-4">{hours}</div>
-          <div className="mb-4">{phone}</div>
-          <div className="mb-4">{address}</div>
-        </div>
-      </Mobile>
-      <NotMobile>
-        <div className="d-flex justify-content-center background-white">
-          <div
-            className="d-flex justify-content-between flex-grow-1 p-4"
-            style={{ maxWidth: "1024px" }}
-          >
-            <img
-              src={logo}
-              height="150px"
-              alt="Twin Peaks Veterinary Dental & Surgery logo"
-            />
-            <Tablet>
-              <div className="d-flex flex-column justify-content-between">
-                {hours}
-                <div className="my-3">{phone}</div>
-                {address}
-              </div>
-            </Tablet>
-            <Desktop>
-              <div className="d-flex flex-column justify-content-around">
-                {hours}
-              </div>
-              <div className="d-flex flex-column justify-content-center">
-                {phone}
-                <div className="mt-3">{address}</div>
-              </div>
-            </Desktop>
-          </div>
-        </div>
-      </NotMobile>
-    </React.Fragment>
-  );
 
   const introContent = (
     <div className="content-container intro">
@@ -142,7 +58,9 @@ function Evans() {
           </li>
         </ul>
 
-        <h2 className="mt-5 mb-3">Dental Services</h2>
+        <Link to="/locations/evans/dental-services" className="hover-underline">
+          <h2 className="mt-5 mb-3">Dental Services</h2>
+        </Link>
         <table>
           <tbody>
             <tr>
@@ -214,7 +132,12 @@ function Evans() {
         </table>
 
         <p className="mt-4 mb-2 font-20 bold">Call now to schedule</p>
-        {phone}
+        <a href="tel: 970-836-1208">
+          <div className="phone">
+            <PhoneIcon />
+            <p>970-836-1208</p>
+          </div>
+        </a>
 
         {/*<button
           className="btn-filled-primary font-18 my-4"
@@ -271,7 +194,7 @@ function Evans() {
       title="Twin Peaks Veterinary Dental & Surgery | Evans, CO"
       description="We are a locally-owned, innovative veterinary clinic focused on dental and other surgical procedures for dogs and cats"
     >
-      {contactInfo}
+      <EvansBanner />
       {introContent}
       {pricing}
       {googleMap}

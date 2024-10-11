@@ -404,6 +404,13 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.hover-underline {
+  &:hover {
+    text-decoration: underline;
+    color: unset;
+  }
+}
+
 .badge {
   margin-right: -12px;
   position: relative;
