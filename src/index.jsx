@@ -6,6 +6,7 @@ import AppointmentRequest from "./components/locations/appointmentRequest";
 import Evans from "./components/locations/evans";
 import Loveland from "./components/locations/loveland";
 
+import CatDentalCare from "./components/locations/evans/services/catDentalCare";
 import DogDentalCare from "./components/locations/evans/services/dogDentalCare";
 
 import HealthPlans from "./components/healthPlans";
@@ -31,6 +32,11 @@ const App = () => {
     <Router>
       <Routes>
         <Route exact path="/locations/evans" element={<Evans />} />
+        <Route
+          exact
+          path="/locations/evans/services/cat-dental-care"
+          element={<CatDentalCare />}
+        />
         <Route
           exact
           path="/locations/evans/services/dog-dental-care"

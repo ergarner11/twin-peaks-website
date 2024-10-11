@@ -31,7 +31,7 @@ function DogDentalCare() {
         <h2 className="my-3 blue">Dental Services</h2>
         <ul>
           <li>
-            <span className="bold roboto">Dental cleaning</span>
+            <span className="bold roboto">Dental Cleaning</span>
           </li>
           <li>
             <span className="bold roboto">Tooth Extraction</span>
@@ -218,7 +218,7 @@ function DogDentalCare() {
     <Page
       selectedTab="locations"
       selectedLevel2="evans"
-      title="Dog Dental Services"
+      title="Dog Dental Care"
       description="Does your dog need dental care? Call today to schedule your free dental evalutation."
     >
       <div className="locations">
