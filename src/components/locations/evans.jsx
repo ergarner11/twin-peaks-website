@@ -188,7 +188,7 @@ function Evans() {
   const services = (
     <div className="content-container background-gray">
       <div className="content-block">
-        <h1 className="header">Services</h1>
+        <h1 className="header">Learn More</h1>
         <ul className="mt-4">
           <Link to="/locations/evans/services/cat-dental-care">
             <li className="btn-text-secondary font-18">Cat Dental Care</li>
@@ -225,7 +225,7 @@ function Evans() {
       <EvansBanner />
       {introContent}
       {pricing}
-      {services}
+      {/*services*/}
       {googleMap}
       {/*showSpayNeuterAppointmentModal && (
         <RequestAppointmentModal

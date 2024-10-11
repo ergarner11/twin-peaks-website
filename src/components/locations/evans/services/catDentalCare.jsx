@@ -36,7 +36,7 @@ function CatDentalCare() {
             <p className="my-2">
               Our skilled veterinary staff will remove tarter from each tooth
               and polish the enamel using specialized dental equipment. In
-              addition to removing exiting buildup, this also helps to prevent
+              addition to removing existing buildup, this also helps to prevent
               future buildup.
             </p>
           </li>
@@ -69,11 +69,10 @@ function CatDentalCare() {
         <h2 className="my-3 blue">Why Your Cat's Dental Health Matters</h2>
         <p>
           Dental diseases in cats are far more common than you might think.
-          Approximately 70% of cats develop some form of dental disease by the
-          time they're three years old. Without proper care, these problems can
-          lead to significant discomfort and systemic issues that can shorten
-          your cat's life. Ensuring your cat has clean teeth and healthy gums is
-          key to their long-term well-being.
+          Without proper care, these problems can lead to significant discomfort
+          and systemic issues that can shorten your cat's life. Ensuring your
+          cat has clean teeth and healthy gums is key to their long-term
+          well-being.
         </p>
       </section>
       <section>
@@ -83,7 +82,7 @@ function CatDentalCare() {
           also suffer from some conditions unique to felines. Below are the most
           common dental issues that affect cats:
         </p>
-        <ol>
+        <ul>
           <li>
             <span className="bold roboto">Periodontal Disease</span>
             <p className="my-2">
@@ -122,7 +121,7 @@ function CatDentalCare() {
               successful treatment of oral tumors.
             </p>
           </li>
-        </ol>
+        </ul>
       </section>
       <section>
         <h2 className="my-3 blue">Preventing Dental Disease in Cats</h2>
@@ -131,7 +130,7 @@ function CatDentalCare() {
           proactive approach. Here are the best ways to keep your cat's teeth
           clean and gums healthy.
         </p>
-        <ol>
+        <ul>
           <li>
             <span className="bold roboto">
               Regular Veterinary Dental Check-Ups
@@ -169,16 +168,10 @@ function CatDentalCare() {
               promote oral health.
             </p>
           </li>
-        </ol>
+        </ul>
       </section>
       <section>
-        <h2 className="my-3 blue">Final Thoughts on Cat Dental Health</h2>
-        <p>
-          Keeping your cat's teeth and gums healthy is key to their overall
-          well-being. Dental problems are common, but with routine care and
-          attention, you can prevent or treat most issues before they become
-          serious.
-        </p>
+        <h2 className="my-3 blue">What's Next?</h2>
         <p>Does your cat need a dental evaluation? We've got your back!</p>
         <Link to="/dental-eval-request">
           <button
