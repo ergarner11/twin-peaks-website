@@ -8,6 +8,7 @@ import Loveland from "./components/locations/loveland";
 
 import CatDentalCare from "./components/locations/evans/services/catDentalCare";
 import DogDentalCare from "./components/locations/evans/services/dogDentalCare";
+import DogForeignBody from "./components/locations/evans/services/dogForeignBody";
 
 import HealthPlans from "./components/healthPlans";
 import HealthPlanVideo from "./components/healthPlanVideo";
@@ -41,6 +42,11 @@ const App = () => {
           exact
           path="/locations/evans/services/dog-dental-care"
           element={<DogDentalCare />}
+        />
+        <Route
+          exact
+          path="/locations/evans/services/dog-foreign-body-surgery"
+          element={<DogForeignBody />}
         />
         <Route exact path="/locations/loveland" element={<Loveland />} />
         <Route exact path="/health-plans" element={<HealthPlans />} />
