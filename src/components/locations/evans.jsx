@@ -43,7 +43,7 @@ function Evans() {
   );
 
   const pricing = (
-    <div className="content-container evans-pricing">
+    <div id="pricing" className="content-container evans-pricing">
       <div className="content-block">
         <h1 className="header">Pricing</h1>
         <p className="mt-3">
@@ -58,9 +58,7 @@ function Evans() {
           </li>
         </ul>
 
-        <Link to="/locations/evans/dental-services" className="hover-underline">
-          <h2 className="mt-5 mb-3">Dental Services</h2>
-        </Link>
+        <h2 className="mt-5 mb-3">Dental Services</h2>
         <table>
           <tbody>
             <tr>
@@ -173,6 +171,19 @@ function Evans() {
     </div>
   );
 
+  const services = (
+    <div className="content-container background-gray">
+      <div className="content-block">
+        <h1 className="header">Services</h1>
+        <ul className="mt-4">
+          <Link to="/locations/evans/services/dog-dental-care">
+            <li className="btn-text-secondary font-18">Dog Dental Care</li>
+          </Link>
+        </ul>
+      </div>
+    </div>
+  );
+
   const googleMap = (
     <div style={{ lineHeight: "0" }}>
       <iframe
@@ -197,6 +208,7 @@ function Evans() {
       <EvansBanner />
       {introContent}
       {pricing}
+      {services}
       {googleMap}
       {/*showSpayNeuterAppointmentModal && (
         <RequestAppointmentModal

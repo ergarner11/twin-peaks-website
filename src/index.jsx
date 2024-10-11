@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppointmentRequest from "./components/locations/appointmentRequest";
 import Evans from "./components/locations/evans";
 import Loveland from "./components/locations/loveland";
-import DentalServices from "./components/locations/dentalServices";
+
+import DogDentalCare from "./components/locations/evans/services/dogDentalCare";
 
 import HealthPlans from "./components/healthPlans";
 import HealthPlanVideo from "./components/healthPlanVideo";
@@ -32,8 +33,8 @@ const App = () => {
         <Route exact path="/locations/evans" element={<Evans />} />
         <Route
           exact
-          path="/locations/evans/dental-services"
-          element={<DentalServices />}
+          path="/locations/evans/services/dog-dental-care"
+          element={<DogDentalCare />}
         />
         <Route exact path="/locations/loveland" element={<Loveland />} />
         <Route exact path="/health-plans" element={<HealthPlans />} />
