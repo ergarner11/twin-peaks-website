@@ -129,8 +129,8 @@ function DogForeignBody() {
     <Page
       selectedTab="locations"
       selectedLevel2="evans"
-      title="Dog Dental Care"
-      description="Does your dog need dental care? Call today to schedule your free dental evalutation."
+      title="Foreign Body Surgery - Dogs"
+      description="Learn about foreign body surgery (abdominal exploration) in dogs. If you believe your dog has an obstruction, call us immediately."
     >
       <div className="locations">
         <EvansBanner />
