@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ReactGA4 from "react-ga4";
 import Modal from "react-bootstrap/Modal";
 
@@ -19,8 +19,6 @@ function Evans() {
   /*const [showSpayNeuterAppointmentModal, setShowSpayNeuterAppointmentModal] =
     useState(false);*/
   const [showContactUsModal, setShowContactUsModal] = useState(false);
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
@@ -74,14 +72,30 @@ function Evans() {
             </tr>
           </tbody>
         </table>
-        <button
-          to="/dental-eval-request"
-          className="btn-filled-primary font-18 mt-5 mb-4"
-          style={{ width: "250px" }}
-          onClick={() => navigate("/dental-eval-request")}
-        >
-          Schedule Free Evaluation
-        </button>
+        <Link to="/dental-eval-request">
+          <button
+            className="btn-filled-primary font-18 mt-5 mb-4"
+            style={{ width: "250px" }}
+          >
+            Schedule Free Evaluation
+          </button>
+        </Link>
+
+        <h2 className="mt-5 mb-3">Lumps, Bumps, and Masses - Oh My!</h2>
+        <p className="mt-3 font-18">
+          Does your dog or cat have a lump, bump, or mass? Let's get it looked
+          at! While these kinds of things are sometimes cosmetic, they can also
+          become very serious threats to your pet's health if they are not
+          managed appropriately.
+        </p>
+        <Link to="/locations/evans/surgical-consult-request">
+          <button
+            className="btn-filled-primary font-18 mt-5 mb-4"
+            style={{ width: "250px" }}
+          >
+            Schedule Free Consult
+          </button>
+        </Link>
 
         <h2 className="mt-4 mb-2">Other Surgical Procedures</h2>
         <table>

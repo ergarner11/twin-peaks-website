@@ -36,6 +36,17 @@ const App = () => {
         <Route exact path="/locations/evans" element={<Evans />} />
         <Route
           exact
+          path="/locations/evans/surgical-consult-request"
+          element={
+            <AppointmentRequest
+              appointmentType="Surgical Consult"
+              headerText="Free Surgical Consult"
+              analyticsEventName="surgical_consult_request_submitted_website"
+            />
+          }
+        />
+        <Route
+          exact
           path="/locations/evans/services/cat-dental-care"
           element={<CatDentalCare />}
         />
