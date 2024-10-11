@@ -185,7 +185,7 @@ function Evans() {
     </div>
   );
 
-  const services = (
+  /*const services = (
     <div className="content-container background-gray">
       <div className="content-block">
         <h1 className="header">Learn More</h1>
@@ -199,7 +199,7 @@ function Evans() {
         </ul>
       </div>
     </div>
-  );
+  );*/
 
   const googleMap = (
     <div style={{ lineHeight: "0" }}>
