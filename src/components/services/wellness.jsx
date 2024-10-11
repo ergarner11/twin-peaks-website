@@ -4,10 +4,14 @@ import ReactGA4 from "react-ga4";
 import Page from "../common/page";
 import { Mobile, NotMobile } from "../common/responsive";
 
+import "../../styles/components/services.scss";
+
 function Wellness() {
   useEffect(() => {
-    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send("pageview");
+    if (process.env.NODE_ENV === "production") {
+      ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+      ReactGA4.send("pageview");
+    }
   }, []);
 
   const content = (
@@ -64,11 +68,11 @@ function Wellness() {
   return (
     <Page
       selectedTab="services"
+      selectedLevel2="wellness"
       title="Wellness Exams"
       description="During each wellness exam, one of our doctors will examine your pet from nose to tail. Routine exams help your pet live a longer, healthier, happier life!"
       className="service-page wellness"
     >
-      <div className="banner" />
       <Mobile>{content}</Mobile>
       <NotMobile>
         <div className="container">{content}</div>

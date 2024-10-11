@@ -4,10 +4,14 @@ import ReactGA4 from "react-ga4";
 import Page from "../common/page";
 import { Mobile, NotMobile } from "../common/responsive";
 
+import "../../styles/components/services.scss";
+
 function Nutrition() {
   useEffect(() => {
-    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send("pageview");
+    if (process.env.NODE_ENV === "production") {
+      ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+      ReactGA4.send("pageview");
+    }
   }, []);
 
   const content = (
@@ -57,11 +61,11 @@ function Nutrition() {
   return (
     <Page
       selectedTab="services"
+      selectedLevel2="nutrition"
       title="Nutrition"
       description="Don't underestimate the difference a diet change can make for your pet. We can help you identify nutritional gaps and make suggestions specific to your pet"
       className="service-page nutrition"
     >
-      <div className="banner" />
       <Mobile>{content}</Mobile>
       <NotMobile>
         <div className="container">{content}</div>

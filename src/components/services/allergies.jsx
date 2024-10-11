@@ -4,10 +4,14 @@ import ReactGA4 from "react-ga4";
 import Page from "../common/page";
 import { Mobile, NotMobile } from "../common/responsive";
 
+import "../../styles/components/services.scss";
+
 function Allergies() {
   useEffect(() => {
-    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send("pageview");
+    if (process.env.NODE_ENV === "production") {
+      ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+      ReactGA4.send("pageview");
+    }
   }, []);
 
   const content = (
@@ -60,11 +64,11 @@ function Allergies() {
   return (
     <Page
       selectedTab="services"
+      selectedLevel2="allergies"
       title="Allergies"
       description="Allergies can have many causes. Our veterinarians will make recommendations specific to your pet's needs and help you stop the itch!"
       className="service-page allergies"
     >
-      <div className="banner" />
       <Mobile>{content}</Mobile>
       <NotMobile>
         <div className="container">{content}</div>

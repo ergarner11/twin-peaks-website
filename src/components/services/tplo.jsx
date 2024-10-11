@@ -4,10 +4,14 @@ import ReactGA4 from "react-ga4";
 import Page from "../common/page";
 import { Mobile, NotMobile } from "../common/responsive";
 
+import "../../styles/components/services.scss";
+
 function TPLO() {
   useEffect(() => {
-    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send("pageview");
+    if (process.env.NODE_ENV === "production") {
+      ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+      ReactGA4.send("pageview");
+    }
   }, []);
 
   const content = (
@@ -122,11 +126,11 @@ function TPLO() {
   return (
     <Page
       selectedTab="services"
+      selectedLevel2="tplo"
       title="TPLO Surgery"
       description="We offer TPLO surgery packages at competitive flat rate prices. If you're dealing with a CCL injury, we can help!"
       className="service-page tplo"
     >
-      <div className="banner" />
       <Mobile>{content}</Mobile>
       <NotMobile>
         <div className="container">{content}</div>

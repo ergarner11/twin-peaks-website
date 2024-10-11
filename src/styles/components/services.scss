@@ -1,71 +1,6 @@
 @import "../colors.scss";
 @import "../mixins.scss";
 @import "../typography.scss";
-.services {
-  .banner {
-    @extend %background-topography;
-    @extend %flex-centered;
-    height: 200px;
-    @media screen and (min-width: 768px) {
-      display: unset;
-      margin-bottom: 30px;
-      @include bannner-img("../assets/servicesBanner.webp");
-    }
-    h1 {
-      font-family: "Brush Script MT", cursive;
-      font-size: 60px;
-      @media screen and (min-width: 768px) {
-        position: relative;
-        top: 30%;
-        left: 10%;
-        margin: 0px;
-        color: $layoutWhite;
-        font-size: 110px;
-        left: 15%;
-      }
-      @media screen and (min-width: 991px) {
-        font-size: 140px;
-        left: 20%;
-      }
-    }
-  }
-  .service {
-    @extend %flex-column;
-    padding: 20px;
-    @media screen and (min-width: 768px) {
-      padding: 30px;
-      width: 50%;
-      max-width: 500px;
-    }
-    img {
-      width: 100%;
-    }
-    .content {
-      @extend %flex-column;
-      justify-content: space-between;
-      padding: 20px;
-      * {
-        margin: 10px 0px;
-      }
-      .header {
-        @extend %flex-row-aligned;
-        @media screen and (min-width: 768px) {
-          font-size: 30px;
-        }
-        svg {
-          margin-right: 15px;
-        }
-      }
-      p {
-        font-size: 16px;
-      }
-      button {
-        font-size: 20px;
-      }
-    }
-  }
-}
-
 .service-page {
   .content {
     margin: 30px 20px;
@@ -75,7 +10,8 @@
   }
   p,
   li {
-    font-size: 16px;
+    font-size: 18px;
+    margin-bottom: 5px;
   }
   p {
     margin-top: 15px;
@@ -84,13 +20,19 @@
   h1,
   h2,
   h3 {
+    font-family: $roboto;
     margin: 15px 0px;
   }
+  h1 {
+    font-size: 30px;
+  }
   h2 {
+    font-size: 24px;
     margin: 20px 0px;
     color: $darkBlue;
   }
   ul {
+    margin-top: 15px;
     margin-left: 30px;
     list-style-type: disc;
   }
@@ -99,7 +41,7 @@
     font-family: $bodyFont;
   }
   section {
-    margin: 50px 0px;
+    margin: 60px 0px;
   }
   a {
     color: $layoutOrange;
@@ -109,53 +51,7 @@
   }
 }
 
-.allergies .banner {
-  @include bannner-img("../assets/allergyBanner.webp");
-}
-
-.cirdc {
-  .banner {
-    @include bannner-img("../assets/wellnessBanner.webp");
-  }
-  table {
-    width: auto;
-    thead {
-      text-decoration: underline;
-    }
-    .service {
-      width: 160px;
-    }
-    .price {
-      width: 130px;
-    }
-  }
-}
-
-.dentistry .banner,
-.tplo .banner {
-  @include bannner-img("../assets/dentistryBanner.webp");
-}
-
-.diagnostics .banner {
-  @include bannner-img("../assets/diagnosticsBanner.webp");
-}
-
-.microchip .banner {
-  @include bannner-img("../assets/microchipBanner.webp");
-}
-
-.nutrition .banner {
-  @include bannner-img("../assets/nutritionBanner.webp");
-}
-
-.spay-neuter .banner {
-  @include bannner-img("../assets/spayNeuterBanner.webp");
-}
-
 .vaccines {
-  .banner {
-    @include bannner-img("../assets/vaccineBanner.webp");
-  }
   .accordion-header {
     margin: 0;
     button:focus {
@@ -171,8 +67,4 @@
     color: unset;
     background-color: unset;
   }
-}
-
-.wellness .banner {
-  @include bannner-img("../assets/wellnessBanner.webp");
 }

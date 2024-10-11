@@ -4,10 +4,14 @@ import ReactGA4 from "react-ga4";
 import Page from "../common/page";
 import { Mobile, NotMobile } from "../common/responsive";
 
+import "../../styles/components/services.scss";
+
 function Microchip() {
   useEffect(() => {
-    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send("pageview");
+    if (process.env.NODE_ENV === "production") {
+      ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+      ReactGA4.send("pageview");
+    }
   }, []);
 
   const content = (
@@ -77,11 +81,11 @@ function Microchip() {
   return (
     <Page
       selectedTab="services"
+      selectedLevel2="microchip"
       title="Microchip"
       description="Getting your pet microchipped is the best thing you can do to ensure a happy reunion when your pet is lost"
       className="service-page microchip"
     >
-      <div className="banner" />
       <Mobile>{content}</Mobile>
       <NotMobile>
         <div className="container">{content}</div>

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Collapse from "react-bootstrap/Collapse";
 import { Link } from "react-router-dom";
 import "../styles/react-popper-tooltip.css";
-import { usePopperTooltip } from "react-popper-tooltip";
 
 import { Mobile, NotMobile } from "./common/responsive";
 
@@ -66,7 +65,6 @@ function Navbar({ selectedTab, selectedCategory, selectedLevel2 }) {
       <ul>
         <Tab
           tabText="Locations"
-          tabLink="locations"
           selectedTab={selectedTab}
           selectedTabMatch="locations"
           selectedLevel2={selectedLevel2}
@@ -97,16 +95,58 @@ function Navbar({ selectedTab, selectedCategory, selectedLevel2 }) {
             <span className="tab-content">Home</span>
           </Link>
         </li>
-        <li
-          className={
-            "nav-tab" +
-            (selectedTab === "services" && !selectedCategory ? " selected" : "")
+        <Tab
+          tabText="Services"
+          selectedTab={selectedTab}
+          selectedTabMatch="services"
+          selectedLevel2={selectedLevel2}
+          expandCategory={expandCategory}
+          handleClick={() =>
+            setExpandCategory(expandCategory ? "" : "services")
           }
-        >
-          <Link to="/services">
-            <span className="tab-content">Services</span>
-          </Link>
-        </li>
+          submenuConfig={[
+            {
+              level2Match: "allergies",
+              pageLink: "/services/allergies",
+              linkText: "Allergies",
+            },
+            {
+              level2Match: "dentistry",
+              pageLink: "/services/dentistry",
+              linkText: "Dentistry",
+            },
+            {
+              level2Match: "diagnostics",
+              pageLink: "/services/diagnostics",
+              linkText: "Diagnostics",
+            },
+            {
+              level2Match: "microchip",
+              pageLink: "/services/microchip",
+              linkText: "Microchip",
+            },
+            {
+              level2Match: "spay-neuter",
+              pageLink: "/services/spay-neuter",
+              linkText: "Spay & Neuter",
+            },
+            {
+              level2Match: "tplo",
+              pageLink: "/services/tplo-surgery",
+              linkText: "TPLO",
+            },
+            {
+              level2Match: "vaccines",
+              pageLink: "/services/vaccines",
+              linkText: "Vaccines",
+            },
+            {
+              level2Match: "wellness",
+              pageLink: "/services/wellness",
+              linkText: "Wellness",
+            },
+          ]}
+        />
         <li
           className={
             "nav-tab" +
@@ -178,19 +218,12 @@ function Tab({
   handleClick,
   submenuConfig,
 }) {
-  const [visible, setVisible] = useState(false);
-  const { setTriggerRef } = usePopperTooltip({
-    offset: [0, 0],
-    trigger: "hover",
-    onVisibleChange: () => setVisible(!visible),
-  });
-
   return (
     <React.Fragment>
       <Mobile>
         <li
           className={
-            "nav-tab" +
+            "nav-tab no-hover-underline" +
             (selectedTab === selectedTabMatch && !selectedLevel2
               ? " selected"
               : "")
@@ -213,13 +246,16 @@ function Tab({
       <NotMobile>
         <li
           className={
-            "nav-tab" + (selectedTab === selectedTabMatch ? " selected" : "")
+            "nav-tab no-hover-underline" +
+            (selectedTab === selectedTabMatch ? " selected" : "")
           }
-          ref={setTriggerRef}
         >
-          <Link to={`/${tabLink}`}>
-            <span className="tab-content">{tabText}</span>
-          </Link>
+          {tabLink && (
+            <Link to={`/${tabLink}`}>
+              <span className="tab-content">{tabText}</span>
+            </Link>
+          )}
+          {!tabLink && <span className="tab-content">{tabText}</span>}
           <Submenu
             selectedLevel2={selectedLevel2}
             submenuConfig={submenuConfig}

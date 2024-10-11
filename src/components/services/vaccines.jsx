@@ -5,10 +5,14 @@ import Accordion from "react-bootstrap/Accordion";
 import Page from "../common/page";
 import { Mobile, NotMobile } from "../common/responsive";
 
+import "../../styles/components/services.scss";
+
 function Vaccines() {
   useEffect(() => {
-    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send("pageview");
+    if (process.env.NODE_ENV === "production") {
+      ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+      ReactGA4.send("pageview");
+    }
   }, []);
 
   const content = (
@@ -199,11 +203,11 @@ function Vaccines() {
   return (
     <Page
       selectedTab="services"
+      selectedLevel2="vaccines"
       title="Vaccinations"
       description="Staying current on all recommended vaccines is one of the best things you can do for the health of your pet"
       className="service-page vaccines"
     >
-      <div className="banner" />
       <Mobile>{content}</Mobile>
       <NotMobile>
         <div className="container">{content}</div>

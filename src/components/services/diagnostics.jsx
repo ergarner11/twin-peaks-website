@@ -4,10 +4,14 @@ import ReactGA4 from "react-ga4";
 import Page from "../common/page";
 import { Mobile, NotMobile } from "../common/responsive";
 
+import "../../styles/components/services.scss";
+
 function Diagnostics() {
   useEffect(() => {
-    ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
-    ReactGA4.send("pageview");
+    if (process.env.NODE_ENV === "production") {
+      ReactGA4.initialize(process.env.REACT_APP_GA4_PROPERTY_ID);
+      ReactGA4.send("pageview");
+    }
   }, []);
 
   const content = (
@@ -58,11 +62,11 @@ function Diagnostics() {
   return (
     <Page
       selectedTab="services"
+      selectedLevel2="diagnostics"
       title="Diagnostics"
       description="There are many reasons that your pet may not being feeling well. Our doctors use reliable and modern equipment and tests to get you answers as soon as possible!"
       className="service-page diagnostics"
     >
-      <div className="banner" />
       <Mobile>{content}</Mobile>
       <NotMobile>
         <div className="container">{content}</div>
