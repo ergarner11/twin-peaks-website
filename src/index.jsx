@@ -6,11 +6,6 @@ import AppointmentRequest from "./components/locations/appointmentRequest";
 import Evans from "./components/locations/evans";
 import Loveland from "./components/locations/loveland";
 
-import CatDentalCare from "./components/locations/evans/services/catDentalCare";
-import CatForeignBody from "./components/locations/evans/services/catForeignBody";
-import DogDentalCare from "./components/locations/evans/services/dogDentalCare";
-import DogForeignBody from "./components/locations/evans/services/dogForeignBody";
-
 import HealthPlans from "./components/healthPlans";
 import HealthPlanVideo from "./components/healthPlanVideo";
 import HealthPlanContractVideo from "./components/healthPlanContractVideo";
@@ -44,26 +39,6 @@ const App = () => {
               analyticsEventName="surgical_consult_request_submitted_website"
             />
           }
-        />
-        <Route
-          exact
-          path="/locations/evans/services/cat-dental-care"
-          element={<CatDentalCare />}
-        />
-        <Route
-          exact
-          path="/locations/evans/services/cat-foreign-body-surgery"
-          element={<CatForeignBody />}
-        />
-        <Route
-          exact
-          path="/locations/evans/services/dog-dental-care"
-          element={<DogDentalCare />}
-        />
-        <Route
-          exact
-          path="/locations/evans/services/dog-foreign-body-surgery"
-          element={<DogForeignBody />}
         />
         <Route exact path="/locations/loveland" element={<Loveland />} />
         <Route exact path="/health-plans" element={<HealthPlans />} />
