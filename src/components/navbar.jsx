@@ -48,7 +48,7 @@ function Navbar({ selectedTab, selectedCategory, selectedLevel2 }) {
         <span className="flex-row-aligned">Client Portal</span>
       </div>
       <button
-        className="btn-filled-secondary ms-2"
+        className="btn-filled-tertiary ms-2"
         onClick={() =>
           window.open(
             "https://connect.allydvm.com/practice/twinpeaksvc/refill_request"
@@ -63,28 +63,6 @@ function Navbar({ selectedTab, selectedCategory, selectedLevel2 }) {
   const nav2Links = (
     <div className="nav-tabs">
       <ul>
-        <Tab
-          tabText="Locations"
-          selectedTab={selectedTab}
-          selectedTabMatch="locations"
-          selectedLevel2={selectedLevel2}
-          expandCategory={expandCategory}
-          handleClick={() =>
-            setExpandCategory(expandCategory ? "" : "locations")
-          }
-          submenuConfig={[
-            {
-              level2Match: "evans",
-              pageLink: "/locations/evans",
-              linkText: "Evans - Dental & Surgery",
-            },
-            {
-              level2Match: "loveland",
-              pageLink: "/locations/loveland",
-              linkText: "Loveland - General Practice",
-            },
-          ]}
-        />
         <li
           className={
             "nav-tab" +
@@ -169,6 +147,23 @@ function Navbar({ selectedTab, selectedCategory, selectedLevel2 }) {
             <span className="tab-content">Our Team</span>
           </Link>
         </li>
+        <Tab
+          tabText="Locations"
+          selectedTab={selectedTab}
+          selectedTabMatch="locations"
+          selectedLevel2={selectedLevel2}
+          expandCategory={expandCategory}
+          handleClick={() =>
+            setExpandCategory(expandCategory ? "" : "locations")
+          }
+          submenuConfig={[
+            {
+              level2Match: "loveland",
+              pageLink: "/locations/loveland",
+              linkText: "Loveland - General Practice",
+            },
+          ]}
+        />
       </ul>
     </div>
   );

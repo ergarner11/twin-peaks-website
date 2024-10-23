@@ -106,13 +106,13 @@ function Loveland() {
   const introContent = (
     <div className="content-container intro">
       <div className="content-block">
-        <h1 className="header">Loveland</h1>
+        <h1 className="header">Welcome</h1>
         <p>
-          Our Loveland location has been serving Loveland, Berthoud, Johnstown,
-          Milliken and the surrounding area for over 10 years! We are a
-          full-service general practice veterinary clinic for dogs and cats.
-          We'd love to welcome you to our Twin Peaks family. Call us today to
-          schedule your first appointment!
+          We have been serving Loveland, Berthoud, Johnstown, Milliken and the
+          surrounding area for over 10 years! We are a full-service general
+          practice veterinary clinic for dogs and cats. We'd love to welcome you
+          to our Twin Peaks family. Call us today to schedule your first
+          appointment!
         </p>
       </div>
     </div>
