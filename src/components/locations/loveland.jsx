@@ -51,7 +51,8 @@ function Loveland() {
         <p>Saturday: 8am - 5pm</p>
         <p>Sunday: Closed</p>
         <br />
-        <p>Thanksgiving: Closed</p>
+        <p>Christmas Eve: Closed</p>
+        <p>Christmas: Closed</p>
       </div>
     </div>
   );
